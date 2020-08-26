@@ -6,7 +6,6 @@
         +row-flex
         +md_block
             margin-bottom: -30px                
-
     &__block
         background-color: $light
         border-radius: 30px
@@ -14,6 +13,10 @@
         justify-content: center
         margin: 0 auto
         width: 100%
+        +sm-block
+            max-width: 100% !important
+            img
+                min-width: 100px
         &_sm
             max-width: 164px
             min-height: 150px
@@ -21,9 +24,9 @@
             max-width: 275px
             max-height: 205px
             padding: 2px
-            +lg-block
+            +md-block
                 max-width: 164px
-                min-height: 150px
+                max-height: 150px
                 img
                     max-width: 80%
     &__col
@@ -44,6 +47,9 @@
             margin: 0 auto 30px
             font-size: 22px
             color: $light
+            +sm-block
+                font-size: 30px
+                max-width: initial
             &::after
                 content: ''
                 display: block
@@ -52,7 +58,9 @@
                 height: 1px
                 margin: 15px auto 0
         &:nth-child(2) h3::after
-                display: none
+            display: none
+            +md-block
+                display: block
                 
                 
         
