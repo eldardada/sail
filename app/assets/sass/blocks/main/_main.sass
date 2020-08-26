@@ -1,0 +1,125 @@
+.main
+    +row-flex
+    height: calc(100vh - 44px)
+    max-height: 1300px
+    @media screen and (max-width:1400px) 
+        max-height: 800px
+    +lg-block
+        max-height: 700px
+    &-content
+        width: calc(100% - 121px)
+        +lg-block
+            width: 100%
+        +md-block
+            display: flex
+            align-items: center
+            justify-content: center
+            margin-top: -100px
+        position: relative
+        background: url('./assets/img/main/main_bg.png') no-repeat 
+        background-size: 108%
+        background-position: -55px 0
+        font-size: 54px
+        color: $light
+        background-color: $mainDark
+        +xxl-block()
+            font-size: 35px
+        +md-block
+            background-size: cover
+        a
+            color: $light
+    .aside
+        min-width: 121px
+        +lg-block()
+            display: none            
+        height: 100%
+        background-color: $aside
+        &-icons
+            padding-top: 25px
+        &__icon
+            display: flex
+            justify-content: center
+            align-items: center
+            height: 69.98px
+            background-color: $light
+            margin: 40px 15px
+            border-radius: 20px
+            +xxl-block()
+                margin: 20px 10px
+    &-header
+        +row-flex
+        align-items: start
+        margin-top: 15px
+        padding-left: 10px
+        margin-bottom: 30px            
+    &-company
+        display: flex
+        align-items: center
+        +col
+        +size(4)
+        +md-block()
+            +size(12)
+            justify-content: center
+            margin-bottom: 30px
+        +xxs-block
+            flex-direction: column
+        &__logo
+            display: flex
+            justify-content: center
+            margin-right: 22px
+            background-color: $light
+            box-shadow: 0 10px 5px rgba(0, 0, 0, 0.25)
+            border-radius: 45px 35px
+            min-width: 90px
+            max-width: 110px
+            +xxl-block()
+                padding: 15px 20px
+                img
+                    max-width: 80%
+            +xxs-block()
+                margin-bottom: 30px
+        &__name
+            +bold
+            text-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25)
+    &__section
+        +col
+        +size(3)
+        +shift-left(4)
+        text-align: center
+        padding: 20px 5px
+        background: #4C4C4C
+        border: 5px solid #FFFFFF
+        box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25)
+        border-radius: 45px 34px 40px 38px
+        max-width: 341px
+        +md-block()
+            +size(12)
+            margin: 0 auto
+        +xxs-block
+            margin-bottom: 30px
+            width: 90%
+    &__title
+        max-width: 760px
+        padding: 25px
+        text-align: center
+        background: #4C4C4C
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25)
+        border-radius: 45px 34px 40px 38px
+        position: absolute
+        bottom: 55px
+        left: 95px
+        +xxl-block()
+            max-width: 600px
+            bottom: 10px
+            left: 20px
+        +lg-block()
+            left: calc(50% - 300px)
+            padding: 10px
+        +md-block()
+            left: auto
+            bottom: 35px
+            width: 80%
+        +sm-block()
+            font-size: 30px
+        +xxs-block()
+            width: 75%
