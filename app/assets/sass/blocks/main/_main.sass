@@ -21,24 +21,6 @@
             background-position: -150px 0
         a
             color: $light
-    .aside
-        min-width: 121px
-        +lg-block()
-            display: none            
-        background-color: $aside
-        &-icons
-            height: 100%
-            padding-top: 25px
-            ul 
-                li
-                    a
-                        display: flex
-                        justify-content: center
-                        align-items: center
-                        height: 69.98px
-                        background-color: $light
-                        margin: 40px 15px
-                        border-radius: 20px
     &-header
         +row-flex
         align-items: start
@@ -84,6 +66,11 @@
         min-width: 200px
         max-width: 341px
         padding: 30px 20px
+        transition: background-color .3s
+        &:hover
+            background-color: #CACDCC
+        &:active
+            background-color: #b0b4b2
         +lg-block()
             +size(12)
             margin: 0 auto
