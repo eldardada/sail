@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Conviction';
+    src: local('Conviction'),
+        url('./assets/fonts/Conviction.woff2') format('woff2'),
+        url('./assets/fonts/Conviction.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@mixin bold {
+    font-weight: 700;
+}
+
+@mixin conv400 {
+    font-family: 'Conviction';
+    font-weight: 400;
+}
+
+@mixin conv700 {
+    font-family: 'Conviction';
+    font-weight: normal;
+}

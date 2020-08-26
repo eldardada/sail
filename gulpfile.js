@@ -164,12 +164,12 @@ function grid(done){
         offset: '0px', /* gutter width px || % || rem */
         mobileFirst: false, /* mobileFirst ? 'min-width' : 'max-width' */
         container: {
-            maxWidth: '1295px', /* max-width оn very large screen */
+            maxWidth: '1660px', /* max-width оn very large screen */
             fields: '30px' /* side fields */
         },
         breakPoints: {
             xxl: {
-              width: "3000px",
+              width: "1400px",
             },
             xl : {
                 width: "1140px",
