@@ -1,0 +1,58 @@
+.advantages
+    background-color: $mainDark
+    text-align: center
+    padding: 30px
+    &-content
+        +row-flex
+        +md_block
+            margin-bottom: -30px                
+
+    &__block
+        background-color: $light
+        border-radius: 30px
+        display: flex
+        justify-content: center
+        margin: 0 auto
+        width: 100%
+        &_sm
+            max-width: 164px
+            min-height: 150px
+        &_lg
+            max-width: 275px
+            max-height: 205px
+            padding: 2px
+            +lg-block
+                max-width: 164px
+                min-height: 150px
+                img
+                    max-width: 80%
+    &__col
+        +col
+        +size(4)
+        +md-block
+            +size(6)
+            &:nth-child(3)
+                +size(12)
+        +sm-block
+            +size(12)
+        margin-bottom: 30px                
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        h3
+            max-width: 150px
+            margin: 0 auto 30px
+            font-size: 22px
+            color: $light
+            &::after
+                content: ''
+                display: block
+                width: 100px
+                background-color: #fff
+                height: 1px
+                margin: 15px auto 0
+        &:nth-child(2) h3::after
+                display: none
+                
+                
+        
