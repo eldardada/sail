@@ -1,0 +1,103 @@
+.footer
+    padding: 20px
+    font-size: 18px
+    +md-block
+        font-size: 25px
+    &-content
+        +row-flex
+    h3
+        text-align: center
+        font-size: 36px
+        &::after
+            content: ''
+            display: block
+            margin: 10px auto 20px
+            width: 235px
+            height: 5px
+            background-color: #cacdcc
+            box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25)
+    &-img
+        margin: 0 auto
+        text-align: center
+        max-width: 289px
+        background: #F7F7F7
+        box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25)
+        border-radius: 30px
+        img
+            min-width: 218px
+            padding: 10px
+        p
+            padding: 20px
+            line-height: 30px
+            color: $dark
+            margin: 0 auto
+        &__logo
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+    background-color: $footer
+    color: $light
+    a
+        color: $light
+        font-size: 18px
+    &__contacts
+        margin: 0 auto
+        max-width: 250px
+        +md-block
+            max-width: 400px
+        text-align: justify
+        li
+            display: flex
+            margin-bottom: 15px
+            &:nth-child(4)
+                display: block
+        a
+            margin-left: auto
+            color:#FFC677
+    &-col
+        +col
+        +size(3)
+        +xl-block
+            +size(4)
+        +lg-block
+            +size(6)
+            margin: 20px 0 0
+        +md-block
+            +size(12)
+    &__garant
+        margin: 0 auto
+        max-width: 290px
+        line-height: 30px
+        text-indent: 10px
+        margin-bottom: 10px
+        +md-block
+            max-width: 500px
+            text-indent: 0
+    &-social
+        +xl-block
+            padding: 10px 0 0
+            +size(12)
+        +lg-block
+            +size(6)
+        &__title
+            +xl-block
+                display: none
+            +lg-block
+                display: block
+        &__list
+            display: flex
+            flex-direction: column
+            align-items: center
+            max-width: 120px
+            margin: 0 auto
+            +xl-block
+                flex-direction: row
+                max-width: 100%
+            +lg-block
+                max-width: 120px
+                flex-direction: column
+            li
+                min-width: 120px
+                margin: 0 auto
+                display: flex
+                align-items: center
+                img
+                    margin-right: 15px
