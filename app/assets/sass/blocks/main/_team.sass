@@ -31,8 +31,14 @@
             box-shadow: initial
             width: 100%
     &__next, &__prev
+        cursor: pointer
+        svg path
+            transition: .3s
         &:focus
             outline: none
+        &:hover
+            svg path
+                fill: #FFC677
         +md-block
             position: absolute
             z-index: 2
