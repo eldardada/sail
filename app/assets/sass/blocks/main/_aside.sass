@@ -1,23 +1,52 @@
 .aside
-    min-width: 121px
-    +lg-block()
-        display: none            
-    background-color: $aside
+    position: relative
     &-icons
         height: 100%
-        padding-top: 25px
+        padding-top: 40px
         ul 
             li
                 a
-                    display: flex
-                    justify-content: center
-                    align-items: center
-                    min-height: 70px
+                    text-align: center
+                    display: block
+                    padding: 5px 10px
                     background-color: $light
-                    margin: 40px 15px
+                    margin: 0 15px 40px
                     border-radius: 20px
                     border: 3px solid transparent
                     &:hover
                         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
                         border: 3px solid #0C0000
                         transition: border .3s, filter .3s
+.aside__menu
+  display: none
+  cursor: pointer
+  +md-block
+    z-index: 99999
+    display: block
+    position: absolute
+    top: calc(50% - 100px)
+    left: 5px
+  li
+    display: block
+    width: 20px
+    height: 20px
+    border-radius: 20px
+    background-color: $mainDark
+    border: 1px solid #fff
+    margin-bottom: 10px
+.main__aside
+  width: 121px
+  height: 100%
+  background-color: $aside
+  +md-block
+    position: absolute
+    top: 0
+    left: -121px
+    transition: left .5s
+.aside_show
+  +md-block
+    z-index: 1
+    left: 0
+
+
+    

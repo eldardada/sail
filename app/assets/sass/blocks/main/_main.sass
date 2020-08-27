@@ -1,11 +1,14 @@
 .main
+    &-container
+        margin-left: 20px
     &-content
         width: calc(100% - 121px)
         +lg-block
-            width: 100%
             display: flex
             align-items: center
             justify-content: center
+        +md-block
+            width: 100%
         position: relative
         background-size: cover
         font-size: 40px
@@ -18,49 +21,41 @@
         a
             color: $light
     &-header
-        +row-flex
-        align-items: start
-        margin-top: 15px
-        padding-left: 10px
-        margin-bottom: 30px            
+        display: flex
+        align-items: center 
+        margin: 15px 0 50px
+        +lg-block
+            flex-direction: column
+            justify-content: space-between
     &-company
         display: flex
         align-items: center
-        +col
-        +size(4)
-        +lg-block()
-            +size(12)
-            justify-content: center
-            margin-bottom: 30px
-        +xxs-block
+        margin-bottom: 40px
+        +sm-block
             flex-direction: column
+            margin-bottom: 20px
         &__logo
-            display: flex
-            justify-content: center
             margin-right: 22px
             background-color: $light
             box-shadow: 0 10px 5px rgba(0, 0, 0, 0.25)
             border-radius: 45px 35px
-            padding: 15px 30px
+            padding: 15px 50px
             img
                 max-width: 100px
-            +xxs-block()
-                margin-bottom: 30px
+            +sm-block()
+                margin: 0 0 10px 0
         &__name
             +bold
             text-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25)
     &__section
-        +col
-        +size(3)
-        +shift-left(4)
+        margin: -30px 0 0 auto
         text-align: center
-        padding: 25px 5px
+        padding: 25px 10px
         background: #4C4C4C
         border: 5px solid #FFFFFF
         box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25)
         border-radius: 45px 34px 40px 38px
         min-width: 200px
-        max-width: 341px
         padding: 30px 20px
         transition: background-color .3s
         &:hover
@@ -68,7 +63,7 @@
         &:active
             background-color: #b0b4b2
         +lg-block()
-            +size(12)
+            max-width: 150px
             margin: 0 auto
         +xxs-block
             margin-bottom: 30px
@@ -84,11 +79,11 @@
         bottom: 55px
         left: 95px
         +lg-block()
-            left: auto
-            bottom: 35px
+            position: initial
+            margin: 0 auto
             width: 80%
-        +sm-block()
             font-size: 30px
-        +xxs-block()
+        +sm-block()
             font-size: 25px
-            width: 75%
+        +xxs-block()
+            width: 80%

@@ -14,11 +14,15 @@
         align-items: center
         right: 10px
         bottom: 10px
-        width: 88.97px
-        height: 69.98px
+        width: 80px
+        height: 65px
         background-color: #fff
         border-radius: 20px
         overflow: visible
+        border: 3px solid transparent
+        transition: border-color .3s
+        &:hover
+            border-color: $dark
     &-content
         +row-flex
     h3
@@ -32,6 +36,10 @@
             height: 5px
             background-color: #cacdcc
             box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25)
+    &-imgblock
+        a
+            width: fit-content
+            display: block
     &-img
         +md-block
             display: none
@@ -48,6 +56,8 @@
             padding: 20px
             line-height: 30px
             color: $dark
+            margin: 0 auto
+        a
             margin: 0 auto
         &__logo
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
@@ -68,7 +78,6 @@
             &:nth-child(4)
                 display: block
         a
-            margin-left: auto
             color:#FFC677
             transition: color .3s
             &:hover
@@ -83,6 +92,8 @@
             margin: 20px 0 0
         +md-block
             +size(12)
+        a
+            margin: 0 auto
     &__garant
         margin: 0 auto
         max-width: 290px
