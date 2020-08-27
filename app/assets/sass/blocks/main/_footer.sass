@@ -1,8 +1,24 @@
 .footer
     padding: 20px
     font-size: 18px
+    position: relative
+
     +md-block
         font-size: 25px
+        +xxs-block
+            padding-bottom: 90px
+    &__arrow
+        position: absolute
+        display: flex
+        justify-content: center
+        align-items: center
+        right: 10px
+        bottom: 10px
+        width: 88.97px
+        height: 69.98px
+        background-color: #fff
+        border-radius: 20px
+        overflow: visible
     &-content
         +row-flex
     h3

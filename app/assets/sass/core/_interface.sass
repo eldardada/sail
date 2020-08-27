@@ -1,5 +1,8 @@
 +reset
 
+body, html
+  scroll-behavior: smooth
+
 body
   font-family: 'Conviction', sans-serif
   font-size: $textsmall
@@ -19,3 +22,9 @@ a
     background-color: #FFE5C0
   &:active
     background-color: #FFDBA9
+
+.main
+    +row-flex
+    min-height: calc(100vh - 44px)
+    +lg-block
+        min-height: calc(100vh - 300px)
