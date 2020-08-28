@@ -1,20 +1,22 @@
 const catalogFilter = document.querySelector('.catalog-filter');
 const catalogBlocks = document.querySelector('.catalog-blocks');
 
+// filter
 catalogFilter.addEventListener('click', e => {
     const target = e.target;
     if(e.target.tagName === 'svg') {
-        const target = e.target;
         target.classList.toggle('arrow_180');
         target.parentElement.classList.toggle('catalog_show-list');
     }
     else if(target.classList.contains('select__element')) {
-        const dataActive = target.dataset.value; // летит как data-active
-        const dataText = target.innerHTML; // летит как текст
+        const dataActive = target.dataset.value;
+        const dataText = target.innerHTML; 
+        
         const ul = target.parentElement;
         const div = ul.parentElement;
         const arrow = div.querySelector('svg'); 
         const p = div.querySelector('.catalog-select__check');
+        
         p.innerHTML = dataText;
         p.dataset = dataActive;
         div.classList.toggle('catalog_show-list');

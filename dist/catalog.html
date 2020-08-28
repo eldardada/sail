@@ -19,7 +19,7 @@
         </div>
     </header>
     
-    <main class="main">
+    <main class="main catalog-main">
         <div class="aside">
             <aside class="main__aside">
                 <nav class="aside-icons">
@@ -56,238 +56,259 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="catalog-filter">
-                        <div class="catalog-filter__param">Фильтр</div>
-                        <div class="catalog-select catalog-filter__param">
-                            <p class="catalog-select__check" data-active="Color">Цвет</p>
-                            <svg id="catalogFilterArrow" width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0.00512503 1.22138C0.00467679 0.981322 0.198971 0.786375 0.439028 0.785927C0.554757 0.785723 0.665801 0.831689 0.747545 0.913637L10.0024 10.1694L19.2573 0.913637C19.4273 0.74367 19.7028 0.74367 19.8728 0.913637C20.0427 1.0836 20.0427 1.35915 19.8728 1.52912L10.3101 11.0918C10.1404 11.2614 9.86527 11.2614 9.69551 11.0918L0.132915 1.52912C0.0511306 1.44762 0.00512502 1.33686 0.00512503 1.22138Z" fill="black"/>
-                            </svg>
-                            <ul>
-                                <li class="select__element" data-value="firstColor">Первый  цвет</li>
-                                <li class="select__element" data-value="secondColor">Второй цвет</li>
-                                <li class="select__element" data-value="thirdColor">Третий цвет</li>
-                            </ul>
-                        </div>
-                        <div class="catalog-select catalog-filter__param">
-                            <p class="catalog-select__check" data-active="name">Название</p>
-                            <svg id="catalogFilterArrow" width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0.00512503 1.22138C0.00467679 0.981322 0.198971 0.786375 0.439028 0.785927C0.554757 0.785723 0.665801 0.831689 0.747545 0.913637L10.0024 10.1694L19.2573 0.913637C19.4273 0.74367 19.7028 0.74367 19.8728 0.913637C20.0427 1.0836 20.0427 1.35915 19.8728 1.52912L10.3101 11.0918C10.1404 11.2614 9.86527 11.2614 9.69551 11.0918L0.132915 1.52912C0.0511306 1.44762 0.00512502 1.33686 0.00512503 1.22138Z" fill="black"/>
-                            </svg>
-                            <ul>
-                                <li class="select__element" data-value="firstColor">Название 1</li>
-                                <li class="select__element" data-value="secondColor">Название 2</li>
-                                <li class="select__element" data-value="thirdColor">Название 3</li>
-                            </ul>
-                        </div>
-                        <div class="catalog-select catalog-filter__param">
-                            <p class="catalog-select__check" data-active="price">Цена</p>
-                            <svg id="catalogFilterArrow" width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0.00512503 1.22138C0.00467679 0.981322 0.198971 0.786375 0.439028 0.785927C0.554757 0.785723 0.665801 0.831689 0.747545 0.913637L10.0024 10.1694L19.2573 0.913637C19.4273 0.74367 19.7028 0.74367 19.8728 0.913637C20.0427 1.0836 20.0427 1.35915 19.8728 1.52912L10.3101 11.0918C10.1404 11.2614 9.86527 11.2614 9.69551 11.0918L0.132915 1.52912C0.0511306 1.44762 0.00512502 1.33686 0.00512503 1.22138Z" fill="black"/>
-                            </svg>
-                            <ul>
-                                <li class="select__element" data-value="firstColor">Цена 1</li>
-                                <li class="select__element" data-value="secondColor">Цена 2</li>
-                                <li class="select__element" data-value="thirdColor">Цена 3</li>
-                            </ul>
-                        </div>
-                        <div class="catalog-select catalog-filter__param">
-                            <p class="catalog-select__check" data-active="popular">Популярное</p>
-                            <svg id="catalogFilterArrow" width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0.00512503 1.22138C0.00467679 0.981322 0.198971 0.786375 0.439028 0.785927C0.554757 0.785723 0.665801 0.831689 0.747545 0.913637L10.0024 10.1694L19.2573 0.913637C19.4273 0.74367 19.7028 0.74367 19.8728 0.913637C20.0427 1.0836 20.0427 1.35915 19.8728 1.52912L10.3101 11.0918C10.1404 11.2614 9.86527 11.2614 9.69551 11.0918L0.132915 1.52912C0.0511306 1.44762 0.00512502 1.33686 0.00512503 1.22138Z" fill="black"/>
-                            </svg>
-                            <ul>
-                                <li class="select__element" data-value="firstColor">Первая категория</li>
-                                <li class="select__element" data-value="secondColor">Вторая категория</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="catalog-blocks">
-                        <div class="catalog-blocks__block">
-                            <div class="catalog-blocks__block__title">Модель</div>
-                            <img src="./assets/img/catalog/catalog-img.jpg" alt="">
-                            <div class="catalog-blocks__block-footer">
-                                <div class="rating">
-                                    <div class="rating-item" data-rate="5"></div>
-                                    <div class="rating-item" data-rate="4"></div>
-                                    <div class="rating-item" data-rate="3"></div>
-                                    <div class="rating-item" data-rate="2"></div>
-                                    <div class="rating-item rating_active" data-rate="1"></div>
-                                </div>
-                                <p>Короткое описание</p>
+                    <div class="catalog-main">
+                        <div class="catalog-filter">
+                            <div class="catalog-filter__param">Фильтр</div>
+                            <div class="catalog-select catalog-filter__param">
+                                <p class="catalog-select__check" data-active="Color">Цвет</p>
+                                <svg id="catalogFilterArrow" width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.00512503 1.22138C0.00467679 0.981322 0.198971 0.786375 0.439028 0.785927C0.554757 0.785723 0.665801 0.831689 0.747545 0.913637L10.0024 10.1694L19.2573 0.913637C19.4273 0.74367 19.7028 0.74367 19.8728 0.913637C20.0427 1.0836 20.0427 1.35915 19.8728 1.52912L10.3101 11.0918C10.1404 11.2614 9.86527 11.2614 9.69551 11.0918L0.132915 1.52912C0.0511306 1.44762 0.00512502 1.33686 0.00512503 1.22138Z" fill="black"/>
+                                </svg>
+                                <ul>
+                                    <li class="select__element" data-value="firstColor">Первый  цвет</li>
+                                    <li class="select__element" data-value="secondColor">Второй цвет</li>
+                                    <li class="select__element" data-value="thirdColor">Третий цвет</li>
+                                </ul>
                             </div>
-                            <ul>
-                                <li><a  href=""><b>Перейти к товару</b></a></li>
-                                <li><a href="">В корзину</a><div class="block30"><img src="./assets/img/basket.svg" alt=""></div></li>
-                                <li><a class="btn_light" href="">В избранное</a><div class="block30"><img src="./assets/img/love.svg" alt=""></div></li>
-                            </ul>
-                            <div class="catalog-blocks__block__price">Цена</div>
-                        </div>
-                        <div class="catalog-blocks__block">
-                            <div class="catalog-blocks__block__title">Модель</div>
-                            <img src="./assets/img/catalog/catalog-img.jpg" alt="">
-                            <div class="catalog-blocks__block-footer">
-                                <div class="rating">
-                                    <div class="rating-item" data-rate="5"></div>
-                                    <div class="rating-item" data-rate="4"></div>
-                                    <div class="rating-item" data-rate="3"></div>
-                                    <div class="rating-item" data-rate="2"></div>
-                                    <div class="rating-item rating_active" data-rate="1"></div>
-                                </div>
-                                <p>Короткое описание</p>
+                            <div class="catalog-select catalog-filter__param">
+                                <p class="catalog-select__check" data-active="name">Название</p>
+                                <svg id="catalogFilterArrow" width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.00512503 1.22138C0.00467679 0.981322 0.198971 0.786375 0.439028 0.785927C0.554757 0.785723 0.665801 0.831689 0.747545 0.913637L10.0024 10.1694L19.2573 0.913637C19.4273 0.74367 19.7028 0.74367 19.8728 0.913637C20.0427 1.0836 20.0427 1.35915 19.8728 1.52912L10.3101 11.0918C10.1404 11.2614 9.86527 11.2614 9.69551 11.0918L0.132915 1.52912C0.0511306 1.44762 0.00512502 1.33686 0.00512503 1.22138Z" fill="black"/>
+                                </svg>
+                                <ul>
+                                    <li class="select__element" data-value="firstColor">Название 1</li>
+                                    <li class="select__element" data-value="secondColor">Название 2</li>
+                                    <li class="select__element" data-value="thirdColor">Название 3</li>
+                                </ul>
                             </div>
-                            <ul>
-                                <li><a  href=""><b>Перейти к товару</b></a></li>
-                                <li><a href="">В корзину</a><div class="block30"><img src="./assets/img/basket.svg" alt=""></div></li>
-                                <li><a class="btn_light" href="">В избранное</a><div class="block30"><img src="./assets/img/love.svg" alt=""></div></li>
-                            </ul>
-                            <div class="catalog-blocks__block__price">Цена</div>
-                        </div>
-                        <div class="catalog-blocks__block">
-                            <div class="catalog-blocks__block__title">Модель</div>
-                            <img src="./assets/img/catalog/catalog-img.jpg" alt="">
-                            <div class="catalog-blocks__block-footer">
-                                <div class="rating">
-                                    <div class="rating-item" data-rate="5"></div>
-                                    <div class="rating-item" data-rate="4"></div>
-                                    <div class="rating-item" data-rate="3"></div>
-                                    <div class="rating-item" data-rate="2"></div>
-                                    <div class="rating-item rating_active" data-rate="1"></div>
-                                </div>
-                                <p>Короткое описание</p>
+                            <div class="catalog-select catalog-filter__param">
+                                <p class="catalog-select__check" data-active="price">Цена</p>
+                                <svg id="catalogFilterArrow" width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.00512503 1.22138C0.00467679 0.981322 0.198971 0.786375 0.439028 0.785927C0.554757 0.785723 0.665801 0.831689 0.747545 0.913637L10.0024 10.1694L19.2573 0.913637C19.4273 0.74367 19.7028 0.74367 19.8728 0.913637C20.0427 1.0836 20.0427 1.35915 19.8728 1.52912L10.3101 11.0918C10.1404 11.2614 9.86527 11.2614 9.69551 11.0918L0.132915 1.52912C0.0511306 1.44762 0.00512502 1.33686 0.00512503 1.22138Z" fill="black"/>
+                                </svg>
+                                <ul>
+                                    <li class="select__element" data-value="firstColor">Цена 1</li>
+                                    <li class="select__element" data-value="secondColor">Цена 2</li>
+                                    <li class="select__element" data-value="thirdColor">Цена 3</li>
+                                </ul>
                             </div>
-                            <ul>
-                                <li><a  href=""><b>Перейти к товару</b></a></li>
-                                <li><a href="">В корзину</a><div class="block30"><img src="./assets/img/basket.svg" alt=""></div></li>
-                                <li><a class="btn_light" href="">В избранное</a><div class="block30"><img src="./assets/img/love.svg" alt=""></div></li>
-                            </ul>
-                            <div class="catalog-blocks__block__price">Цена</div>
-                        </div>
-                        <div class="catalog-blocks__block">
-                            <div class="catalog-blocks__block__title">Модель</div>
-                            <img src="./assets/img/catalog/catalog-img.jpg" alt="">
-                            <div class="catalog-blocks__block-footer">
-                                <div class="rating">
-                                    <div class="rating-item" data-rate="5"></div>
-                                    <div class="rating-item" data-rate="4"></div>
-                                    <div class="rating-item" data-rate="3"></div>
-                                    <div class="rating-item" data-rate="2"></div>
-                                    <div class="rating-item rating_active" data-rate="1"></div>
-                                </div>
-                                <p>Короткое описание</p>
+                            <div class="catalog-select catalog-filter__param">
+                                <p class="catalog-select__check" data-active="popular">Популярное</p>
+                                <svg id="catalogFilterArrow" width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.00512503 1.22138C0.00467679 0.981322 0.198971 0.786375 0.439028 0.785927C0.554757 0.785723 0.665801 0.831689 0.747545 0.913637L10.0024 10.1694L19.2573 0.913637C19.4273 0.74367 19.7028 0.74367 19.8728 0.913637C20.0427 1.0836 20.0427 1.35915 19.8728 1.52912L10.3101 11.0918C10.1404 11.2614 9.86527 11.2614 9.69551 11.0918L0.132915 1.52912C0.0511306 1.44762 0.00512502 1.33686 0.00512503 1.22138Z" fill="black"/>
+                                </svg>
+                                <ul>
+                                    <li class="select__element" data-value="firstColor">Первая категория</li>
+                                    <li class="select__element" data-value="secondColor">Вторая категория</li>
+                                </ul>
                             </div>
-                            <ul>
-                                <li><a  href=""><b>Перейти к товару</b></a></li>
-                                <li><a href="">В корзину</a><div class="block30"><img src="./assets/img/basket.svg" alt=""></div></li>
-                                <li><a class="btn_light" href="">В избранное</a><div class="block30"><img src="./assets/img/love.svg" alt=""></div></li>
-                            </ul>
-                            <div class="catalog-blocks__block__price">Цена</div>
                         </div>
-                        <div class="catalog-blocks__block">
-                            <div class="catalog-blocks__block__title">Модель</div>
-                            <img src="./assets/img/catalog/catalog-img.jpg" alt="">
-                            <div class="catalog-blocks__block-footer">
-                                <div class="rating">
-                                    <div class="rating-item" data-rate="5"></div>
-                                    <div class="rating-item" data-rate="4"></div>
-                                    <div class="rating-item" data-rate="3"></div>
-                                    <div class="rating-item" data-rate="2"></div>
-                                    <div class="rating-item rating_active" data-rate="1"></div>
+                        <div class="catalog-blocks">
+                            <div class="catalog-blocks__block">
+                                <div class="catalog-blocks__block__title">Модель</div>
+                                <div class="catalog-blocks__block-img">
+                                    <img src="./assets/img/catalog/catalog-img.jpg" alt="">
+                                    <ul>
+                                        <li><a href="">Перейти к товару</a></li>
+                                        <li><a href="">В корзину</a><div class="block30"><img src="./assets/img/basket.svg" alt=""></div></li>
+                                        <li><a href="">В избранное</a><div class="block30"><img src="./assets/img/love.svg" alt=""></div></li>
+                                    </ul>
                                 </div>
-                                <p>Короткое описание</p>
+                                    <div class="catalog-blocks__block-footer">
+                                        <div class="rating">
+                                            <div class="rating-item" data-rate="5"></div>
+                                            <div class="rating-item" data-rate="4"></div>
+                                            <div class="rating-item" data-rate="3"></div>
+                                            <div class="rating-item" data-rate="2"></div>
+                                            <div class="rating-item rating_active" data-rate="1"></div>
+                                        </div>
+                                        <p>Короткое описание</p>
+                                    </div>
+                                <div class="catalog-blocks__block__price">Цена</div>
                             </div>
-                            <ul>
-                                <li><a  href=""><b>Перейти к товару</b></a></li>
-                                <li><a href="">В корзину</a><div class="block30"><img src="./assets/img/basket.svg" alt=""></div></li>
-                                <li><a class="btn_light" href="">В избранное</a><div class="block30"><img src="./assets/img/love.svg" alt=""></div></li>
-                            </ul>
-                            <div class="catalog-blocks__block__price">Цена</div>
-                        </div>
-                        <div class="catalog-blocks__block">
-                            <div class="catalog-blocks__block__title">Модель</div>
-                            <img src="./assets/img/catalog/catalog-img.jpg" alt="">
-                            <div class="catalog-blocks__block-footer">
-                                <div class="rating">
-                                    <div class="rating-item" data-rate="5"></div>
-                                    <div class="rating-item" data-rate="4"></div>
-                                    <div class="rating-item" data-rate="3"></div>
-                                    <div class="rating-item" data-rate="2"></div>
-                                    <div class="rating-item rating_active" data-rate="1"></div>
+                            <div class="catalog-blocks__block">
+                                <div class="catalog-blocks__block__title">Модель</div>
+                                <div class="catalog-blocks__block-img">
+                                    <img src="./assets/img/catalog/catalog-img.jpg" alt="">
+                                    <ul>
+                                        <li><a href="">Перейти к товару</a></li>
+                                        <li><a href="">В корзину</a><div class="block30"><img src="./assets/img/basket.svg" alt=""></div></li>
+                                        <li><a href="">В избранное</a><div class="block30"><img src="./assets/img/love.svg" alt=""></div></li>
+                                    </ul>
                                 </div>
-                                <p>Короткое описание</p>
+                                    <div class="catalog-blocks__block-footer">
+                                        <div class="rating">
+                                            <div class="rating-item" data-rate="5"></div>
+                                            <div class="rating-item" data-rate="4"></div>
+                                            <div class="rating-item" data-rate="3"></div>
+                                            <div class="rating-item" data-rate="2"></div>
+                                            <div class="rating-item rating_active" data-rate="1"></div>
+                                        </div>
+                                        <p>Короткое описание</p>
+                                    </div>
+                                <div class="catalog-blocks__block__price">Цена</div>
                             </div>
-                            <ul>
-                                <li><a  href=""><b>Перейти к товару</b></a></li>
-                                <li><a href="">В корзину</a><div class="block30"><img src="./assets/img/basket.svg" alt=""></div></li>
-                                <li><a class="btn_light" href="">В избранное</a><div class="block30"><img src="./assets/img/love.svg" alt=""></div></li>
-                            </ul>
-                            <div class="catalog-blocks__block__price">Цена</div>
-                        </div>
-                        <div class="catalog-blocks__block">
-                            <div class="catalog-blocks__block__title">Модель</div>
-                            <img src="./assets/img/catalog/catalog-img.jpg" alt="">
-                            <div class="catalog-blocks__block-footer">
-                                <div class="rating">
-                                    <div class="rating-item" data-rate="5"></div>
-                                    <div class="rating-item" data-rate="4"></div>
-                                    <div class="rating-item" data-rate="3"></div>
-                                    <div class="rating-item" data-rate="2"></div>
-                                    <div class="rating-item rating_active" data-rate="1"></div>
+                            <div class="catalog-blocks__block">
+                                <div class="catalog-blocks__block__title">Модель</div>
+                                <div class="catalog-blocks__block-img">
+                                    <img src="./assets/img/catalog/catalog-img.jpg" alt="">
+                                    <ul>
+                                        <li><a  href="">Перейти к товару</a></li>
+                                        <li><a href="">В корзину</a><div class="block30"><img src="./assets/img/basket.svg" alt=""></div></li>
+                                        <li><a href="">В избранное</a><div class="block30"><img src="./assets/img/love.svg" alt=""></div></li>
+                                    </ul>
                                 </div>
-                                <p>Короткое описание</p>
+                                    <div class="catalog-blocks__block-footer">
+                                        <div class="rating">
+                                            <div class="rating-item" data-rate="5"></div>
+                                            <div class="rating-item" data-rate="4"></div>
+                                            <div class="rating-item" data-rate="3"></div>
+                                            <div class="rating-item" data-rate="2"></div>
+                                            <div class="rating-item rating_active" data-rate="1"></div>
+                                        </div>
+                                        <p>Короткое описание</p>
+                                    </div>
+                                <div class="catalog-blocks__block__price">Цена</div>
                             </div>
-                            <ul>
-                                <li><a  href=""><b>Перейти к товару</b></a></li>
-                                <li><a href="">В корзину</a><div class="block30"><img src="./assets/img/basket.svg" alt=""></div></li>
-                                <li><a class="btn_light" href="">В избранное</a><div class="block30"><img src="./assets/img/love.svg" alt=""></div></li>
-                            </ul>
-                            <div class="catalog-blocks__block__price">Цена</div>
-                        </div>
-                        <div class="catalog-blocks__block">
-                            <div class="catalog-blocks__block__title">Модель</div>
-                            <img src="./assets/img/catalog/catalog-img.jpg" alt="">
-                            <div class="catalog-blocks__block-footer">
-                                <div class="rating">
-                                    <div class="rating-item" data-rate="5"></div>
-                                    <div class="rating-item" data-rate="4"></div>
-                                    <div class="rating-item" data-rate="3"></div>
-                                    <div class="rating-item" data-rate="2"></div>
-                                    <div class="rating-item rating_active" data-rate="1"></div>
+                            <div class="catalog-blocks__block">
+                                <div class="catalog-blocks__block__title">Модель</div>
+                                <div class="catalog-blocks__block-img">
+                                    <img src="./assets/img/catalog/catalog-img.jpg" alt="">
+                                    <ul>
+                                        <li><a  href="">Перейти к товару</a></li>
+                                        <li><a href="">В корзину</a><div class="block30"><img src="./assets/img/basket.svg" alt=""></div></li>
+                                        <li><a href="">В избранное</a><div class="block30"><img src="./assets/img/love.svg" alt=""></div></li>
+                                    </ul>
                                 </div>
-                                <p>Короткое описание</p>
+                                    <div class="catalog-blocks__block-footer">
+                                        <div class="rating">
+                                            <div class="rating-item" data-rate="5"></div>
+                                            <div class="rating-item" data-rate="4"></div>
+                                            <div class="rating-item" data-rate="3"></div>
+                                            <div class="rating-item" data-rate="2"></div>
+                                            <div class="rating-item rating_active" data-rate="1"></div>
+                                        </div>
+                                        <p>Короткое описание</p>
+                                    </div>
+                                <div class="catalog-blocks__block__price">Цена</div>
                             </div>
-                            <ul>
-                                <li><a  href=""><b>Перейти к товару</b></a></li>
-                                <li><a href="">В корзину</a><div class="block30"><img src="./assets/img/basket.svg" alt=""></div></li>
-                                <li><a class="btn_light" href="">В избранное</a><div class="block30"><img src="./assets/img/love.svg" alt=""></div></li>
-                            </ul>
-                            <div class="catalog-blocks__block__price">Цена</div>
-                        </div>
-                        <div class="catalog-blocks__block">
-                            <div class="catalog-blocks__block__title">Модель</div>
-                            <img src="./assets/img/catalog/catalog-img.jpg" alt="">
-                            <div class="catalog-blocks__block-footer">
-                                <div class="rating">
-                                    <div class="rating-item" data-rate="5"></div>
-                                    <div class="rating-item" data-rate="4"></div>
-                                    <div class="rating-item" data-rate="3"></div>
-                                    <div class="rating-item" data-rate="2"></div>
-                                    <div class="rating-item rating_active" data-rate="1"></div>
+                            <div class="catalog-blocks__block">
+                                <div class="catalog-blocks__block__title">Модель</div>
+                                <div class="catalog-blocks__block-img">
+                                    <img src="./assets/img/catalog/catalog-img.jpg" alt="">
+                                    <ul>
+                                        <li><a  href="">Перейти к товару</a></li>
+                                        <li><a href="">В корзину</a><div class="block30"><img src="./assets/img/basket.svg" alt=""></div></li>
+                                        <li><a href="">В избранное</a><div class="block30"><img src="./assets/img/love.svg" alt=""></div></li>
+                                    </ul>
                                 </div>
-                                <p>Короткое описание</p>
+                                    <div class="catalog-blocks__block-footer">
+                                        <div class="rating">
+                                            <div class="rating-item" data-rate="5"></div>
+                                            <div class="rating-item" data-rate="4"></div>
+                                            <div class="rating-item" data-rate="3"></div>
+                                            <div class="rating-item" data-rate="2"></div>
+                                            <div class="rating-item rating_active" data-rate="1"></div>
+                                        </div>
+                                        <p>Короткое описание</p>
+                                    </div>
+                                <div class="catalog-blocks__block__price">Цена</div>
                             </div>
-                            <ul>
-                                <li><a  href=""><b>Перейти к товару</b></a></li>
-                                <li><a href="">В корзину</a><div class="block30"><img src="./assets/img/basket.svg" alt=""></div></li>
-                                <li><a class="btn_light" href="">В избранное</a><div class="block30"><img src="./assets/img/love.svg" alt=""></div></li>
-                            </ul>
-                            <div class="catalog-blocks__block__price">Цена</div>
+                            <div class="catalog-blocks__block">
+                                <div class="catalog-blocks__block__title">Модель</div>
+                                <div class="catalog-blocks__block-img">
+                                    <img src="./assets/img/catalog/catalog-img.jpg" alt="">
+                                    <ul>
+                                        <li><a  href="">Перейти к товару</a></li>
+                                        <li><a href="">В корзину</a><div class="block30"><img src="./assets/img/basket.svg" alt=""></div></li>
+                                        <li><a href="">В избранное</a><div class="block30"><img src="./assets/img/love.svg" alt=""></div></li>
+                                    </ul>
+                                </div>
+                                    <div class="catalog-blocks__block-footer">
+                                        <div class="rating">
+                                            <div class="rating-item" data-rate="5"></div>
+                                            <div class="rating-item" data-rate="4"></div>
+                                            <div class="rating-item" data-rate="3"></div>
+                                            <div class="rating-item" data-rate="2"></div>
+                                            <div class="rating-item rating_active" data-rate="1"></div>
+                                        </div>
+                                        <p>Короткое описание</p>
+                                    </div>
+                                <div class="catalog-blocks__block__price">Цена</div>
+                            </div>
+                            <div class="catalog-blocks__block">
+                                <div class="catalog-blocks__block__title">Модель</div>
+                                <div class="catalog-blocks__block-img">
+                                    <img src="./assets/img/catalog/catalog-img.jpg" alt="">
+                                    <ul>
+                                        <li><a  href="">Перейти к товару</a></li>
+                                        <li><a href="">В корзину</a><div class="block30"><img src="./assets/img/basket.svg" alt=""></div></li>
+                                        <li><a href="">В избранное</a><div class="block30"><img src="./assets/img/love.svg" alt=""></div></li>
+                                    </ul>
+                                </div>
+                                    <div class="catalog-blocks__block-footer">
+                                        <div class="rating">
+                                            <div class="rating-item" data-rate="5"></div>
+                                            <div class="rating-item" data-rate="4"></div>
+                                            <div class="rating-item" data-rate="3"></div>
+                                            <div class="rating-item" data-rate="2"></div>
+                                            <div class="rating-item rating_active" data-rate="1"></div>
+                                        </div>
+                                        <p>Короткое описание</p>
+                                    </div>
+                                <div class="catalog-blocks__block__price">Цена</div>
+                            </div>
+                            <div class="catalog-blocks__block">
+                                <div class="catalog-blocks__block__title">Модель</div>
+                                <div class="catalog-blocks__block-img">
+                                    <img src="./assets/img/catalog/catalog-img.jpg" alt="">
+                                    <ul>
+                                        <li><a  href="">Перейти к товару</a></li>
+                                        <li><a href="">В корзину</a><div class="block30"><img src="./assets/img/basket.svg" alt=""></div></li>
+                                        <li><a href="">В избранное</a><div class="block30"><img src="./assets/img/love.svg" alt=""></div></li>
+                                    </ul>
+                                </div>
+                                    <div class="catalog-blocks__block-footer">
+                                        <div class="rating">
+                                            <div class="rating-item" data-rate="5"></div>
+                                            <div class="rating-item" data-rate="4"></div>
+                                            <div class="rating-item" data-rate="3"></div>
+                                            <div class="rating-item" data-rate="2"></div>
+                                            <div class="rating-item rating_active" data-rate="1"></div>
+                                        </div>
+                                        <p>Короткое описание</p>
+                                    </div>
+                                <div class="catalog-blocks__block__price">Цена</div>
+                            </div>
+                            <div class="catalog-blocks__block">
+                                <div class="catalog-blocks__block__title">Модель</div>
+                                <div class="catalog-blocks__block-img">
+                                    <img src="./assets/img/catalog/catalog-img.jpg" alt="">
+                                    <ul>
+                                        <li><a  href="">Перейти к товару</a></li>
+                                        <li><a href="">В корзину</a><div class="block30"><img src="./assets/img/basket.svg" alt=""></div></li>
+                                        <li><a href="">В избранное</a><div class="block30"><img src="./assets/img/love.svg" alt=""></div></li>
+                                    </ul>
+                                </div>
+                                    <div class="catalog-blocks__block-footer">
+                                        <div class="rating">
+                                            <div class="rating-item" data-rate="5"></div>
+                                            <div class="rating-item" data-rate="4"></div>
+                                            <div class="rating-item" data-rate="3"></div>
+                                            <div class="rating-item" data-rate="2"></div>
+                                            <div class="rating-item rating_active" data-rate="1"></div>
+                                        </div>
+                                        <p>Короткое описание</p>
+                                    </div>
+                                <div class="catalog-blocks__block__price">Цена</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+    <script src="./assets/js/aside.js"></script>
     <script src="./assets/js/catalog.js"></script>
 </body>
 </html>

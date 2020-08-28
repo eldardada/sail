@@ -2,27 +2,43 @@
 
 .catalog
     width: calc(100% - 121px)
+    +md-block
+        width: 100%
     &-wrapper
         padding: 50px 0 0 120px
-        height: 100%
+        +xxl-block
+            padding: 60px 0 30px 30px
     &-content
+        background-color: $lightbg
         padding: 30px 0 0 120px
         background-color: $lightbg
         border-radius: 230px 0px 0px 0px
         height: 100%
+        +xl-block
+            padding: 30px 0 0
     h1
         text-align: center
         +bold
         +font(36, 20)
+        +xl-block
+            margin-bottom: 10px
     &-header
         padding-top: 17px
         position: relative
+        +xxl-block
+            display: flex
+            align-items: center
+        +xl-block
+            flex-direction: column-reverse
         &__search
             position: absolute
             display: flex
             align-items: center
             left: 0
             top: 0
+            +xxl-block
+                position: initial
+                margin-right: 30px
             input
                 margin-left: 20px
                 background-color: #FFF0DB
@@ -33,29 +49,40 @@
                 padding: 10px 20px
                 &:focus
                     outline: none
+            img
+                +xl-block
+                    max-width: 40px
         &__exit
             position: absolute
-            display: flex
-            justify-content: center
-            align-items: center
+            right: 15px
+            top: 0
             width: 50px
             height: 50px
             border: 3px solid
+            text-align: center
+            line-height: 38px
             border-radius: 50px
-            right: 15px
-            top: 0
+            padding: 10px
     &-filter
         user-select: none
         margin: 20px 80px 70px -40px
+        +xl-block
+            margin: 30px 0 50px
         display: flex
         justify-content: space-between
+        +xl-block
+            flex-wrap: wrap
+            justify-content: center
         &__param
             display: flex
             padding: 15px 30px
+            margin: 0 15px
             background-color: #FFDBA9
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
             border-radius: 107px 15px 15px 15px
             position: relative
+            +xl-block
+                margin: 10px 50px
             svg
                 margin-left: 10px
                 cursor: pointer
@@ -91,11 +118,11 @@
                 padding-right: 50px
                 +size(4)
                 +shift-left(1)
-            display: flex
-            flex-direction: column
-            align-items: center
             position: relative
             margin-bottom: 100px
+            &-img
+                border-radius: 106px 14px 14px 14px
+                overflow: hidden
             &-footer
                 width: 100%
                 padding: 10px 5px
@@ -104,8 +131,11 @@
                 min-height: 110px
             &__title
                 position: absolute
+                white-space: nowrap
                 font-size: 22px
-                top: -25px
+                top: -20px
+                left: 50%
+                transform: translateX(-50%)
                 padding: 15px 45px
                 background-color: #FFC677
                 box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25)
@@ -120,8 +150,8 @@
                 border-radius: 15px 0px
             ul
                 position: absolute
-                right: -90px
-                top: calc(50% - 120px)
+                right: -80px
+                top: calc(50% - 180px)
                 filter: drop-shadow(10px 2px 4px rgba(0, 0, 0, 0.25))
                 .block30
                     background-color: #fff
@@ -149,7 +179,6 @@
                         background: #FFE5C0
                     &:nth-child(3)
                         background-color: #FFF0DB
-            img
-                border-radius: 106px 14px 14px 14px
+            
 
 

@@ -1,6 +1,11 @@
 .aside
     position: relative
     min-height: 600px
+    +md-block
+      position: fixed
+      z-index: 999
+      height: 100%
+      top: 0
     &-icons
         height: 100%
         padding-top: 40px
@@ -25,7 +30,7 @@
     z-index: 99999
     display: block
     position: absolute
-    top: calc(50% - 100px)
+    top: 50%
     left: 5px
   li
     display: block
