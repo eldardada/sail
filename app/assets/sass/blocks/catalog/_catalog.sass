@@ -5,12 +5,11 @@
     +md-block
         width: 100%
     &-wrapper
-        padding: 50px 0 0 120px
+        padding: 50px 0 0 115px
         +xxl-block
             padding: 60px 0 30px 30px
     &-content
-        background-color: $lightbg
-        padding: 30px 0 0 120px
+        padding: 30px 0
         background-color: $lightbg
         border-radius: 230px 0px 0px 0px
         height: 100%
@@ -23,7 +22,7 @@
         +xl-block
             margin-bottom: 10px
     &-header
-        padding-top: 17px
+        margin: 0 0 0 120px 
         position: relative
         +xxl-block
             display: flex
@@ -65,14 +64,14 @@
             padding: 10px
     &-filter
         user-select: none
-        margin: 20px 80px 70px -40px
-        +xl-block
-            margin: 30px 0 50px
+        margin: 20px 70px 70px 70px
         display: flex
         justify-content: space-between
         +xl-block
+            max-width: 800px
             flex-wrap: wrap
             justify-content: center
+            margin: 30px auto 50px
         &__param
             display: flex
             padding: 15px 30px
@@ -110,19 +109,73 @@
             transform: scaleY(1)
     &-blocks
         +row-flex
+        justify-content: center
+        +xxl-block
+            justify-content: space-evenly
         &__block
-            +col
-            +size(3)
-            +shift-right(1)
-            +xxl-block
-                padding-right: 50px
-                +size(4)
-                +shift-left(1)
             position: relative
-            margin-bottom: 100px
-            &-img
-                border-radius: 106px 14px 14px 14px
-                overflow: hidden
+            max-width: 400px
+            +col
+            +size(4)
+            padding: 0 45px
+            +xxl-block
+                +size(6)
+            +xm-block
+                display: flex
+                justify-content: space-evenly
+                align-items: center
+                min-width: 100%
+                padding: 0
+                +shift-left(1)
+                +shift-right(1)
+                padding-left: 30px
+            &-content
+                position: relative
+                margin-bottom: 100px
+                max-width: 380px
+            img
+                display: block
+            ul
+                position: absolute
+                right: -20px 
+                bottom: 40%
+                filter: drop-shadow(10px 2px 4px rgba(0, 0, 0, 0.25))
+                +xm-block
+                    position: initial
+                    margin: 0 20px 200px
+                li
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+                    margin: 15px 0
+                    padding: 20px 15px
+                    white-space: nowrap
+                    +xm-block
+                        padding: 30px 20px
+                    a
+                        margin-right: 10px
+                        color: $dark
+                    &:nth-child(1)
+                        background-color: $lightOrange
+                        border-radius: 50px 15px 12px 0
+                    &:nth-child(2), &:nth-child(3)
+                        border-radius: 15px 0px
+                        a
+                            text-decoration: underline
+                    &:nth-child(2)
+                        background: #FFE5C0
+                    &:nth-child(3)
+                        background-color: #FFF0DB
+                    .block30
+                        background-color: #fff
+                        border-radius: 5px
+                        padding: 5px 10px
+                        +xm-block
+                            padding: 15px
+                        img
+                            max-width: 25px
+                            +xm-block
+                                max-width: 40px
             &-footer
                 width: 100%
                 padding: 10px 5px
@@ -143,42 +196,11 @@
             &__price
                 position: absolute
                 bottom: -10px
-                right: -20px
+                right: 25px
                 padding: 5px 40px
                 background-color: #FFE5C0
                 box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25)
                 border-radius: 15px 0px
-            ul
-                position: absolute
-                right: -80px
-                top: calc(50% - 180px)
-                filter: drop-shadow(10px 2px 4px rgba(0, 0, 0, 0.25))
-                .block30
-                    background-color: #fff
-                    padding: 5px 10px
-                    border-radius: 5px
-                    margin-left: 10px
-                    img
-                        max-width: 30px
-                li
-                    margin: 10px
-                    padding: 20px 10px 20px 20px 
-                    a
-                        color: $dark
-                    &:nth-child(1)
-                        background-color: $lightOrange
-                        border-radius: 50px 15px 12px 0
-                    &:nth-child(2), &:nth-child(3)
-                        display: flex
-                        align-items: center
-                        justify-content: space-between
-                        border-radius: 15px 0px
-                        a
-                            text-decoration: underline
-                    &:nth-child(2)
-                        background: #FFE5C0
-                    &:nth-child(3)
-                        background-color: #FFF0DB
             
 
 

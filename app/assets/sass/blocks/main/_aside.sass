@@ -1,38 +1,38 @@
 .aside
-    position: relative
-    min-height: 600px
-    +md-block
-      position: fixed
-      z-index: 999
-      height: 100%
-      top: 0
-    &-icons
-        height: 100%
-        padding-top: 40px
-        ul 
-            li
-                a
-                    text-align: center
-                    display: block
-                    padding: 5px 10px
-                    background-color: $light
-                    margin: 0 15px 40px
-                    border-radius: 20px
-                    border: 3px solid transparent
-                    &:hover
-                        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
-                        border: 3px solid #0C0000
-                        transition: border .3s, filter .3s
-.aside__menu
+  position: relative
+  min-height: 600px
   +md-block
+    position: fixed
+    z-index: 999
+    height: 100%
+    top: 0
+  &-icons
+    height: 100%
+    padding-top: 40px
+    ul 
+      li
+        a
+          text-align: center
+          display: block
+          padding: 5px 10px
+          background-color: $light
+          margin: 0 15px 40px
+          border-radius: 20px
+          border: 3px solid transparent
+          &:hover
+              filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+              border: 3px solid #0C0000
+              transition: border .3s, filter .3s
+.aside__menu
+  display: none
+  +md-block
+    display: block
     cursor: pointer
     z-index: 2
-    display: block
     position: absolute
     top: 50%
     left: 5px
   li
-    display: block
     width: 20px
     height: 20px
     border-radius: 20px

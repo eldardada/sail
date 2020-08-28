@@ -3,6 +3,7 @@ $atom: (100% / $columns)
 
 $break_xxl: 1400px
 $break_xl: 1140px
+$break_xm: 1040px
 $break_lg: 960px
 $break_md: 720px
 $break_sm: 540px
@@ -11,6 +12,7 @@ $break_xxs: 420px
 $offset: 0px
 $offset_xxl: $offset
 $offset_xl: $offset
+$offset_xm: $offset
 $offset_lg: $offset
 $offset_md: $offset
 $offset_sm: $offset
@@ -19,6 +21,7 @@ $offset_xxs: $offset
 $offset_one_side: ($offset / 2)
 $offset_xxl_one_side: ($offset_xxl / 2)
 $offset_xl_one_side: ($offset_xl / 2)
+$offset_xm_one_side: ($offset_xm / 2)
 $offset_lg_one_side: ($offset_lg / 2)
 $offset_md_one_side: ($offset_md / 2)
 $offset_sm_one_side: ($offset_sm / 2)
@@ -82,6 +85,10 @@ $fields: 30px
 =size-xl($n)
     $val: 100% / $columns * $n
     +xl(width, #{calc(#{$val} - #{$offset_xl})})
+
+=size-xm($n)
+    $val: 100% / $columns * $n
+    +xm(width, #{calc(#{$val} - #{$offset_xm})})
 
 =size-lg($n)
     $val: 100% / $columns * $n
@@ -176,6 +183,32 @@ $fields: 30px
 =shift-xl-padding-right($n)
     $val: 100% / $columns * $n
     +xl(padding-right, #{calc(#{$val} + #{$offset_xl_one_side})})
+
+=shift-xm($n)
+    $val: 100% / $columns * $n
+    +xm(margin-left, #{calc(#{$val} + #{$offset_xm_one_side})})
+    +xm(margin-right, #{calc(#{$val} + #{$offset_xm_one_side})})
+
+=shift-xm-left($n)
+    $val: 100% / $columns * $n
+    +xm(margin-left, #{calc(#{$val} + #{$offset_xm_one_side})})
+
+=shift-xm-right($n)
+    $val: 100% / $columns * $n
+    +xm(margin-right, #{calc(#{$val} + #{$offset_xm_one_side})})
+
+=shift-xm-padding($n)
+    $val: 100% / $columns * $n
+    +xm(padding-left, #{calc(#{$val} + #{$offset_xm_one_side})})
+    +xm(padding-right, #{calc(#{$val} + #{$offset_xm_one_side})})
+
+=shift-xm-padding-left($n)
+    $val: 100% / $columns * $n
+    +xm(padding-left, #{calc(#{$val} + #{$offset_xm_one_side})})
+
+=shift-xm-padding-right($n)
+    $val: 100% / $columns * $n
+    +xm(padding-right, #{calc(#{$val} + #{$offset_xm_one_side})})
 
 =shift-lg($n)
     $val: 100% / $columns * $n
@@ -295,6 +328,14 @@ $fields: 30px
 
 =xl-block()
     @media screen and (max-width: $break_xl)
+        @content
+
+=xm($name, $value)
+    @media screen and (max-width: $break_xm)
+        #{$name}: $value
+
+=xm-block()
+    @media screen and (max-width: $break_xm)
         @content
 
 =lg($name, $value)

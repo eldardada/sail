@@ -167,16 +167,19 @@ function grid(done){
         },
         breakPoints: {
             xxl: {
-              width: "1400px",
+              width: "1400px"
             },
             xl : {
-                width: "1140px",
+                width: "1140px"
+            },
+            xm: {
+              width: "1040px"
             },
             lg : {
-                width: "960px",
+                width: "960px"
             },  
             md : {
-                width: "720px",
+                width: "720px"
             },
             sm: {
                 width: "540px"

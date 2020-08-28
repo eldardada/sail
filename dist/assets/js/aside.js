@@ -6,7 +6,9 @@ menu.addEventListener('click', () => {
 });
 
 document.addEventListener('click', e => {
-    if(!e.target.classList.contains('aside__menu__item') && !e.target.classList.contains('main__aside')) {
+    if(!e.target.classList.contains('aside__menu__item') 
+    && e.target.dataset.name != 'aside-icons' 
+    && e.target.dataset.name !== 'aside-icons-list') {
         aside.classList.remove('aside_show');
     }
 });
