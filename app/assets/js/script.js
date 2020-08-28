@@ -25,6 +25,7 @@ let menu = document.querySelector('.aside__menu');
 let aside = document.querySelector('.main__aside');
 let mainContent = document.querySelector('.main-content');
 
+
 menu.addEventListener('click', () => {
   menu.style.display = 'none';
   aside.classList.toggle('aside_show');
@@ -39,5 +40,3 @@ window.addEventListener('resize', () => {
   if(window.innerWidth > 720) menu.style.display = 'none';
   else if(window.innerWidth <= 720 && !aside.classList.contains('aside_show')) menu.style.display = 'block';
 });
-
-
