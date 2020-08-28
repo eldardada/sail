@@ -45,10 +45,12 @@
             right: 15px
             top: 0
     &-filter
+        user-select: none
         margin: 20px 80px 70px -40px
         display: flex
         justify-content: space-between
         &__param
+            display: flex
             padding: 15px 30px
             background-color: #FFDBA9
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
@@ -81,14 +83,14 @@
             transform: scaleY(1)
     &-blocks
         +row-flex
-        margin-left: -90px
         &__block
             +col
             +size(3)
             +shift-right(1)
             +xxl-block
+                padding-right: 50px
                 +size(4)
-                +shift-right(2)
+                +shift-left(1)
             display: flex
             flex-direction: column
             align-items: center
