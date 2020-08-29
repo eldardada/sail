@@ -1,0 +1,100 @@
+.models
+    margin-top: 80px
+    z-index: 3
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-evenly
+    & > div
+        position: relative
+        margin: 0 0 80px
+        margin-right: 20px
+    &__model
+        z-index: 3
+        width: max-content
+        position: relative
+        &__exit, &__done
+            height: 30px
+            width: 30px
+            position: absolute
+            cursor: pointer
+        &__exit
+            border: 1px solid #000
+            border-radius: 100%
+            text-align: center
+            line-height: 30px
+            top: 10px
+            left: calc(100% - 35px)
+        &__done
+            background-color: $lightbg
+            border-radius: 8px
+            text-align: center
+            line-height: 40px
+            top: 15px
+        > div
+            padding: 15px 45px 15px 15px
+            border-radius: 15px
+            box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.25)
+        &-img
+            & > div
+                position: relative
+                span
+                    position: absolute
+                    left: 50%
+                    top: -30px
+                    transform: translateX(-50%)
+                    white-space: nowrap
+                    font-size: 22px
+                    padding: 15px 45px
+                    background-color: #FFC677
+                    border-radius: 15px 0px
+                > div
+                    overflow: hidden 
+                    border-radius: 106px 14px 14px 14px
+                    max-width: 390px
+        ul
+            position: absolute
+            right: -70px 
+            bottom: 10%
+            li
+                padding: 15px
+                border-radius: 15px 0px
+                box-shadow: 10px 2px 4px rgba(0, 0, 0, 0.25)
+                a 
+                    color: $dark
+                &:first-child
+                    font-size: 22px
+                    border-radius: 50px 15px 12px 0px
+                    background-color: $orange300
+                    a
+                        margin: 0 auto
+                        text-decoration: none
+                        +bold
+                        width: fit-content
+                &:not(&:first-child)
+                    margin-top: 10px
+                    a
+                        display: flex
+                        align-items: center
+                        justify-content: space-between
+                        span
+                            margin-right: 15px
+                            border-bottom: 1px solid #000
+                &:nth-child(2)
+                    background-color: $orange200
+                &:nth-child(3)
+                    background-color: $orange100
+    &-bgmenu
+        position: absolute
+        z-index: 1
+        left: 0
+        top: 50%
+        transform: translateY(-50%)
+        width: 640px
+        height: 100%
+        max-height: 320px
+        border-radius: 24px
+        background-color: $gray
+        padding: 5px 10px
+        > div
+            width: fit-content
+            margin-left: auto

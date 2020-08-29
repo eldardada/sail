@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header header_orange">
+        <div class="container">
+            <div class="header-item">
+                <p class="header__slogan">Парус - личное пространство для вас</p>
+                <a href="tel:79622037388"class="header__phone">+7-962-203-73-88</a>
+            </div>
+            <ul>
+                <li><a href="index.html">ПАРУС</a></li>
+                <li><a href="favorites.html">Избранное</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <main class="main basket-main">
+        <div class="aside">
+            <aside class="main__aside">
+                <nav data-name="aside-icons" class="aside-icons">
+                    <ul data-name="aside-icons-list">
+                        <li><a href=""><img src="./assets/img/main/attention.svg" alt=""></a></li>
+                        <li><a href=""><img src="./assets/img/basket.svg" alt=""></a></li>
+                        <li><a href=""><img src="./assets/img/love.svg" alt=""></a></li>
+                        <li><a href=""><img src="./assets/img/main/user.svg" alt=""></a></li>
+                        <li id="arrowToFooter"><a  href="#footer"><img src="./assets/img/main/arrow.svg" alt=""></a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <div class="aside__menu">
+                <ul>
+                    <li class="aside__menu__item"></li>
+                    <li class="aside__menu__item"></li>
+                    <li class="aside__menu__item"></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="basket">
+            <div>
+                <div>
+                    <div class="basket-header">
+                        <h1>Список товаров</h1>   
+                        <div class="favorites-header__buy">
+                            <div>
+                                <span>Общая сумма</span>
+                                <input type="text" value="0">
+                            </div>
+                            <a href="">Купить</a>
+                        </div> 
+                    </div>
+                </div>
+                    <div class="models">
+                        <div>
+                            <div class="models__model">
+                                <div>
+                                    <div class="models__model-img">
+                                        <div>
+                                            <span>Модель</span>
+                                            <div>
+                                                <img src="./assets/img/catalog/catalog-img.jpg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul>
+                                    <li><a href="">Купить</a></li>
+                                    <li><a href=""><span>В корзину</span><div class="block30"><img src="./assets/img/basket.svg" alt=""></div></a></li>
+                                    <li><a href=""><span>В избранное</span> <div class="block30"><img src="./assets/img/love.svg" alt=""></div></a></li>
+                                </ul>
+                            </div>
+                            <div class="models-bgmenu">
+                                <div>
+                                    <span>Количество</span>
+                                <div class="favorites-models__model-bgmenu-count">
+                                    <button class="btn_count"></button>
+                                    <input type="text" value="0">
+                                    <button class="btn_count"></button>
+                                </div>
+                                <div class="favorites-models__model-bgmenu-price">
+                                    <span>Цена</span>
+                                    <div></div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./assets/js/aside.js"></script>
+</body>
+</html>

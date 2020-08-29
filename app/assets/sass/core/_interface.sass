@@ -16,21 +16,48 @@ body
 .section
   background-color: #F7F7F7
   padding: 30px
+
 a
   text-decoration: none
-
+btn, input
+  &:focus
+    outline: none
 .arrow_180
-    transform: rotate(-180deg)
+  transform: rotate(-180deg)
 
-.btn_light
+=btn($colors)
+  cursor: pointer
+  border: none
   transition: background-color .3s
+  background-color: map-get($colors, color)
   &:hover
-    background-color: #FFE5C0
+    background-color: map-get($colors, colorHover)
   &:active
-    background-color: #FFDBA9
+    background-color: map-get($colors, colorActive)
+
+=btn_sm($colors)
+  +btn($colors)
+  padding: 10px 15px
+  border-radius: 15px 0px
 
 .main
     +row-flex
     min-height: calc(100vh - 44px)
     +lg-block
         min-height: calc(100vh - 300px)
+
+.block30
+  width: max-content
+  background-color: #fff
+  border-radius: 5px
+  padding: 5px 10px
+  +xm-block
+      padding: 15px
+  +md-block
+      padding: 5px 10px
+  img
+      max-width: 25px
+      +xm-block
+          max-width: 40px
+      +md-block
+          max-width: 30px

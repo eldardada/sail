@@ -44,8 +44,8 @@ const catalogFilterElement = document.querySelector('.catalog_filter');
 
 if(window.innerWidth <= 960) {
     const catalogFilterCp = catalogFilter.cloneNode(true);
-    let params = catalogFilterCp.querySelectorAll('.catalog-filter__param:not(.catalog_filter)');
-    let ul = document.createElement('ul');
+    const params = catalogFilterCp.querySelectorAll('.catalog-filter__param:not(.catalog_filter)');
+    const ul = document.createElement('ul');
     params.forEach(element => {
         ul.appendChild(element);
     });

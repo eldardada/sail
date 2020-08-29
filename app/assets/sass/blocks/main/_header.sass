@@ -3,6 +3,12 @@
     background-color: $mainDark
     padding: 10px 
     letter-spacing: 0.5em
+    +sm-block
+        letter-spacing: 0.12em
+        font-size: 14px
+    ul
+        display: flex
+        letter-spacing: normal
     &-item
         display: flex
         justify-content: space-between
@@ -13,9 +19,6 @@
             text-align: center
         a
             color: $light
-            +md-block
-                font-size: 25px
-                padding: 10px 0
     &_orange
         color: $dark
         position: relative
@@ -25,8 +28,8 @@
         ul
             position: absolute
             z-index: 1
-            bottom: -50px
-            left: 120px
+            top: 100%
+            left: 116px
             +md-block
                 left: 50%
                 transform: translateX(-50%)
@@ -39,3 +42,11 @@
                     color: #4A4A4A
                     background-color: #FFDBA9
                     border-radius: 0px 0px 92px 92px
+                    +md-block
+                        font-size: 25px
+                    +sm-block
+                        letter-spacing: normal
+                        font-size: 20px
+                    +xxs-block
+                        font-size: 18px
+
