@@ -79,7 +79,7 @@
         background-color: #FFC677 !important
         display: block !important
         +lg-block
-            width: 100%
+            width: 80%
             text-align: center
     &-filter
         user-select: none
@@ -99,10 +99,10 @@
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
             border-radius: 107px 15px 15px 15px
             position: relative
+            +lg-block
+                margin: 0
             +xl-block
                 margin: 10px 50px
-            +lg-block
-                display: none
             svg
                 margin-left: 10px
                 cursor: pointer
@@ -241,6 +241,25 @@
                 background-color: #FFE5C0
                 box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25)
                 border-radius: 15px 0px
-
-
+.filter_js
+    & > ul
+        min-width: 100%
+        left: 0
+        padding: 0
+        background-color: initial
+        transform: scale(1)
+        border-top: initial
+        div
+            display: flex
+            border-top: 1px solid
+            border-radius: initial
+            justify-content: space-between
+            ul
+                display: block
+.catalog-filter__param
+    +lg-block
+        padding: 10px 20px
+        margin: 0
+        display: none
+        background-color: #FFC677 
 

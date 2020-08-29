@@ -38,3 +38,26 @@ catalogBlocks.addEventListener('click', e => {
         }
     }
 });
+
+
+const catalogFilterElement = document.querySelector('.catalog_filter');
+
+if(window.innerWidth <= 960) {
+    const catalogFilterCp = catalogFilter.cloneNode(true);
+    let params = catalogFilterCp.querySelectorAll('.catalog-filter__param:not(.catalog_filter)');
+    let ul = document.createElement('ul');
+    params.forEach(element => {
+        ul.appendChild(element);
+    });
+    catalogFilterElement.appendChild(ul);
+    wasCheck = true;
+}
+
+catalogFilterElement.addEventListener('click', e => {
+    target = e.target;
+    if(e.target.dataset.name === 'filter')
+    catalogFilterElement.classList.toggle('filter_js');
+});
+
+
+
