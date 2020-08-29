@@ -8,6 +8,8 @@
         padding: 50px 0 0 115px
         +xxl-block
             padding: 60px 0 30px 30px
+        +md-block
+            padding: 60px 0 0
     &-content
         padding: 30px 0
         background-color: $lightbg
@@ -15,6 +17,8 @@
         height: 100%
         +xl-block
             padding: 30px 0 0
+        +sm-block
+            border-radius: 100px 0 0 0 
     h1
         text-align: center
         +bold
@@ -27,6 +31,8 @@
         +xxl-block
             display: flex
             align-items: center
+        +lg-block
+            margin: 0
         +xl-block
             flex-direction: column-reverse
         &__search
@@ -51,7 +57,10 @@
             img
                 +xl-block
                     max-width: 40px
+                +sm-block
+                    display: none
         &__exit
+            cursor: pointer
             position: absolute
             right: 15px
             top: 0
@@ -62,6 +71,16 @@
             line-height: 38px
             border-radius: 50px
             padding: 10px
+            +sm-block
+                transform: scale(0.7) 
+                top: -20px
+    &_filter
+        +bold
+        background-color: #FFC677 !important
+        display: block !important
+        +lg-block
+            width: 100%
+            text-align: center
     &-filter
         user-select: none
         margin: 20px 70px 70px 70px
@@ -82,6 +101,8 @@
             position: relative
             +xl-block
                 margin: 10px 50px
+            +lg-block
+                display: none
             svg
                 margin-left: 10px
                 cursor: pointer
@@ -128,13 +149,16 @@
                 padding: 0
                 +shift-left(1)
                 +shift-right(1)
-                padding-left: 30px
+                padding: 0 30px
+            +sm-block
+                flex-direction: column
+                width: 90%
             &-content
                 position: relative
                 margin-bottom: 100px
                 max-width: 380px
-            img
-                display: block
+                +sm-block
+                    margin-bottom: 20px
             ul
                 position: absolute
                 right: -20px 
@@ -143,6 +167,12 @@
                 +xm-block
                     position: initial
                     margin: 0 20px 200px
+                +lg-block
+                    transform: scale(0.9)
+                +sm-block
+                    width: 90%
+                    margin-bottom: 60px
+                    transform: initial
                 li
                     display: flex
                     justify-content: space-between
@@ -152,6 +182,10 @@
                     white-space: nowrap
                     +xm-block
                         padding: 30px 20px
+                    +sm-block
+                        font-size: 20px
+                        width: 100%
+                        justify-content: center
                     a
                         margin-right: 10px
                         color: $dark
@@ -164,6 +198,8 @@
                             text-decoration: underline
                     &:nth-child(2)
                         background: #FFE5C0
+                        a
+                            margin-right: 35px
                     &:nth-child(3)
                         background-color: #FFF0DB
                     .block30
@@ -172,10 +208,14 @@
                         padding: 5px 10px
                         +xm-block
                             padding: 15px
+                        +md-block
+                            padding: 5px 10px
                         img
                             max-width: 25px
                             +xm-block
                                 max-width: 40px
+                            +md-block
+                                max-width: 30px
             &-footer
                 width: 100%
                 padding: 10px 5px
@@ -201,6 +241,6 @@
                 background-color: #FFE5C0
                 box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25)
                 border-radius: 15px 0px
-            
+
 
 
