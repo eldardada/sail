@@ -25,6 +25,18 @@ btn, input
 .arrow_180
   transform: rotate(-180deg)
 
+.btn_count
+  width: 30px
+  height: 30px
+  display: inline-flex
+  vertical-align: middle
+  align-items: center
+  border-radius: 30px
+  border: 3px solid #000
+  background-color: transparent
+  cursor: pointer
+  
+    
 =btn($colors)
   cursor: pointer
   border: none
@@ -51,13 +63,17 @@ btn, input
   background-color: #fff
   border-radius: 5px
   padding: 5px 10px
-  +xm-block
+  @media screen and ( max-width: 1810px)
+      padding: 25px
+      img
+          max-width: 100%
+  +xxx-block
       padding: 15px
   +md-block
       padding: 5px 10px
   img
       max-width: 25px
-      +xm-block
+      +xxx-block
           max-width: 40px
       +md-block
           max-width: 30px

@@ -7,7 +7,8 @@ global.distDirAssets = distDir + 'assets/';
 global.html_arch = [
   'index',
   'catalog',
-  'favorites'
+  'favorites',
+  'basket'
 ].map(element => appDir + element + '.html')
 // files name
 global.mainSass = 'style.sass';

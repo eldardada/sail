@@ -1,0 +1,72 @@
+.basket
+    h1
+        +bold
+        +font(36, 22)
+    &-bgmenu
+        position: absolute
+        top: 80px
+        left: -52px
+        z-index: 1
+        width: 645px
+        height: 561px
+        max-height: 320px
+        border-radius: 24px
+        background-color: $gray
+        padding: 5px 10px
+        > div
+            text-align: center
+            width: fit-content
+            margin-left: auto
+            input
+                text-align: center
+                max-width: 58px
+                padding: 20px 10px
+                background-color: $light
+                border-radius: 20px
+        &-price
+            margin-top: 10px
+            > div
+                user-select: none
+                width: 128px
+                height: 60px
+                background-color: #fff
+                border-radius: 20px
+                text-align: center
+                line-height: 60px
+// adaptive
+// 1810px
+.basket
+    &-models
+        @media screen and ( max-width: 1810px)
+            max-width: 1400px
+            margin: 0 auto
+        +xxx-block
+            max-width: 600px
+        +xl-block
+            margin-left: 50px
+        +lg-block
+            margin-left: -30px
+        > div
+            margin: 80px 150px
+            +xxx-block
+                margin: 40px auto
+            .basket__model
+                ul
+                    @media screen and ( max-width: 1810px)
+                        left: calc(100vw - 210%)
+                        top: 50px
+                        width: 80%
+                    +xxx-block
+                        width: initial
+                        left: initial
+                        right: -70px 
+                        top: initial
+                        bottom: 2%
+                    li
+                        @media screen and ( max-width: 1810px)
+                            font-size: 30px 
+                        +xxx-block
+                            font-size: 22px 
+
+
+        

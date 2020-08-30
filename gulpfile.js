@@ -166,6 +166,9 @@ function grid(done){
             fields: '30px' /* side fields */
         },
         breakPoints: {
+            xxx: {
+              width: "1600px"
+            },
             xxl: {
               width: "1400px"
             },
