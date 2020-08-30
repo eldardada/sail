@@ -46,6 +46,8 @@
                 width: 100%
                 max-width: 900px
                 margin: 0 auto 80px
+            @media screen and ( max-width: 1210px )
+                max-width: 750px
             .basket__model
                 width: 100% !important
                 @media screen and ( max-width: 1810px)
@@ -68,7 +70,8 @@
         &-info
             @media screen and ( max-width: 1210px )
                 display: flex
-                margin: 0 auto
+                margin: 0 !important
+
         &-count
             @media screen and ( max-width: 1210px )
                 span
@@ -81,7 +84,7 @@
                 @media screen and ( max-width: 1210px )
                     margin-top: 10px
 
-  
+    
 +lg-block
     .basket
         &-models
@@ -108,7 +111,6 @@
             span
                 display: none
             &-info
-                margin: 0 !important
                 input
                     height: 20px
             &-price
