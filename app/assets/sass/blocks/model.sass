@@ -3,19 +3,19 @@
     flex-wrap: wrap
     margin-top: 80px
     > div
-        box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.25)
         width: max-content
         height: max-content
         position: relative
         margin: 40px 70px
     &__model
-        background-color: $light
-        z-index: 2
         width: max-content
-        position: relative
         & > div
+            z-index: 2
+            background-color: $light
+            box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.25)
             padding: 15px 45px 15px 15px
             border-radius: 15px
+            position: relative
         &__exit, &__done
             height: 30px
             width: 30px
@@ -52,6 +52,7 @@
             border-radius: 106px 14px 14px 14px
             max-width: 390px
     ul
+        z-index: 10
         position: absolute
         right: -70px 
         bottom: 2%

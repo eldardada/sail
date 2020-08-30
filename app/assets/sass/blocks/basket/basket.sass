@@ -33,40 +33,84 @@
                 border-radius: 20px
                 text-align: center
                 line-height: 60px
-// adaptive
-// 1810px
+        &-count
+            span
+                display: flex
+// 960px - 1810px  
 .basket
     &-models
-        @media screen and ( max-width: 1810px)
-            max-width: 1400px
-            margin: 0 auto
-        +xxx-block
-            max-width: 600px
-        +xl-block
-            margin-left: 50px
-        +lg-block
-            margin-left: -30px
+        +row-flex
         > div
             margin: 80px 150px
-            +xxx-block
-                margin: 40px auto
+            @media screen and ( max-width: 1810px)
+                width: 100%
+                max-width: 900px
+                margin: 0 auto 80px
             .basket__model
-                ul
-                    @media screen and ( max-width: 1810px)
-                        left: calc(100vw - 210%)
-                        top: 50px
-                        width: 80%
-                    +xxx-block
-                        width: initial
-                        left: initial
-                        right: -70px 
-                        top: initial
-                        bottom: 2%
-                    li
-                        @media screen and ( max-width: 1810px)
-                            font-size: 30px 
-                        +xxx-block
-                            font-size: 22px 
+                width: 100% !important
+                @media screen and ( max-width: 1810px)
+                    display: flex
+                    justify-content: space-between
+            ul
+                @media screen and ( max-width: 1810px)
+                    position: static
+                    margin: auto 0
+    &-bgmenu
+        @media screen and ( max-width: 1210px )
+            margin-top: 20px
+            position: initial
+            max-width: 450px
+            height: max-content
+            display: flex
+            max-height: 320px
+            padding: 20px
+            vertical-align: middle
+            font-size: 20px
+        &-info
+            @media screen and ( max-width: 1210px )
+                display: flex
+                margin: 0 auto
+
+        &-count
+            @media screen and ( max-width: 1210px )
+                span
+                    display: block
+                    width: 100%
+        &-price
+            @media screen and ( max-width: 1210px )
+                margin-top: 0
+            > div
+                @media screen and ( max-width: 1210px )
+                    margin-top: 10px
+
+  
++lg-block
+    .basket
+        &-models
+            > div
+                display: flex
+                flex-direction: column-reverse
+                margin-bottom: 40px
+        &__model
+            margin: 0 auto
+            max-width: 450px
+            flex-direction: column
+            > div
+                span
+                    display: none
+            ul
+                order: 2
+        &-bgmenu
+            width: 100%
+            max-width: 450px
+            margin: 20px auto
+            order: 1
+            span
+                display: none
+
+
+                
+
 
 
         
