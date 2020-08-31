@@ -15,6 +15,7 @@
     &-info
         +col
         +size(6)
+        margin: 0 20px
         h1
             font-size: 36px
             +bold
@@ -22,19 +23,26 @@
             margin-top: 80px
             font-size: 22px
             width: 100%
+            padding: 25px
             li
                 width: 100%
                 margin-bottom: 35px
+                display: flex
                 a
+                    width: 100%
                     color: $dark
                     text-align: center
                     max-width: 320px 
-                    display: inline-block
-                    vertical-align: text-top
+                    display: block
                     margin-left: auto
                 div
-                    vertical-align: middle
                     display: inline-block
+        &__map
+            background: #FFFFFF
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+            border-radius: 24px
+            min-height: 400px
+            overflow: hidden
     &-form
         +col
         +size(6)
@@ -50,7 +58,7 @@
             font-size: 20px
             label
                 display: block
-                margin-bottom: 5
+                margin-bottom: 5px
             textarea, input
                 border: none
                 border-radius: 24px
@@ -70,5 +78,5 @@
                 +btn($btnOrangeSubmit)
                 background: #FFC677
                 box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25)
-                border-radius: 34px 0px;
-                transform: rotate(0.35deg);
+                border-radius: 34px 0px
+                +font(36, 22)
