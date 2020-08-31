@@ -1,18 +1,20 @@
 .card
+    padding-top: 80px
+    +lg-block
+        padding-top: 0
     h3
         text-align: center
         +font(30, 36)
         margin-bottom: 15px
         +lg-block
-        margin-top: 30px
+            margin-top: 30px
     &-main
         background-color: $lightbg
-    width: 
     &__inner
         padding: 80px 0
         +lg-block
-        padding: 30px 0
-        width: 100%
+            padding: 30px 0
+            width: 100%
         +row-flex
     &-model
         +col
@@ -151,7 +153,7 @@
         &__desc
             margin-top: 50px
             +lg-block
-                margin-bottom: 30px
+                margin: 0 0 30px
             p
                 text-align: justify
     &-info
@@ -280,5 +282,5 @@
             align-items: center
             +lg-block
                 margin-right: 0
-
+    
 
