@@ -14,6 +14,6 @@ document.addEventListener('click', e => {
 });
 
 window.addEventListener('resize', () => {
-  if(window.innerWidth > 720) menu.style.display = 'none';
-  else if(window.innerWidth <= 720 && !aside.classList.contains('aside_show')) menu.style.display = 'block';
+  if(window.innerWidth > 768) menu.style.display = 'none';
+  else if(window.innerWidth <= 768 && !aside.classList.contains('aside_show')) menu.style.display = 'block';
 });

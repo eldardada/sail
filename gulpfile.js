@@ -182,7 +182,7 @@ function grid(done){
                 width: "960px"
             },  
             md : {
-                width: "720px"
+                width: "768px"
             },
             sm: {
                 width: "540px"

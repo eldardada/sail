@@ -4,23 +4,38 @@
         width: 100%
     > div
         padding: 100px 100px 0 30px
+        height: 100%
         +xxl-block
             padding: 100px 30px 0 0
+        +sm-block
+            padding: 0
+            background-color: $lightbg
         > div
             background-color: $lightbg
             padding: 60px 40px 60px 30px
             border-radius: 0 175px 0 0
+            height: 100%
+            +sm-block
+                padding: 60px 15px
     &__inner
-        display: flex
+        +row-flex
     &-info
         +col
-        +size(6)
-        margin: 0 20px
+        +size(5.5)
+        +shift-right(0.5)
+        +xxx-block
+            +size(12)
+            +shift-right(0)
+            margin-bottom: 50px
         h1
-            font-size: 36px
+            +font(36, 26)
             +bold
-        ul
+            +xxx-block
+                text-align: center
+        ul                
             margin-top: 80px
+            +sm-block
+                margin-top: 0
             font-size: 22px
             width: 100%
             padding: 25px
@@ -28,6 +43,18 @@
                 width: 100%
                 margin-bottom: 35px
                 display: flex
+                @media screen and ( max-width: 650px)
+                    flex-direction: column
+                    align-items: center
+                    font-size: 30px
+                    a
+                        margin-left: 0
+                    > div
+                        margin-bottom: 10px
+                        > div // .contacts-info__img
+                            display: inline-block
+                +sm-block
+                    font-size: 22px
                 a
                     width: 100%
                     color: $dark
@@ -35,27 +62,32 @@
                     max-width: 320px 
                     display: block
                     margin-left: auto
-                div
-                    display: inline-block
+        &__img
+            display: inline-block
+            vertical-align: middle
         &__map
             background: #FFFFFF
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
             border-radius: 24px
-            min-height: 400px
+            height: 400px
             overflow: hidden
     &-form
         +col
         +size(6)
+        +xxx-block
+            +size(12)
         padding: 30px 25px
         background: #FFE5C0
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25)
         border-radius: 0 175px 0 0
+        +lg-block
+            border-radius: 10px
         h2
             text-align: center
             +font(36, 22)
             margin-bottom: 40px
         form
-            font-size: 20px
+            +font(20, 15)
             label
                 display: block
                 margin-bottom: 5px
@@ -79,4 +111,6 @@
                 background: #FFC677
                 box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25)
                 border-radius: 34px 0px
-                +font(36, 22)
+                +font(36, 18)
+                +md-block
+                    margin: 0 auto
