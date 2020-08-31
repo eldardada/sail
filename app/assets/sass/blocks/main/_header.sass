@@ -14,6 +14,7 @@
         display: flex
         justify-content: space-between
         font-size: 20px
+        position: relative
         +xl-block
             flex-direction: column
             align-items: center
@@ -29,8 +30,8 @@
         ul
             position: absolute
             z-index: 1
-            top: 100%
-            left: 116px
+            top: calc(100% + 15px)
+            left: 80px
             +md-block
                 left: 50%
                 transform: translateX(-50%)
@@ -43,6 +44,7 @@
                     color: #4A4A4A
                     background-color: #FFDBA9
                     border-radius: 0px 0px 92px 92px
+                    box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25)
                     +md-block
                         font-size: 25px
                     +sm-block

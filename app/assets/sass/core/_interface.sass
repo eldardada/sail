@@ -13,6 +13,11 @@ body
 .container
   +wrapper
 
+.container_inner
+  width: calc(100% - 121px)
+  +md-block
+    width: 100%
+
 .section
   background-color: #F7F7F7
   padding: 30px
@@ -79,3 +84,6 @@ btn, input
   &:hover
     svg path
       fill: darken(#FFC677, 20%)
+
+.brforcheck          
+  border-radius: 12px 50px 0 15px  !important
