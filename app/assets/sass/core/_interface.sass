@@ -65,3 +65,17 @@ btn, input
   padding: 5px 10px
   img
     max-width: 25px
+
+.icon_model
+  cursor: pointer
+  +sm-block
+    cursor: initial
+  padding: 5px 20px
+  border-radius: 20px
+  background-color: $light
+  svg
+    path
+      transition: fill .3s
+  &:hover
+    svg path
+      fill: darken(#FFC677, 20%)
