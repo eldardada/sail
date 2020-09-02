@@ -73,21 +73,21 @@ btn, input
 
 .icon_model
   cursor: pointer
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25)
   +sm-block
     cursor: initial
     padding: 0 10px
   padding: 5px 20px
   border-radius: 20px
   background-color: $light
+  display: flex
+  justify-content: center
+  align-items: center
   svg
-    path
-      transition: fill .3s
+    fill: #000
+    transition: fill .3s
   &:hover
-    svg path
-      fill: darken(#FFC677, 20%)
-  svg
-    max-width: 30px
-
+    fill: darken(#FFC677, 20%)
 .brforcheck          
   border-radius: 12px 50px 0 15px  !important
 
@@ -111,3 +111,12 @@ btn, input
   margin-right: 10px
   +sm-block
       left: 0
+
+.webMoney
+  background-image: url('./assets/img/pay/webmoney.svg')
+  background-repeat: no-repeat
+  background-size: cover
+  overflow: hidden
+  background-position: 0 -50px
+  height: 70px
+  width: 160px

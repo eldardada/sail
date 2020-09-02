@@ -1,0 +1,50 @@
+.about
+    width: calc(100% - 121px)
+    +md-block
+        width: 100%
+        background-color: $lightbg
+    padding-top: 80px
+    h2
+        margin: 50px 0 30px
+        font-size: 36px
+    &__icon
+        position: absolute
+        top: 15px
+        right: -40px
+        max-width: 89px
+        max-height: 79px
+    &-content
+        padding: 20px 50px
+        width: 100%
+        background-color: $lightbg
+        box-shadow: 15px 0px 15px rgba(0, 0, 0, 0.25)
+        border-radius: 0 175px 0 0
+        text-align: center
+        +md-block
+            box-shadow: initial
+
+        +md-block
+            border-radius: 0
+            padding: 10px
+        > h1
+            +bold
+            +font(36, 22)
+            margin-bottom: 70px
+        > p
+            margin-bottom: 30px
+        > p, b
+            +font(22, 18)
+    &-video
+        position: relative
+        max-width: 1018px
+        height: 100vh
+        max-height: 684px
+
+        margin: 0 auto
+        background: linear-gradient(0deg, #CACDCC, #CACDCC), url(3.jpg)
+        box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25)
+        border-radius: 40px
+    &-img
+        width: fit-content
+        margin: 0 auto
+        position: relative

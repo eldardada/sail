@@ -1,0 +1,164 @@
+.pay
+    width: calc(100% - 121px)
+    +md-block
+        width: 100%
+    padding-top: 80px
+    h2
+        text-align: center
+        +bold
+        +font(36, 22)
+        margin-bottom: 40px
+    input, button
+        border: none
+        
+    button
+        display: block
+        box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25)
+        border-radius: 45px 34px 40px 38px
+        padding: 20px 30px
+        +btn($btnOrange300)
+        +font(36, 22)
+        margin-left: auto
+        cursor: pointer
+        &:focus
+            outline: none
+    &-content
+        padding: 20px 50px
+        width: 100%
+        background-color: $lightbg
+        box-shadow: 15px 0px 15px rgba(0, 0, 0, 0.25)
+        border-radius: 0 175px 0 0
+    &-data
+        &__inner
+            +row-flex
+        &__user
+            margin-top: 70px
+            +size(5.5)
+            +xxx-block
+                +size(6)
+            div
+                display: flex
+                align-items: center
+                margin-bottom: 60px
+                input
+                    width: 100%
+                    max-width: 468px
+                    padding: 10px 20px
+                    background: #FFFFFF
+                    border-radius: 24px
+                    border: 1px solid gray
+                    margin-left: auto
+                    +xxx-block
+                        max-width: 250px
+        &__products
+            +size(5.5)
+            +shift-left(1)
+            +xxx-block
+                +shift-left(0.5)
+                +size(5.5)
+            > div
+                padding: 10px 20px
+                background-color: $orange200
+                position: relative
+                > div
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                > h3
+                    +font(15, 15)
+                    color: $light
+                    padding: 5px 10px
+                    max-width: 80%
+                    margin-left: 20%
+                    background-color: $mainDark
+                    border-radius: 15px 0 15px 0
+                    text-align: center
+                &:first-child
+                    border-radius: 107px 15px 0 0
+            &-img
+                margin-top: 4px
+                overflow: hidden
+                width: 164px
+                height: 96px
+                background-size: 100%
+                background-repeat: no-repeat
+            &-count
+                text-align: center
+                span
+                    display: inline-block
+                    margin-bottom: 10px
+                input
+                    color: $light
+                    text-align: center
+                    background: #4A4A4A
+                    border-radius: 20px
+                    max-width: 50px
+                    padding: 10px
+                > div
+                    span
+                        vertical-align: middle
+            &-price
+                label
+                    display: block
+                    text-align: center
+                    margin-bottom: 10px
+                input
+                    padding: 10px
+                    text-align: center
+                    border-radius: 20px
+                    max-width: 102px
+            &__exit
+                border: 1px solid $dark
+                border-radius: 12px
+                position: absolute
+                right: 15px
+                top: 50px
+                svg
+                    width: 12px
+                    height: 12px
+        &__summary
+            margin-left: auto
+            background-color: $orange300
+            box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25)
+            border-radius: 15px 0px
+            padding: 10px 20px
+            margin-right: 50px
+            input
+                text-align: center
+                border-radius: 8px
+                padding: 10px
+                max-width: 100px
+                margin-left: 20px
+    &-pay
+        > div
+            display: flex
+            label
+                +font(24, 18)
+    &-electron
+        display: flex
+        text-align: center
+        +font(20, 18)
+        img
+            display: block
+            height: 70px
+        > div
+            text-align: center
+            margin-left: 40px
+            p
+                margin-top: 10px
+                display: block
+.pay__sign
+    margin: 10px
+    cursor: pointer
+    display: block
+    height: 20px
+    width: 20px
+    border-radius: 20px
+    border: 1px solid
+    padding: 3px 4px
+    svg
+        max-width: 10px
+        max-height: 10px 
+    
+        
+
