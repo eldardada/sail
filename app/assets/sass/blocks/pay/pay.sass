@@ -135,11 +135,13 @@
                     border-radius: 20px
                     max-width: 102px
             &__exit
+                cursor: pointer
                 border: 1px solid $dark
                 border-radius: 12px
                 position: absolute
                 right: 15px
                 top: 50px
+                padding: 1px
                 svg
                     width: 12px
                     height: 12px
@@ -165,6 +167,9 @@
             +font(36, 22)
         > div
             margin-bottom: 40px
+            @media screen and (max-width: 1250px)
+                display: flex
+                flex-direction: column
         +md-block
             padding-left: 30px
         input
@@ -176,6 +181,9 @@
                 font-size: 22px
         label
             width: 200px
+            +xl-block
+                width: initial
+                margin-bottom: 20px
             margin-right: 20px
             user-select: none
             +font(36, 20)
@@ -199,6 +207,7 @@
                 +font(24, 18)
     &-electron
         display: flex
+        flex-wrap: wrap
         text-align: center
         +font(20, 18)
         img
@@ -207,6 +216,13 @@
         > div
             text-align: center
             margin-right: 40px
+            @media screen and (max-width: 1250px)
+                +size(6)
+                margin: 0 0 20px
+                img, > div
+                    margin: 0 auto
+            +sm-block
+                +size(12)
             p
                 margin-top: 10px
                 display: block
