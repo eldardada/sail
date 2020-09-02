@@ -11,7 +11,7 @@
     &-main
         background-color: $lightbg
     &__inner
-        padding: 80px 0
+        padding-bottom: 50px
         +lg-block
             padding: 30px 0
             width: 100%
@@ -66,6 +66,9 @@
                     a
                         display: block
                         width: 100%
+                    +sm-block
+                        svg
+                            max-width: 30px
             &-count
                 position: absolute
                 bottom: -30px
@@ -85,8 +88,20 @@
                     > div
                         display: block
                 span
-                    +font(22, 16)
+                    +font(22, 20)
+                    +xl-block
+                        display: none
+                    +lg-block
+                        display: block
+                    +sm-block
+                        display: none
                 > div
+                    +xl-block
+                        margin: 0 auto
+                    +lg-block
+                        margin: 0
+                    +sm-block
+                        margin: 0 auto
                     input 
                         +font(24, 18)
                         text-align: center
@@ -97,6 +112,8 @@
                         max-width: 68px
                         height: 53px
                         margin: 0 10px
+                        +sm-block
+                            max-height: 30px
                     > div
                         cursor: pointer
                         display: inline-flex
@@ -124,10 +141,9 @@
                         vertical-align: middle
                         display: inline-block
                         +font(36, 18)
-
                 > strong
                     display: block
-                    +font(64, 32)
+                    +font(64, 20)
                     margin-bottom: 20px
                 > span
                     padding: 15px 30px
@@ -154,24 +170,23 @@
             margin-top: 50px
             +lg-block
                 margin: 0 0 30px
-            p
-                text-align: justify
     &-info
         +lg-block
             display: flex
             flex-direction: column-reverse
         +col
         +size(6)
+        +xxx-block
+            +size(6)
         +lg-block
             +size(12)
-        +xxx-block
-            +size(7)
+        
 
 // general classes from card-info
 .card 
     &__infoblock // lists in card-info block
         border: 1px solid
-        +font(22, 18)
+        +font(20, 13)
         background: $light
         box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.25)
         border-radius: 25px
@@ -181,7 +196,7 @@
             display: flex
             margin-bottom: 40px
             +xxx-block
-                margin-bottom: 20px
+                margin-bottom: 10px
             strong
                 overflow: hidden
                 flex-grow: 1
@@ -210,9 +225,13 @@
     img
         vertical-align: middle
         max-width: 10px
+
+
 .card-info-add
     +row-flex
     margin-top: 50px
+    +lg-block
+        margin-top: 20px
     @media screen and (max-width: 620px)
         flex-direction: column
     &__block
@@ -222,30 +241,43 @@
         display: flex
         align-items: center
         +xxx-block
-            flex-direction: column
-        @media screen and (max-width: 620px)
             +size(12)
+            justify-content: center
             flex-direction: row
+        +lg-block
+            +size(6)
+            +shift-left(0)
+        +lg-block
+            +size(10)
+            +shift-left(1)
+            +shift-right(1)
+        +md-block
+            +size(12)
+            +shift-left(0)
+            +shift-right(0)
         +sm-block
             flex-direction: column
         &-check
-            font-size: 20px
+            +font(20, 15)
             display: inline-flex
             align-items: center
             padding: 20px 20px 15px 0
-            width: 220px
-            height: 60px
+            width: 240px
+            min-height: 60px
             border-radius: 15px
             position: relative
             margin-right: 20px
-            @media screen and (max-width: 620px)
+            +xxx-block
+                margin-bottom: 5px
+                margin-right: 0
+                width: 250px
+            +lg-block
                 width: 100%
                 margin-right: 20px
                 border-radius: 15px !important
-            +xxx-block
-                margin-bottom: 5px
-            +lg-block
-                margin-right: -10px
+                margin-right: 10px
+            +sm-block
+                margin: 5px 0
             input
                 display: none
                 &:checked + label::before
@@ -254,7 +286,7 @@
             label
                 user-select: none
                 display: block
-                margin-left: 10px
+                margin: 0 10px
                 &::before
                     content: ''
                     cursor: pointer
@@ -282,5 +314,3 @@
             align-items: center
             +lg-block
                 margin-right: 0
-    
-

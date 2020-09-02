@@ -1,8 +1,6 @@
 .feedback
-    background-color: red
     width: 100%
     background-color: $gray
-    height: 100px
     position: relative
     > .container
         padding: 20px 
@@ -12,12 +10,104 @@
         top: 20px
         left: 15px
         +font(36, 32)
+        +lg-block
+            display: none
     h3
-        +font(36, 32)
+        +font(36, 26)
         text-align: center
         margin: 0 auto
         background: #FFC677
         box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25)
         border-radius: 15px 0px
+        padding: 10px
+        width: 90%
         max-width: 420px
+    &-blocks
+        +row-flex
+        justify-content: space-evenly
+        +lg-block
+            flex-direction: column
+        > div
+            +col
+            +size(4.1)
+            +lg-block
+                +size(8)
+                +shift-left(2)
+                +shift-right(2)
+            +md-block
+                +size(10)
+                +shift-right(2.5)
+                +shift-left(0.5)
+            +sm-block
+                +shift-left(0)
+            position: relative
+            height: 123px
+            margin-bottom: 60px
+    &__block
+        position: relative
+        background-color: $orange100
+        background: #FFF0DB
+        border-radius: 24px
+        padding: 25px 20px 
+        margin-top: 60px
+        height: 123px
+        z-index: 1
+        a
+            color: $dark
+        span, time, small
+            position: absolute
+            
+        span, time
+            bottom: 100%
+            +md-block
+                font-size: 15px
+        span
+            left: 60px
+        time
+            right: 30px
+            +sm-block
+                top: calc(100% - 25px)
+                left: 20px
+        small
+            top: calc(100% - 25px)
+            right: 20px
+        p
+            +sm-block
+                font-size: 15px
+        + div
+            position: absolute
+            top: 35px
+            right: -50px
+            width: 100%
+            display: block
+            height: 100%
+            border-radius: 24px
+            background-color: #fff
+    &-bgblock
+        display: flex
+        > div
+            width: fit-content
+            margin: 10px 3px 10px auto
+            input
+                border: none
+                height: 20px
+                width: 20px
+                background-color: #FFFFFF
+                box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25)
+                border-radius: 5px
+                padding: 2px
+                text-align: center
+            svg
+                cursor: pointer
+            svg path
+                transition: fill .3s
+            svg.like:hover path
+                fill: green
+            svg.dislike:hover path
+                fill: red
+
+
+
+
+
     

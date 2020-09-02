@@ -2,7 +2,6 @@
     padding: 20px
     font-size: 18px
     position: relative
-
     +md-block
         font-size: 25px
         +xxs-block
@@ -41,11 +40,11 @@
             width: fit-content
             display: block
     &-img
+        max-width: 290px
         +md-block
             display: none
         margin: 0 auto
         text-align: center
-        max-width: 289px
         background: #F7F7F7
         box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25)
         border-radius: 30px
@@ -70,8 +69,7 @@
         margin: 0 auto
         max-width: 250px
         +md-block
-            max-width: 400px
-        text-align: justify
+            max-width: 80%
         li
             display: flex
             margin-bottom: 15px
@@ -80,8 +78,12 @@
         a
             color:#FFC677
             transition: color .3s
+            text-align: right
+            width: 100%
             &:hover
                 color: lighten(#FFC677, 10%)
+        +sm-block
+            max-width: 100%
     &-col
         +col
         +size(3)
@@ -95,14 +97,16 @@
         a
             margin: 0 auto
     &__garant
-        margin: 0 auto
         max-width: 290px
+        margin: 0 auto
         line-height: 30px
         text-indent: 10px
         margin-bottom: 10px
         +md-block
-            max-width: 500px
+            max-width: 80%
             text-indent: 0
+        +sm-block
+            max-width: 100%
     &-social
         +xl-block
             padding: 10px 0 0
@@ -118,23 +122,20 @@
             display: flex
             flex-direction: column
             align-items: center
-            max-width: 120px
             margin: 0 auto
             +xl-block
                 flex-direction: row
-                max-width: 100%
             +lg-block
-                max-width: 120px
                 flex-direction: column
             li
-                min-width: 120px
+                min-width: 140px
                 margin: 0 auto
                 display: flex
                 align-items: center
-                img
-                    margin-right: 15px
+                a
+                    margin-left: auto
+                    transition: color .3s
                 &:hover
                     a 
                         color: #FFC677
-                a
-                    transition: color .3s
+                

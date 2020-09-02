@@ -1,0 +1,70 @@
+.simproducts
+    width: 100%
+    background-color: $mainDark
+    padding: 20px 0
+    h2
+        +font(36, 22)
+        letter-spacing: 0.205em
+        color: $light
+        +xl-block
+            text-align: center
+    &-content
+        padding-top: 20px
+        display: flex
+        align-items: center
+        position: relative
+    &-wrapper
+        padding: 10px 0
+    &-slide
+        &__main
+            border-radius: 24px
+            background-color: $light
+            margin-bottom: 10px
+            padding: 10px
+            position: relative
+            min-height: 443px 
+            > div
+                position: absolute
+                left: calc(100% - 100px)
+                top: 0
+                border-radius: 20px
+                padding: 22px 35px
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25)
+                width: 90px
+                height: 70px
+                position: relative
+                svg
+                    cursor: pointer
+                    max-width: 30px
+                    max-height: 30px
+                    transition: fill .3s
+                    &:hover
+                        fill: $orange400
+        &__footer
+            padding: 10px
+            background-color: #fff
+            border-radius: 24px
+            min-height: 150px
+            position: relative
+            strong
+                +font(22, 18)
+                margin: 0 0 0 20px
+            p 
+                margin: 10px 0
+            span
+                position: absolute
+                bottom: 10px
+                right: 20px
+    &__next, &__prev
+        +sm-block
+            position: absolute
+    &__next
+        +sm-block
+            left: -5px
+    &__prev
+        +sm-block
+            right: -5px
+            
+                
+
+                

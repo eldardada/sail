@@ -1,4 +1,4 @@
-let swiper = new Swiper('.swiper-container', {
+let MainSwiper = new Swiper('.swiper-container', {
   slidesPerView: 1,
   spaceBetween: 0,
   slidesPerGroup: 3,
@@ -20,5 +20,3 @@ let swiper = new Swiper('.swiper-container', {
     }
   }
 });
-
-

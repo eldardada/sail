@@ -75,6 +75,7 @@ btn, input
   cursor: pointer
   +sm-block
     cursor: initial
+    padding: 0 10px
   padding: 5px 20px
   border-radius: 20px
   background-color: $light
@@ -84,6 +85,29 @@ btn, input
   &:hover
     svg path
       fill: darken(#FFC677, 20%)
+  svg
+    max-width: 30px
 
 .brforcheck          
   border-radius: 12px 50px 0 15px  !important
+
+.icon__next, .icon__prev
+  cursor: pointer
+  svg path
+      transition: .3s
+  &:focus
+      outline: none
+  &:hover
+      svg path
+          fill: #FFC677
+  +sm-block
+      position: absolute
+      z-index: 2
+.icon__next
+  margin-left: 10px
+  +sm-block
+      right: 0
+.icon__prev
+  margin-right: 10px
+  +sm-block
+      left: 0
