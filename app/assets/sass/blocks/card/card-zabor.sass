@@ -1,0 +1,43 @@
+.card
+    &-info
+        &-variations
+            ul
+                background-color: $lightbg
+                padding: 0
+                border: none
+                box-shadow: none
+                li
+                    +font(36, 18)
+                    padding: 15px 20px
+                    background-color: $orange100
+                    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.25)
+                    border-radius: 25px
+                    margin-bottom: -2px
+        &-colors
+            padding: 20px
+            > div
+                display: flex
+                justify-content: space-around
+                @media screen and ( max-width: 1200px)
+                    flex-direction: column
+                    > div:first-child
+                        margin-bottom: 20px
+                input
+                    display: none
+                    &:checked + label::before
+                        content: '✓'
+                label
+                    user-select: none
+                    &::before
+                        content: ''
+                        text-align: center
+                        vertical-align: middle
+                        display: inline-block
+                        margin-right: 20px
+                        width: 30px
+                        height: 30px
+                        background-color: $orange200
+                        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+                        border-radius: 8px
+                        
+

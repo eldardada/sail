@@ -5,12 +5,19 @@ menu.addEventListener('click', () => {
   aside.classList.toggle('aside_show');
 });
 
+function hideMenu() {
+  aside.classList.remove('aside_show');
+};
+
 document.addEventListener('click', e => {
-    if(!e.target.classList.contains('aside__menu__item') 
-    && e.target.dataset.name != 'aside-icons' 
-    && e.target.dataset.name !== 'aside-icons-list') {
-        aside.classList.remove('aside_show');
-    }
+  const target = e.target;
+  const its_menu = target == menu || menu.contains(target);
+  const its_aside = target == aside;
+  const aside_is_active = aside.classList.contains('aside_show');
+
+  if (!its_aside && !its_menu && aside_is_active) {
+    hideMenu();
+  }
 });
 
 window.addEventListener('resize', () => {

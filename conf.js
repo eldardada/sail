@@ -12,7 +12,8 @@ global.html_arch = [
   'contacts',
   'card',
   'about',
-  'pay'
+  'pay',
+  'card-zabor'
 ].map(element => appDir + element + '.html')
 // files name
 global.mainSass = 'style.sass';

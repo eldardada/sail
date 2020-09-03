@@ -77,11 +77,11 @@
     &_filter
         +bold
         background-color: #FFC677 !important
-        display: block !important
         +lg-block
-            width: 80%
-            text-align: center
+            display: none
     &-filter
+        +lg-block
+            justify-content: space-evenly
         user-select: none
         margin: 20px 70px 70px 70px
         display: flex
@@ -100,7 +100,18 @@
             border-radius: 107px 15px 15px 15px
             position: relative
             +lg-block
-                margin: 0
+                margin: 0 0 20px
+                +shift-left(0.5)
+                +shift-right(0.5)
+                +size(5)
+                padding-right: 10px
+                svg
+                    margin-left: auto
+            +xxs-block
+                +shift-left(0)
+                +shift-right(0.1)
+                font-size: 13px
+                padding-left: 20px
             +xl-block
                 margin: 10px 50px
             svg
@@ -242,10 +253,3 @@
             justify-content: space-between
             ul
                 display: block
-.catalog-filter__param
-    +lg-block
-        padding: 10px 20px
-        margin: 0
-        display: none
-        background-color: #FFC677 
-

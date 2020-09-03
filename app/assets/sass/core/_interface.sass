@@ -73,11 +73,18 @@ btn, input
 
 .icon_model
   cursor: pointer
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25)
   +sm-block
     cursor: initial
-    padding: 0 10px
-  padding: 5px 20px
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25)
+  width: 90px // 9 / 7 1px h = 1.285px w
+  height: 70px
+  +lg-block
+    width: 65px
+    height: 50px
+  +sm-block
+    height: 40px
+    width: 51px
+    border-radius: 15px
   border-radius: 20px
   background-color: $light
   display: flex
@@ -86,6 +93,13 @@ btn, input
   svg
     fill: #000
     transition: fill .3s
+    max-width: 50px
+    +lg-block
+      max-width: 30px
+    +sm-block
+      max-width: 20px
+
+    
   &:hover
     fill: darken(#FFC677, 20%)
 .brforcheck          
