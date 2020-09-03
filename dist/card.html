@@ -24,10 +24,10 @@
             <aside class="main__aside">
                 <nav data-name="aside-icons" class="aside-icons">
                     <ul data-name="aside-icons-list">
-                        <li><a href=""><img src="./assets/img/main/attention.svg" alt=""></a></li>
+                        <li><a href="about.html"><img src="./assets/img/main/attention.svg" alt=""></a></li>
                         <li><a href="basket.html"><img src="./assets/img/basket.svg" alt=""></a></li>
                         <li><a href="favorites.html"><img src="./assets/img/love.svg" alt=""></a></li>
-                        <li><a href=""><img src="./assets/img/main/user.svg" alt=""></a></li>
+                        <li><a href="contacts.html"><img src="./assets/img/main/user.svg" alt=""></a></li>
                         <li><a href="#footer"><img src="./assets/img/main/arrow.svg" alt=""></a></li>
                     </ul>
                 </nav>
@@ -296,10 +296,10 @@
             </section>
         </div>
 
-        <section class="feedback">
+        <section class="feedback" id="feedback">
             <div class="container container_inner">
                 <h2>Отзывы</h2>
-                <h3>Оставь свой отзыв</h3>
+                <button>Оставь свой отзыв</button>
                 <div class="feedback-blocks">
                     <div>
                         <div class="feedback__block">
@@ -426,6 +426,24 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="feedback-modal">
+                    <div class="feedback-modal__exit">
+                        <svg>
+                            <use xlink:href="assets/img/svg/sprite.svg#exit"></use>
+                        </svg>
+                    </div>
+                    <form action="">
+                        <label for="feedback_login">Электронная почта или номер телефона :</label>
+                        <input id="feedback_login"type="text">
+                        <label for="feeback_name">Ваше имя и фамилия :</label>
+                        <input id="feeback_name" type="text">
+                        <label for="feeback_comment">Ваш коментарий :</label>
+                        <textarea id="feeback_comment"></textarea>
+                        <button>Отправить</button>
+                    </form>
+                </div>
+
             </div>
         </section>
 
@@ -539,6 +557,8 @@
                 </div>
             </div>
         </section>
+
+        <div class="modal-bg"></div>
     </main>
 
     <footer id="footer" class="footer">
@@ -592,6 +612,7 @@
     </footer>
 </body>
 <script src="./assets/js/aside.js"></script>
+<script src="./assets/js/card.js"></script>
 <script src="./assets/js/swiper.bundle.min.js"></script>
 <script src="./assets/js/simproducts.js"></script>
 </html>
