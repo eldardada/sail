@@ -41,3 +41,72 @@ feedbackBtn.addEventListener('click', () => {
 
 feedbackModalExit.addEventListener('click', hideFeedbackModal);
 
+const cardCountInput = document.querySelector('.card-model__product-count input');
+
+cardCountInput.addEventListener('input', () => {
+    cardCountInput.value = cardCountInput.value.replace(/\D/g, '');
+});
+
+cardCountInput.addEventListener('change', () => {
+    let value = cardCountInput.value;
+    if(value === '') {
+        value = 0;
+    }
+    else if(value > 50) {
+        value = 50;
+    }
+    cardCountInput.value = value;
+});
+
+const cardModelCount = document.querySelector('.card-model__product-count>div');
+
+cardModelCount.addEventListener('click', e => {
+    target = e.target;
+
+    if(target.hasAttribute('data-name')) {
+        if(target.dataset.name == 'minus') {
+            if(cardCountInput.value > 0) cardCountInput.value -= 1;
+        }
+        else if (target.dataset.name == 'plus') {
+            if(cardCountInput.value < 50)
+            cardCountInput.value = Number(cardCountInput.value) + 1;
+        }
+    }
+    else {
+        let div = target;
+        while(!div.hasAttribute('data-name')) 
+            div = div.parentElement;
+        if(div.dataset.name == 'minus') {
+            if(cardCountInput.value > 0) cardCountInput.value -= 1;
+        }
+        else if (div.dataset.name == 'plus') {
+            if(cardCountInput.value < 50)
+            cardCountInput.value = Number(cardCountInput.value) + 1;
+        }
+    }
+});
+
+const cardInfoAdd = document.querySelector('.card-info-add');
+
+cardInfoAdd.addEventListener('click', e => {
+    const target = e.target;
+
+    if(target.classList.contains('.add__sign')) {
+        
+    }
+    else {
+        let div = target;
+
+        while(!div.classList.contains('.add__sign')) {
+            if(div.parentElement == cardInfoAdd) {
+                break;
+            }
+            div = div.parentElement;
+        }
+        if(div.dataset.name == 'plus') {
+            
+        }
+
+    }
+});
+
