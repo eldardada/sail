@@ -6,10 +6,6 @@
     box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25)
     +sm-block
         letter-spacing: 0.12em
-        font-size: 14px
-    ul
-        display: flex
-        letter-spacing: normal
     &-item
         display: flex
         justify-content: space-between
@@ -23,33 +19,39 @@
             color: $light
     &_orange
         color: $dark
+        background-color: $orange300
         position: relative
-        background-color: #FFDBA9
         a
             color: $mainDark
-        ul
+        nav
+            display: flex
+            letter-spacing: normal
             position: absolute
             z-index: 1
-            top: calc(100% + 5px)
+            top: 100%
             left: 120px
             +md-block
                 left: 50%
                 transform: translateX(-50%)
-            li
+            a
                 margin-right: 10px
-                a
-                    padding: 10px 40px
-                    font-size: 40px
-                    font-weight: 700
-                    color: #4A4A4A
-                    background-color: #FFDBA9
-                    border-radius: 0px 0px 92px 92px
-                    box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25)
-                    +md-block
-                        font-size: 25px
-                    +sm-block
-                        letter-spacing: normal
-                        font-size: 20px
-                    +xxs-block
-                        font-size: 18px
+                padding: 10px 40px
+                font-size: 40px
+                font-weight: 700
+                color: #4A4A4A
+                background-color: #FFDBA9
+                border-radius: 0px 0px 92px 92px
+                box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25)
+                +md-block
+                    font-size: 25px
+                +sm-block
+                    letter-spacing: normal
+                    font-size: 20px
+                +xxs-block
+                    font-size: 18px
+                    padding: 10px 30px
+
+                &:first-child
+                    text-transform: uppercase
+                    
 

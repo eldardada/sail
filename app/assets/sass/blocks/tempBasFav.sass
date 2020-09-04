@@ -2,10 +2,14 @@
     width: calc(100% - 121px)
     +md-block
         width: 100%
+    +sm-block
+        background-color: $lightbg
     > div
         padding: 100px 100px 0 30px
         +xxl-block
             padding: 100px 30px 0 0
+        +sm-block
+             padding: 0
         > div
             background-color: $lightbg
             padding: 60px 40px 60px 30px
@@ -15,10 +19,14 @@
         align-items: center
         justify-content: space-between
         margin-bottom: 80px
+        +lg-block
+            margin-bottom: 10px !important
         +xm-block
+            flex-direction: column
             h1
                 margin-bottom: 30px
-            flex-direction: column
+                +lg-block
+                    margin-bottom: 10px
             &__edit
                 margin-bottom: 30px
         &__edit
@@ -27,11 +35,13 @@
                 vertical-align: top
                 strong
                     +bold
-                    font-size: 36px
+                    +font(36, 24)
                 button
                     display: block
                     margin-left: auto
                     +btn_sm($btnOrange100)
+                    +xm-block
+                        margin-right: auto
             > div:nth-child(2)
                 display: inline-block
                 margin: 10px
@@ -49,6 +59,25 @@
                 svg
                     transition: transform .3s, stroke .3s
         &__buy
+            input
+                text-align: center
+            +sm-block
+                text-align: center
+                a
+                    margin-left: 20px
+                    @media screen and ( max-width: 346px)
+                        display: block
+                        margin-left: 0
+                        
+                > div
+                    vertical-align: middle
+                    display: inline-flex
+                    flex-direction: column
+                    align-items: center
+                    margin: 0 auto 20px
+                    span
+                        margin: 0 auto
+                        margin-bottom: 10px
             > div
                 display: inline-block
                 margin-right: 30px
@@ -71,4 +100,3 @@
                 +bold
                 +font(36, 20)
                 color: $dark
-            

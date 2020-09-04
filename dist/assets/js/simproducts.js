@@ -21,25 +21,23 @@ let swiperSimproducts = new Swiper('.simproducts-slider', {
     }
   });
 
+const feedbackSlider = document.querySelector('.feedback-slider');
 
-  let swiperFeedback= new Swiper('.feedback-slider', {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    slidesPerGroup: 1,
-    loop: true,
-    loopFillGroupWithBlank: true,
-    arrows: false,
-    navigation: {
-      nextEl: '.feedback__next',
-    },
-    breakpoints: {
-    800: {
-        slidesPerView: 2,
-        spaceBetween: 50
-    },
-    1400: {
-        slidesPerView: 3,
-        spaceBetween: 100
-      }
+var swiperFeedback = new Swiper(feedbackSlider, {
+  slidesPerView: 1,
+  slidesPerColumn: 2,
+  slidesPerColumnFill: 'row',
+  spaceBetween: 50,
+  centerSlides: false,
+  slideClass: 'feedback-slide',
+  loop: true,
+  navigation: {
+    prevEl: '.feedback-slider__next'
+  },
+  breakpoints: {
+    1248: {
+      slidesPerView: 2,
     }
-  });
+  }
+});
+

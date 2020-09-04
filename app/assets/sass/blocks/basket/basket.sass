@@ -36,11 +36,12 @@
         &-count
             span
                 display: flex
-// 960px - 1810px  
+// 1810px  - 960px 
 .basket
     &-models
         +row-flex
-        > div
+        > form
+            position: relative
             margin: 80px 150px
             @media screen and ( max-width: 1810px)
                 width: 100%
@@ -64,6 +65,8 @@
                             max-width: 100%
                         +md-block
                             padding: 5px 10px
+                li
+                    cursor: pointer
     &-bgmenu
         @media screen and ( max-width: 1210px )
             margin-top: 20px
@@ -73,12 +76,20 @@
             display: flex
             max-height: 320px
             padding: 20px
-            font-size: 20px
+            font-size: 20px        
+        +xxs-block
+            z-index: 99
+            &-price
+                position: absolute
+                top: 67px
+                left: 50%
+                transform: translateX(-50%)
         &-info
             @media screen and ( max-width: 1210px )
                 display: flex
                 margin: 0 !important
-
+            +xxs-block
+                margin: 0 auto !important
         &-count
             @media screen and ( max-width: 1210px )
                 span
@@ -90,12 +101,14 @@
             > div
                 @media screen and ( max-width: 1210px )
                     margin-top: 10px
+            +xxs-block
+                margin-left: 0 !important
 
     
 +lg-block
     .basket
         &-models
-            > div
+            > form
                 display: flex
                 flex-direction: column-reverse
                 margin-bottom: 20px
@@ -105,6 +118,8 @@
             flex-direction: column
             > div
                 border-radius: 0 0 0 0
+                +xxs-block
+                    padding-top: 30px
                 span
                     display: none
             ul
@@ -124,10 +139,4 @@
                 div
                     height: 30px
                     line-height: 30px
-
-
-                
-
-
-
-        
+                    

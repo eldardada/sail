@@ -40,3 +40,4 @@ feedbackBtn.addEventListener('click', () => {
 });
 
 feedbackModalExit.addEventListener('click', hideFeedbackModal);
+

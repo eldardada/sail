@@ -5,6 +5,39 @@
     > .container
         padding: 20px 
         position: relative
+    &-slider
+        padding: 0 0 120px
+        width: 100%
+        &__next
+            cursor: pointer
+            background-color: red
+            position: absolute
+            right: 10px
+            bottom: 10px
+            background-color: $lightbg
+            padding: 15px 10px
+            border-radius: 20px
+            &:focus
+                outline: none
+            svg
+                width: 40px
+                height: 30px
+    &-slide
+        display: flex
+        justify-content: center
+        +md-block
+            justify-content: start
+            padding-left: 10px
+        > div
+            width: 80%
+            height: 123px
+            position: relative
+            +md-block
+                margin-left: 20px
+            +sm-block
+                margin-left: 0
+            @media screen and ( max-width: 1248px)
+                max-width: 600px
     h2
         position: absolute
         top: 20px
@@ -27,27 +60,6 @@
         max-width: 420px
         &:focus
             outline: none
-    &-blocks
-        +row-flex
-        justify-content: space-evenly
-        +lg-block
-            flex-direction: column
-        > div
-            +col
-            +size(4.1)
-            +lg-block
-                +size(8)
-                +shift-left(2)
-                +shift-right(2)
-            +md-block
-                +size(10)
-                +shift-right(2.5)
-                +shift-left(0.5)
-            +sm-block
-                +shift-left(0)
-            position: relative
-            height: 123px
-            margin-bottom: 60px
     &__block
         position: relative
         background-color: $orange100
@@ -61,13 +73,18 @@
             color: $dark
         span, time, small
             position: absolute
-            
         span, time
             bottom: 100%
             +md-block
                 font-size: 15px
         span
+            display: block
+            overflow: hidden
+            white-space: nowrap
+            text-overflow: ellipsis
             left: 60px
+            +xxs-block
+                max-width: 150px
         time
             +font(15, 12)
             right: 30px
@@ -78,6 +95,12 @@
             top: calc(100% - 25px)
             right: 20px
         p
+            display: -webkit-box
+            -webkit-line-clamp: 3
+            -webkit-box-orient: vertical
+            overflow: hidden
+            max-height: 60px
+            text-overflow: ellipsis
             +sm-block
                 font-size: 15px
         + div

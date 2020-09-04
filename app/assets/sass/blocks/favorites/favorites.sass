@@ -1,3 +1,57 @@
 .favorites
     &-models
-        justify-content: space-around
+        +row-flex
+        > form
+            position: relative
+            margin: 80px 150px
+            @media screen and ( max-width: 1810px)
+                width: 100%
+                max-width: 900px
+                margin: 0 auto 80px
+            @media screen and ( max-width: 1210px )
+                max-width: 750px
+            .favorites__model
+                width: 100% !important
+                @media screen and ( max-width: 1810px)
+                    display: flex
+                    justify-content: space-between
+            ul
+                @media screen and ( max-width: 1810px)
+                    position: static
+                    margin: auto 0
+                .block30
+                     @media screen and ( max-width: 1810px)
+                        padding: 25px
+                        img
+                            max-width: 100%
+                        +md-block
+                            padding: 5px 10px
+                li
+                    cursor: pointer
+    
++lg-block
+    .favorites
+        &-models
+            > form
+                display: flex
+                flex-direction: column-reverse
+                margin-bottom: 20px
+        &__model
+            margin: 0 auto
+            max-width: 450px
+            flex-direction: column
+            > div
+                border-radius: 0 0 0 0
+                +xxs-block
+                    padding-top: 30px
+                span
+                    display: none
+            ul
+                order: 2
+
+                
+
+
+
+        
+

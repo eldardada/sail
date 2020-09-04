@@ -31,15 +31,20 @@ btn, input
   transform: rotate(-180deg)
 
 .btn_count
+  display: inline-flex
   width: 30px
   height: 30px
-  display: inline-flex
   vertical-align: middle
   align-items: center
+  justify-content: center
   border-radius: 30px
   border: 3px solid #000
   background-color: transparent
   cursor: pointer
+  &:focus
+    outline: none
+  &:active
+        
   
     
 =btn($colors)
@@ -76,28 +81,21 @@ btn, input
   +sm-block
     cursor: initial
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25)
-  width: 90px // 9 / 7 1px h = 1.285px w
-  height: 70px
-  +lg-block
-    width: 65px
-    height: 50px
-  +sm-block
-    height: 40px
-    width: 51px
-    border-radius: 15px
   border-radius: 20px
   background-color: $light
-  display: flex
-  justify-content: center
-  align-items: center
+  padding: 5px 10px
   svg
+    display: block
     fill: #000
     transition: fill .3s
-    max-width: 50px
+    width: 50px
+    height: 40px
     +lg-block
-      max-width: 30px
+      width: 40px
+      height: 30px
     +sm-block
-      max-width: 20px
+      width: 30px
+      height: 20px
 
     
   &:hover
