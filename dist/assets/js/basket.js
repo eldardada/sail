@@ -1,5 +1,24 @@
 const basketModels = document.querySelector('.basket-models');
 
+basketModels.addEventListener('input', e => {
+    const target = e.target;
+    if(target.dataset.name = 'input-count') {
+        target.value = target.value.replace(/\D/g, '');
+        
+    }
+});
+
+basketModels.addEventListener('change', e => {
+    const target = e.target;
+    if(target.dataset.name = 'input-count') {
+        if(target.value === '') {
+            target.value = 0;
+        }
+        else if(target.value > 50) {
+            target.value = 50;
+        }
+    }
+});
 
 basketModels.addEventListener('click', e => {
     const target = e.target;
@@ -20,7 +39,7 @@ basketModels.addEventListener('click', e => {
         if(itInc) {
             const divParrent = div.parentElement;
             const input = divParrent.querySelector('input');
-            input.value = Number(input.value) + 1; 
+            if(input.value < 50) input.value = Number(input.value) + 1; 
         }
         else if(itDec) {
             const divParrent = div.parentElement;
@@ -33,3 +52,4 @@ basketModels.addEventListener('click', e => {
     }
     
 });
+

@@ -51,3 +51,5 @@ catalogBlocks.addEventListener('click', e => {
 });
 
 
+
+
