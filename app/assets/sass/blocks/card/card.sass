@@ -7,7 +7,7 @@
         +font(30, 36)
         margin-bottom: 15px
         +lg-block
-            margin-top: 30px
+            margin-top: 60px
     &-main
         background-color: $lightbg
     &__inner
@@ -89,14 +89,14 @@
                         display: block
                 span
                     +font(22, 20)
-                    +xl-block
+                    @media screen and ( max-width: 1250px)
                         display: none
                     +lg-block
                         display: block
                     +sm-block
                         display: none
                 > div
-                    +xl-block
+                    @media screen and ( max-width: 1250px)
                         margin: 0 auto
                     +lg-block
                         margin: 0
@@ -124,6 +124,7 @@
                         border: 2px solid #000
                         border-radius: 30px
             &-cta
+                cursor: pointer
                 position: absolute
                 right: -100px
                 text-align: center
@@ -134,6 +135,8 @@
                 bottom: -30px
                 border: none
                 width: 100%
+                &:focus
+                    outline: none
                 +xxx-block
                     position: initial
                     display: block
@@ -143,6 +146,8 @@
                         vertical-align: middle
                         display: inline-block
                         +font(36, 18)
+                +md-block
+                    cursor: initial
                 > strong
                     display: block
                     +font(64, 20)
@@ -152,7 +157,7 @@
                     background-color: $orange200
                     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25)
                     border-radius: 15px 0px
-                    +font(36, 22)
+                    +font(33, 20)
             &-info
                 margin-top: 10px
             &-count, &-cta
@@ -224,7 +229,17 @@
     width: 20px
     border: 2px solid #000
     margin: 10px
+    cursor: pointer
+    transition: width .1s
+    +md-block
+        cursor: initial
+    &:active
+        height: 15px
+        width: 15px
+        img
+            max-width: 5px
     img
+        transition: width .1s
         vertical-align: middle
         max-width: 10px
 
@@ -310,9 +325,33 @@
             height: 50px
             background: #FFFFFF
             border-radius: 10px
+        ul
+            background-color: #FFDBA9
+            z-index: 2
+            position: absolute
+            top: calc(100% - 10px)
+            left: 0
+            box-shadow: 0 4px 3px rgba(0, 0, 0, 0.25)
+            min-width: 100%
+            border-top: 1px solid $mainDark
+            transform: scaleY(0)
+            transform-origin: top left
+            transition: transform .3s
+            li
+                cursor: pointer
+                padding: 5px
+                border-bottom: 1px solid $mainDark
+                &:last-child
+                    border-bottom: none
         &-count
-            margin-right: 10px
+            user-select: none
             display: flex
             align-items: center
-            +lg-block
-                margin-right: 0
+            justify-content: space-between
+            min-width: 140px
+            position: relative                
+            input
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
