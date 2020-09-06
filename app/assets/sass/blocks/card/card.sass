@@ -134,7 +134,8 @@
                 padding: 10px 30px 40px
                 bottom: -30px
                 border: none
-                width: 100%
+                +xxx-block
+                    width: 100%
                 &:focus
                     outline: none
                 +xxx-block
@@ -297,24 +298,25 @@
                 margin: 5px 0
             input
                 display: none
-                &:checked + label::before
+                &:checked + span::before
                     content: '✔'
                     text-align: center
                     line-height: 35px
             label
-                user-select: none
-                display: block
-                margin: 0 10px
-                &::before
-                    content: ''
-                    cursor: pointer
-                    display: inline-block
-                    width: 30px
-                    height: 30px
-                    background-color: #fff
-                    border-radius: 8px
-                    vertical-align: middle
-                    margin-right: 10px
+                span
+                    user-select: none
+                    display: block
+                    margin: 0 10px
+                    &::before
+                        content: ''
+                        cursor: pointer
+                        display: inline-block
+                        width: 30px
+                        height: 30px
+                        background-color: #fff
+                        border-radius: 8px
+                        vertical-align: middle
+                        margin-right: 10px
             svg 
                 display: block
                 cursor: pointer

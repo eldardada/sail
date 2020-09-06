@@ -111,7 +111,8 @@
                 overflow: hidden
                 width: 164px
                 height: 96px
-                background-size: 100%
+                background-size: contain
+                background-position: center
                 background-repeat: no-repeat
             &-count
                 text-align: center
@@ -147,6 +148,10 @@
                 right: 15px
                 top: 50px
                 padding: 1px
+                transition: background-color .3s, border .3s
+                &:hover
+                    background-color: $gray
+                    border: 1px solid transparent
                 svg
                     width: 12px
                     height: 12px

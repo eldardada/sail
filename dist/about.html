@@ -47,15 +47,26 @@
                         <h1>Наша команда</h1>
                         <p>Подвесные кресла фабрики «Парус»</p>
                         <p><b>«Парус - личное пространство для вас."</b></p>
-                        <div class="about-video">
-                            <div>
-                                <img src="https://i.ytimg.com/vi/WhY7uyc56ms/maxresdefault.jpg" alt="Sharp 4K Demo - World Cities in Dolby Digital">
+                        <div class="about-video video--enabled">
+                            <div class="video">
+                                <a class="about-video__link video__link" href="https://www.youtube.com/watch?v=WhY7uyc56ms&t=42s">
+                                    <picture>
+                                        <source srcset="https://i.ytimg.com/vi_webp/WhY7uyc56ms/maxresdefault.webp" type='image/webp'>
+                                        <img class="video__media" src="https://i.ytimg.com/vi/WhY7uyc56ms/maxresdefault.jpg" alt="Sharp 4K Demo - World Cities in Dolby Digital">
+                                    </picture>
+                                </a>
+                                <button class="about-video__button video__button" aria-label="Запустить видео">
+                                    <svg viewBox="0 -77 512.00213 512" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="about-video__button-shape" d="m501.453125 56.09375c-5.902344-21.933594-23.195313-39.222656-45.125-45.128906-40.066406-10.964844-200.332031-10.964844-200.332031-10.964844s-160.261719 0-200.328125 10.546875c-21.507813 5.902344-39.222657 23.617187-45.125 45.546875-10.542969 40.0625-10.542969 123.148438-10.542969 123.148438s0 83.503906 10.542969 123.148437c5.90625 21.929687 23.195312 39.222656 45.128906 45.128906 40.484375 10.964844 200.328125 10.964844 200.328125 10.964844s160.261719 0 200.328125-10.546875c21.933594-5.902344 39.222656-23.195312 45.128906-45.125 10.542969-40.066406 10.542969-123.148438 10.542969-123.148438s.421875-83.507812-10.546875-123.570312zm0 0"/>
+                                        <path class="about-video__button-icon" d="m204.96875 256 133.269531-76.757812-133.269531-76.757813zm0 0"/>
+                                    </svg>
+                                </button>
                                 <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/sn-S82mF_gw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-                                <div class="icon_model about__icon">
+                                <a class="icon_model about__icon">
                                     <svg>
                                         <use xlink:href="assets/img/svg/sprite.svg#share"></use>
                                     </svg>
-                                </div>
+                                </a>
                             </div>
                         </div>
                         <h2>Наша ключевая особенность</h2>
@@ -98,4 +109,5 @@
             </section>
     </main>
 </body>
+<script src="./assets/js/video.js"></script>
 </html>

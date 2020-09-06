@@ -80,8 +80,14 @@ cardModelCount.addEventListener('click', e => {
 const cardInfoAdd = document.querySelector('.card-info-add');
 
 
-cardAddCheckInputs = document.querySelectorAll('.card-info-add__block-check>input');
-cardAddCheckLists = document.querySelectorAll('.card-info-add__block-check>ul');
+cardAddChecks = document.querySelectorAll('.card-info-add__block-check');
+
+function cardHideAllLists(div) {
+    cardAddChecks.forEach(block => {
+        if(block !== div)
+            block.classList.remove('open');
+    });
+}
 
 cardInfoAdd.addEventListener('click', e => {
     const target = e.target;
@@ -111,58 +117,39 @@ cardInfoAdd.addEventListener('click', e => {
     }
     // drop-down lists
     else if(div.classList.contains('card-info-add__block-check')) {
-        const divParent = div.parentElement;
-        const input = div.querySelector('input');
-        const label = div.querySelector('label');
+        const input = div.querySelector('label>input');
+        const span = div.querySelector('label>span');
+        const divOutput = div.querySelector('#add_content');
         const list = div.querySelector('ul');
         const itListElement = list.contains(target) && target != list;
-        const arrow = div.querySelector('#catalogFilterArrow');
-        const itLabel = target.tagName == 'LABEL';
+        const itSpan = target == span || target == input;
         
         if(itListElement) {
-            label.innerHTML = target.innerHTML;
+            divOutput.innerHTML = target.innerHTML;
             input.checked = true;
-            list.style.transform = 'scaleY(0)';
-            arrow.classList.remove('arrow_180');
-            cardAddCheckInputs.forEach(AddInput => {
-                if(AddInput != input) {
-                    let parrentInput = AddInput.parentElement;
-                    let ul = parrentInput.querySelector('ul');
-                    ul.style.transform = 'scaleY(0)';
-                } 
-            });
+            cardHideAllLists(null);
         }
-        else if(itLabel && input.checked) {
-            input.checked = false;
-            arrow.classList.remove('arrow_180');
-            label.innerHTML = label.dataset.content;
+        else if (!itSpan) {
+            div.classList.add('open');
+            cardHideAllLists(div);
         }
-        else if(!input.checked) {
-            text = label.innerHTML;
-            list.style.transform = 'scaleY(1)';
-            arrow.classList.add('arrow_180');
-            cardAddCheckInputs.forEach(AddInput => {
-                if(AddInput != input) {
-                    let parrentInput = AddInput.parentElement;
-                    let ul = parrentInput.querySelector('ul');
-                    ul.style.transform = 'scaleY(0)';
-                } 
-            });
+    }
+});
 
+cardInfoAdd.addEventListener('change', e => {
+    const target = e.target;
+    const div = target.parentElement.parentElement;
+    const divOutput = div.querySelector('#add_content');
+    
+    if(!target.checked) {
+        divOutput.innerHTML = divOutput.dataset.content;
+        cardHideAllLists(null);
+    }
+    else {
+        if(divOutput.innerHTML == divOutput.dataset.content) {
+            target.checked = false;
         }
-        else if(list.style.transform != 'scaleY(1)') {
-            input.checked = false;
-            list.style.transform = 'scaleY(1)';
-            arrow.classList.add('arrow_180');
-            cardAddCheckInputs.forEach(AddInput => {
-               
-                if(AddInput != input) {
-                    let parrentInput = AddInput.parentElement;
-                    let ul = parrentInput.querySelector('ul');
-                    ul.style.transform = 'scaleY(0)';
-                } 
-            });
-        }
+        div.classList.add('open');
     }
 });
 
@@ -217,9 +204,7 @@ feedbackBlock.addEventListener('click', e => {
 document.addEventListener('click', e => {
     const target = e.target;
     if(!cardInfoAdd.contains(target)) {
-        cardAddCheckLists.forEach(list => {
-            list.style.transform = 'scaleY(0)';
-        });
+        cardHideAllLists(null);
     }
 });
 

@@ -142,9 +142,16 @@ btn, input
   pointer-events: auto !important
 
 .scale1
+  transform: scale(1) !important
   display: block !important
 
 .btn_count
   transition: transform .3s
   &:active
     transform: scale(0.5)
+
+.open
+  #catalogFilterArrow
+    transform: rotate(-180deg)
+  ul
+    transform: scale(1) !important

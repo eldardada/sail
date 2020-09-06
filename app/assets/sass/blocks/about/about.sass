@@ -48,14 +48,45 @@
         height: 0
         +sm-block
             min-height: 300px
-        iframe
+        &:hover .about-video__button-shape,
+        &__button:focus .about-video__button-shape,
+            fill: #ff0000
+            fill-opacity: 1
+        &__button
+            position: absolute
+            padding: 0
+            top: 50%
+            left: 50%
+            width: 204px
+            height: 144px
+            border: none
+            background-color: transparent
+            transform: translate(-50%, -50%)
+            border-radius: 36px
+            outline: none
+            display: none
+            svg &:hover
+                margin-top: -30px
+            &-shape
+                fill: #212121
+                fill-opacity: 0.8
+                transition: fill .3s
+            &-icon 
+                fill: #fff
+        iframe, img
+            height: 100%
+            width: 100%
             border-radius: 40px
             position: absolute
             top: 0
             left: 0
-            border-width: 0
-            outline-width: 0
+            border: none
     &-img
         width: fit-content
         margin: 0 auto
         position: relative
+
+.video--enabled
+    cursor: pointer
+    .about-video__button
+        display: block
