@@ -97,26 +97,27 @@ cardInfoAdd.addEventListener('click', e => {
 
     if(div.classList.contains('add__sign')) {
         const divParent = div.parentElement;
-        const mainParrent = divParent.parentElement;
+        const mainParent = divParent.parentElement;
 
-        if(mainParrent.querySelector('.card-info-add__block-check input').checked){
+        if(mainParent.querySelector('.card-info-add__block-check input').checked){
             const input = divParent.querySelector('input');
-        if(div.dataset.name == 'plus' && input.value < 50) {
-            input.value = Number(input.value) + 1; 
-        }
-        else if(div.dataset.name == 'minus' && input.value > 0) {
-            input.value -= 1;
-        }
+            if(div.dataset.name == 'plus' && input.value < 50) {
+                input.value = Number(input.value) + 1; 
+            }
+            else if(div.dataset.name == 'minus' && input.value > 0) {
+                input.value -= 1;
+            }
         }
     }
     // drop-down lists
     else if(div.classList.contains('card-info-add__block-check')) {
+        const divParent = div.parentElement;
+        const 
         const input = div.querySelector('input');
         const label = div.querySelector('label');
         const list = div.querySelector('ul');
         const itListElement = list.contains(target) && target != list;
         const arrow = div.querySelector('#catalogFilterArrow');
-
         const itLabel = target.tagName == 'LABEL';
         
         if(itListElement) {
@@ -142,13 +143,13 @@ cardInfoAdd.addEventListener('click', e => {
             list.style.transform = 'scaleY(1)';
             arrow.classList.add('arrow_180');
             cardAddCheckInputs.forEach(AddInput => {
-               
                 if(AddInput != input) {
                     let parrentInput = AddInput.parentElement;
                     let ul = parrentInput.querySelector('ul');
                     ul.style.transform = 'scaleY(0)';
                 } 
             });
+
         }
         else if(list.style.transform != 'scaleY(1)') {
             input.checked = false;
