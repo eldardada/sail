@@ -50,3 +50,29 @@ var swiperFeedback = new Swiper(feedbackSlider, {
 });
 
 }
+
+const cardZabor = document.querySelector('.card-zabor');
+
+if(cardZabor) {
+  var swiperFeedback = new Swiper('.card-zabor-slider', {
+    slidesPerView: 1,
+    slidesPerColumn: 2,
+    slidesPerColumnFill: 'row',
+    spaceBetween: 50,
+    centerSlides: false,
+    slideClass: 'feedback-slide',
+    loop: true,
+    updateOnWindowResize: true,
+    speed: 600,
+    lazy: true,
+    navigation: {
+      prevEl: '.feedback-slider__next'
+    },
+    breakpoints: {
+      1248: {
+        slidesPerView: 2,
+      }
+    }
+  });
+  
+}

@@ -80,7 +80,9 @@ cardModelCount.addEventListener('click', e => {
     }
 });
 
-const cardInfoAdd = document.querySelector('.card-info-add');
+const cardMain = document.querySelector('.card_main');
+if(cardMain) {
+    const cardInfoAdd = document.querySelector('.card-info-add');
 
 
 let cardAddChecks = document.querySelectorAll('.card-info-add__block-check');
@@ -180,6 +182,16 @@ cardInfoAdd.addEventListener('change', e => {
     }
 });
 
+document.addEventListener('click', e => {
+    const target = e.target;
+    if(!cardInfoAdd.contains(target)) {
+        cardHideAllLists(null);
+    }
+});
+}
+}
+
+
 // feedback
 
 const feedbackBlock = document.querySelector('.feedback');
@@ -206,13 +218,5 @@ feedbackBlock.addEventListener('click', e => {
         }
     }
 });
-
-document.addEventListener('click', e => {
-    const target = e.target;
-    if(!cardInfoAdd.contains(target)) {
-        cardHideAllLists(null);
-    }
-});
-}
 
 
