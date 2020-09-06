@@ -55,13 +55,17 @@
                             display: inline-block
                 +sm-block
                     font-size: 22px
-                a
+                a, span
                     width: 100%
                     color: $dark
                     text-align: center
                     max-width: 320px 
                     display: block
                     margin-left: auto
+                a
+                    transition: color .3s
+                    &:hover
+                        color: $orange600
         &__img
             display: inline-block
             vertical-align: middle

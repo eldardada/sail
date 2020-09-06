@@ -1,4 +1,4 @@
-let MainSwiper = new Swiper('.swiper-container', {
+let MainSwiper = new Swiper('.team-container', {
   slidesPerView: 1,
   spaceBetween: 0,
   slidesPerGroup: 3,
@@ -6,6 +6,8 @@ let MainSwiper = new Swiper('.swiper-container', {
   loopFillGroupWithBlank: true,
   arrows: false,
   updateOnWindowResize: true,
+  speed: 600,
+  lazy: true,
   navigation: {
     nextEl: '.team__next',
     prevEl: '.team__prev',

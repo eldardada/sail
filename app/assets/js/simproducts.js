@@ -4,6 +4,8 @@ let swiperSimproducts = new Swiper('.simproducts-slider', {
     slidesPerGroup: 3,
     loop: true,
     loopFillGroupWithBlank: true,
+    speed: 600,
+    lazy: true,
     arrows: false,
     updateOnWindowResize: true,
     navigation: {
@@ -33,6 +35,8 @@ var swiperFeedback = new Swiper(feedbackSlider, {
   slideClass: 'feedback-slide',
   loop: true,
   updateOnWindowResize: true,
+  speed: 600,
+  lazy: true,
   navigation: {
     prevEl: '.feedback-slider__next'
   },

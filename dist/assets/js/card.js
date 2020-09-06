@@ -112,7 +112,6 @@ cardInfoAdd.addEventListener('click', e => {
     // drop-down lists
     else if(div.classList.contains('card-info-add__block-check')) {
         const divParent = div.parentElement;
-        const 
         const input = div.querySelector('input');
         const label = div.querySelector('label');
         const list = div.querySelector('ul');

@@ -11,6 +11,7 @@
         +sm-block
              padding: 0
         > div
+            min-height: calc(100vh - 150px)
             background-color: $lightbg
             padding: 60px 40px 60px 30px
             border-radius: 0 175px 0 0
@@ -59,6 +60,12 @@
                 svg
                     transition: transform .3s, stroke .3s
         &__buy
+            +lg-block
+                margin-bottom: 30px
+            a
+                transition: color .3s
+                &:hover
+                    color: $orange500
             input
                 text-align: center
             +sm-block
