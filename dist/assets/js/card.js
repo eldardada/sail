@@ -96,13 +96,17 @@ cardInfoAdd.addEventListener('click', e => {
     }
 
     if(div.classList.contains('add__sign')) {
-        let divParrent = div.parentElement;
-        const input = divParrent.querySelector('input');
+        const divParent = div.parentElement;
+        const mainParrent = divParent.parentElement;
+
+        if(mainParrent.querySelector('.card-info-add__block-check input').checked){
+            const input = divParent.querySelector('input');
         if(div.dataset.name == 'plus' && input.value < 50) {
             input.value = Number(input.value) + 1; 
         }
         else if(div.dataset.name == 'minus' && input.value > 0) {
             input.value -= 1;
+        }
         }
     }
     // drop-down lists
