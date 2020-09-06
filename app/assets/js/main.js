@@ -5,6 +5,7 @@ let MainSwiper = new Swiper('.swiper-container', {
   loop: true,
   loopFillGroupWithBlank: true,
   arrows: false,
+  updateOnWindowResize: true,
   navigation: {
     nextEl: '.team__next',
     prevEl: '.team__prev',

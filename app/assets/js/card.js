@@ -22,15 +22,6 @@ document.addEventListener('click', e => {
     }
 });
 
-
-document.addEventListener('click', e => {
-    if(!e.target.classList.contains('.feedback-modal') 
-    && e.target.dataset.name != 'aside-icons' 
-    && e.target.dataset.name !== 'aside-icons-list') {
-        aside.classList.remove('aside_show');
-    }
-});
-
 feedbackBtn.addEventListener('click', () => {
     window.location= '#feedback';
     body.style.overflow = 'hidden';
@@ -74,7 +65,7 @@ cardModelCount.addEventListener('click', e => {
     }
     else {
         let div = target;
-        while(!div.hasAttribute('data-name')) 
+        while(!div.dataset.name) 
             div = div.parentElement;
         if(div.dataset.name == 'minus') {
             if(cardCountInput.value > 0) cardCountInput.value -= 1;
@@ -90,6 +81,7 @@ const cardInfoAdd = document.querySelector('.card-info-add');
 
 
 cardAddCheckInputs = document.querySelectorAll('.card-info-add__block-check>input');
+cardAddCheckLists = document.querySelectorAll('.card-info-add__block-check>ul');
 
 cardInfoAdd.addEventListener('click', e => {
     const target = e.target;
@@ -119,16 +111,32 @@ cardInfoAdd.addEventListener('click', e => {
         const label = div.querySelector('label');
         const list = div.querySelector('ul');
         const itListElement = list.contains(target) && target != list;
+        const arrow = div.querySelector('#catalogFilterArrow');
 
+        const itLabel = target.tagName == 'LABEL';
+        
         if(itListElement) {
             label.innerHTML = target.innerHTML;
             input.checked = true;
             list.style.transform = 'scaleY(0)';
+            arrow.classList.remove('arrow_180');
+            cardAddCheckInputs.forEach(AddInput => {
+                if(AddInput != input) {
+                    let parrentInput = AddInput.parentElement;
+                    let ul = parrentInput.querySelector('ul');
+                    ul.style.transform = 'scaleY(0)';
+                } 
+            });
+        }
+        else if(itLabel && input.checked) {
+            input.checked = false;
+            arrow.classList.remove('arrow_180');
+            label.innerHTML = label.dataset.content;
         }
         else if(!input.checked) {
             text = label.innerHTML;
             list.style.transform = 'scaleY(1)';
-            
+            arrow.classList.add('arrow_180');
             cardAddCheckInputs.forEach(AddInput => {
                
                 if(AddInput != input) {
@@ -141,18 +149,15 @@ cardInfoAdd.addEventListener('click', e => {
         else if(list.style.transform != 'scaleY(1)') {
             input.checked = false;
             list.style.transform = 'scaleY(1)';
-            if(input.id == 'stand')
-                label.innerHTML = 'Подставка';
-            else if(input.id == 'basket')
-                label.innerHTML = 'Корзина';
-            else if(input.id == 'pillow')
-                label.innerHTML = 'Подушка';
-            else if(input.id == 'casePillow')
-                label.innerHTML = 'Чехол подушка';
-            else if(input.id == 'chain')
-                label.innerHTML = 'Цепь';
-            else if(input.id == 'armСhair')
-                label.innerHTML = 'Цепь';
+            arrow.classList.add('arrow_180');
+            cardAddCheckInputs.forEach(AddInput => {
+               
+                if(AddInput != input) {
+                    let parrentInput = AddInput.parentElement;
+                    let ul = parrentInput.querySelector('ul');
+                    ul.style.transform = 'scaleY(0)';
+                } 
+            });
         }
     }
 });
@@ -205,4 +210,12 @@ feedbackBlock.addEventListener('click', e => {
     }
 });
 
+document.addEventListener('click', e => {
+    const target = e.target;
+    if(!cardInfoAdd.contains(target)) {
+        cardAddCheckLists.forEach(list => {
+            list.style.transform = 'scaleY(0)';
+        });
+    }
+});
 

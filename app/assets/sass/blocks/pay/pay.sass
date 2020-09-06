@@ -4,11 +4,15 @@
         width: 100%
         background-color: $lightbg
     padding-top: 80px
+    p
+        margin: 10px 0
     h2
         text-align: center
         +bold
         +font(36, 22)
         margin-bottom: 40px
+        label
+            cursor: pointer
     input, button
         border: none
     button
@@ -83,7 +87,7 @@
                 +shift-left(0)
                 +shift-right(0)
                 +size(12)
-            > div
+            >div
                 padding: 10px 20px
                 background-color: $orange200
                 position: relative
@@ -126,6 +130,7 @@
                         vertical-align: middle
             &-price
                 label
+                    cursor: pointer
                     display: block
                     text-align: center
                     margin-bottom: 10px
@@ -161,6 +166,8 @@
                 max-width: 100px
                 margin-left: 20px
     &-pay
+        > h2
+            margin-left: -80px
         padding-left: 80px
         > p
             margin: -30px -50px 20px
@@ -180,6 +187,7 @@
                 text-align: center
                 font-size: 22px
         label
+            cursor: pointer
             width: 200px
             +xl-block
                 width: initial
@@ -204,6 +212,7 @@
         > div
             display: flex
             label
+                cursor: pointer
                 +font(24, 18)
     &-electron
         display: flex
@@ -255,7 +264,14 @@
                 background-color: $orange200
                 border-radius: 8px
                 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+        &-choice
+            display: none
+            > p
+                +font(40, 18)
+.pay__paragraph
+    margin-bottom: 30px
 .pay__sign
+    user-select: none
     margin: 10px
     cursor: pointer
     display: block
@@ -265,6 +281,9 @@
     border: 1px solid
     line-height: 20px
     text-align: center
+    transition: transform .3s
+    &:active
+        transform: scale(0.5)
     svg
         max-width: 10px
         max-height: 10px 

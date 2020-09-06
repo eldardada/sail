@@ -5,6 +5,7 @@ let swiperSimproducts = new Swiper('.simproducts-slider', {
     loop: true,
     loopFillGroupWithBlank: true,
     arrows: false,
+    updateOnWindowResize: true,
     navigation: {
       nextEl: '.simproducts__next',
       prevEl: '.simproducts__prev',
@@ -31,6 +32,7 @@ var swiperFeedback = new Swiper(feedbackSlider, {
   centerSlides: false,
   slideClass: 'feedback-slide',
   loop: true,
+  updateOnWindowResize: true,
   navigation: {
     prevEl: '.feedback-slider__next'
   },

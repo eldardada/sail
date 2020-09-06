@@ -1,6 +1,5 @@
 const catalogFilter = document.querySelector('.catalog-filter');
 const catalogBlocks = document.querySelector('.catalog-blocks');
-
 // filter
 catalogFilter.addEventListener('click', e => {
     const target = e.target;
@@ -15,6 +14,7 @@ catalogFilter.addEventListener('click', e => {
             const div = ul.parentElement;
             const arrow = div.querySelector('svg'); 
             const p = div.querySelector('.catalog-select__check');
+
             p.innerHTML = dataText;
             p.dataset = dataActive;
             div.classList.toggle('catalog_show-list');
@@ -49,6 +49,8 @@ catalogBlocks.addEventListener('click', e => {
         }
     }
 });
+
+
 
 
 
