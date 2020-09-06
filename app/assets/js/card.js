@@ -1,8 +1,11 @@
-const feedbackBtn = document.querySelector('.feedback button');
-const feedbackModal = document.querySelector('.feedback-modal');
-const modalBg = document.querySelector('.modal-bg');
-const feedbackModalExit = feedbackModal.querySelector('.feedback-modal__exit');
-const body = document.querySelector('body');
+const card = document.querySelector('.card');
+
+if (card) {
+    const feedbackBtn = document.querySelector('.feedback button');
+    const feedbackModal = document.querySelector('.feedback-modal');
+    const modalBg = document.querySelector('.modal-bg');
+    const feedbackModalExit = feedbackModal.querySelector('.feedback-modal__exit');
+    const body = document.querySelector('body');
 
 
 function hideFeedbackModal() {
@@ -80,7 +83,7 @@ cardModelCount.addEventListener('click', e => {
 const cardInfoAdd = document.querySelector('.card-info-add');
 
 
-cardAddChecks = document.querySelectorAll('.card-info-add__block-check');
+let cardAddChecks = document.querySelectorAll('.card-info-add__block-check');
 
 function cardHideAllLists(div) {
     cardAddChecks.forEach(block => {
@@ -140,10 +143,13 @@ cardInfoAdd.addEventListener('change', e => {
     const target = e.target;
     const div = target.parentElement.parentElement;
     const divOutput = div.querySelector('#add_content');
-    
+    const mainParent = target.closest('.card-info-add__block');
+    const input = mainParent.querySelector('.card-info-add__block-count>input');
+
     if(!target.checked) {
         divOutput.innerHTML = divOutput.dataset.content;
         cardHideAllLists(null);
+        input.value = 0;
     }
     else {
         if(divOutput.innerHTML == divOutput.dataset.content) {
@@ -207,4 +213,6 @@ document.addEventListener('click', e => {
         cardHideAllLists(null);
     }
 });
+}
+
 

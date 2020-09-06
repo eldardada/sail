@@ -1,4 +1,7 @@
-const basketModels = document.querySelector('.basket-models');
+const basket = document.querySelector('.basket');
+
+if(basket) {
+    const basketModels = document.querySelector('.basket-models');
 
 basketModels.addEventListener('input', e => {
     const target = e.target;
@@ -52,4 +55,5 @@ basketModels.addEventListener('click', e => {
     }
     
 });
+}
 

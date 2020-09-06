@@ -1,38 +1,46 @@
+const catalog = document.querySelector('.catalog');
+
+if(catalog) {
+
 const catalogFilter = document.querySelector('.catalog-filter');
 const catalogBlocks = document.querySelector('.catalog-blocks');
+const filterParams = document.querySelectorAll('.catalog-select');
+
+function hideFilterLists() {
+    filterParams.forEach(filter => {
+        if(filter.classList.contains('filter-open')) {
+            filter.classList.remove('filter-open');
+        }
+    });
+};
 // filter
 catalogFilter.addEventListener('click', e => {
     const target = e.target;
-    const itCatalogParam = target.classList.contains('catalog-filter__param');
+    const catalogSelect = document.querySelector('.catalog-filter:not(.catalog_filter)');
+    const itCatalogParam = (catalogSelect == target || catalogSelect.contains(target)) && !target.classList.contains('catalog_filter');
     const itSelectElement = target.classList.contains('select__element');
-    
-    if(target != catalogFilter){
+    if(itCatalogParam){
+        const div = target.closest('.catalog-select');
         if(itSelectElement) {
             const dataActive = target.dataset.value;
-            const dataText = target.innerHTML; 
-            const ul = target.parentElement;
-            const div = ul.parentElement;
-            const arrow = div.querySelector('svg'); 
+            const dataText = target.innerHTML;
             const p = div.querySelector('.catalog-select__check');
-
             p.innerHTML = dataText;
-            p.dataset = dataActive;
-            div.classList.toggle('catalog_show-list');
-            arrow.classList.toggle('arrow_180');
+            p.dataset.value = dataActive;
+            hideFilterLists();
         }
-        else if(itCatalogParam) {
-            const arrow = target.querySelector('#catalogFilterArrow');
-            arrow.classList.toggle('arrow_180');
-            target.classList.toggle('catalog_show-list');
-        }
-        else if(!itCatalogParam) {
-            let div = target.parentElement;
-            while(!div.classList.contains('catalog-filter__param')) div = div.parentElement;
-            const arrow = div.querySelector('#catalogFilterArrow');
-            arrow.classList.toggle('arrow_180');
-            div.classList.toggle('catalog_show-list');
+        else {
+            hideFilterLists();
+            div.classList.add('filter-open');
         }
     }   
+});
+
+document.addEventListener('click', e => {
+    const target = e.target;
+    if(!catalogFilter.contains(target)) {
+        hideFilterLists();
+    }
 });
 
 // Raiting
@@ -49,9 +57,4 @@ catalogBlocks.addEventListener('click', e => {
         }
     }
 });
-
-
-
-
-
-
+}

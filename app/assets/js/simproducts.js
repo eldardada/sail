@@ -1,4 +1,6 @@
-let swiperSimproducts = new Swiper('.simproducts-slider', {
+const simproducts = document.querySelector('.simproducts');
+if(simproducts) {
+  let swiperSimproducts = new Swiper('.simproducts-slider', {
     slidesPerView: 1,
     spaceBetween: 0,
     slidesPerGroup: 3,
@@ -47,3 +49,4 @@ var swiperFeedback = new Swiper(feedbackSlider, {
   }
 });
 
+}

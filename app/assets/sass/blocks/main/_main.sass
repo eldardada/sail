@@ -1,9 +1,8 @@
 .main
     background-color: $mainDark
-    &-container
-        margin-left: 20px
-        +lg-block
-            margin: 0 auto
+    .container__inner
+        position: relative
+        height: 100%
     &-content
         width: calc(100% - 121px)
         +lg-block
@@ -18,7 +17,6 @@
         font-size: 40px
         color: $light
         background-color: $mainDark
-        +lg-block
         a
             color: $light
     &-header
@@ -77,8 +75,8 @@
         box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25)
         border-radius: 45px 34px 40px 38px
         position: absolute
-        bottom: 55px
-        left: 95px
+        bottom: 30px
+        left: 30px
         +lg-block()
             position: initial
             margin: 0 auto 30px

@@ -62,17 +62,17 @@ function scripts(){
 
     return gulp.src(config.app.js)
 
-            // .pipe(concat('script.js'))
+            .pipe(concat('script.js'))
 
-            // .pipe(babel({
-            //   presets: ['@babel/env']
-            //  }))
+            .pipe(babel({
+              presets: ['@babel/env']
+             }))
              
-            // .pipe(gulpif(isProd,
-            //   uglyfly({
-            //     toplevel: true
-            //   })
-            // ))
+            .pipe(gulpif(isProd,
+              uglyfly({
+                toplevel: true
+              })
+            ))
 
             .pipe(gulp.dest(config.dist.js))
             .pipe(browserSync.stream())

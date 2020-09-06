@@ -1,4 +1,7 @@
-const delivery = document.querySelector('.pay-delivary-choice');
+const pay = document.querySelector('.pay');
+
+if(pay) {
+    const delivery = document.querySelector('.pay-delivary-choice');
 const deliveryButton = document.querySelector('.pay-delivary>h2>input');
 const payDataProducts = document.querySelector('.pay-data__products');
 const payDataUser = document.querySelector('.pay-data__user');
@@ -58,6 +61,6 @@ payDataProducts.addEventListener('click', e => {
         }
     }
 });
-
+}
 
 
