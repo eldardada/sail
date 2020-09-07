@@ -195,28 +195,30 @@ document.addEventListener('click', e => {
 // feedback
 
 const feedbackBlock = document.querySelector('.feedback');
-
-feedbackBlock.addEventListener('click', e => {
-    let target = e.target;
-
-    if(!target.classList.contains('like') && !target.classList.contains('dislike')) {
-      target = target.parentElement;  
-    }
-
-    if(target.classList.contains('like') || target.classList.contains('dislike')) {
-        let div = target;
-        
-        while(!div.classList.contains('feedback-bgblock')) div = div.parentElement;
-
-        if(target.classList.contains('like')) {
-            div.querySelector('.dislike').style.fill = 'black';
-            target.style.fill = 'green';
+if(feedbackBlock) {
+    feedbackBlock.addEventListener('click', e => {
+        let target = e.target;
+    
+        if(!target.classList.contains('like') && !target.classList.contains('dislike')) {
+          target = target.parentElement;  
         }
-        else if(target.classList.contains('dislike')) {
-            div.querySelector('.like').style.fill = 'black';
-            target.style.fill = 'red';
+    
+        if(target.classList.contains('like') || target.classList.contains('dislike')) {
+            let div = target;
+            
+            while(!div.classList.contains('feedback-bgblock')) div = div.parentElement;
+    
+            if(target.classList.contains('like')) {
+                div.querySelector('.dislike').style.fill = 'black';
+                target.style.fill = 'green';
+            }
+            else if(target.classList.contains('dislike')) {
+                div.querySelector('.like').style.fill = 'black';
+                target.style.fill = 'red';
+            }
         }
-    }
-});
+    });
+}
+
 
 

@@ -1,11 +1,9 @@
 .advantages
     background-color: $mainDark
     text-align: center
-    padding: 30px
+    padding-top: 30px
     &-content
         +row-flex
-        +md_block
-            margin-bottom: -30px                
     &__block
         background-color: $light
         border-radius: 30px
@@ -13,6 +11,7 @@
         justify-content: center
         margin: 0 auto
         width: 100%
+        padding: 5px
         +sm-block
             max-width: 100% !important
             img
@@ -23,7 +22,6 @@
         &_lg
             max-width: 275px
             max-height: 205px
-            padding: 2px
             +md-block
                 max-width: 164px
                 max-height: 150px
@@ -37,7 +35,10 @@
             &:nth-child(3)
                 +size(12)
         +sm-block
-            +size(12)
+            +size(10)
+            +shift-left(1)
+            +shift-right(1)
+
         margin-bottom: 30px                
         display: flex
         flex-direction: column
@@ -48,7 +49,6 @@
             font-size: 22px
             color: $light
             +sm-block
-                font-size: 30px
                 max-width: initial
             &::after
                 content: ''

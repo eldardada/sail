@@ -264,29 +264,33 @@ if (card) {
 
 
 var feedbackBlock = document.querySelector('.feedback');
-feedbackBlock.addEventListener('click', function (e) {
-  var target = e.target;
 
-  if (!target.classList.contains('like') && !target.classList.contains('dislike')) {
-    target = target.parentElement;
-  }
+if (feedbackBlock) {
+  feedbackBlock.addEventListener('click', function (e) {
+    var target = e.target;
 
-  if (target.classList.contains('like') || target.classList.contains('dislike')) {
-    var div = target;
-
-    while (!div.classList.contains('feedback-bgblock')) {
-      div = div.parentElement;
+    if (!target.classList.contains('like') && !target.classList.contains('dislike')) {
+      target = target.parentElement;
     }
 
-    if (target.classList.contains('like')) {
-      div.querySelector('.dislike').style.fill = 'black';
-      target.style.fill = 'green';
-    } else if (target.classList.contains('dislike')) {
-      div.querySelector('.like').style.fill = 'black';
-      target.style.fill = 'red';
+    if (target.classList.contains('like') || target.classList.contains('dislike')) {
+      var div = target;
+
+      while (!div.classList.contains('feedback-bgblock')) {
+        div = div.parentElement;
+      }
+
+      if (target.classList.contains('like')) {
+        div.querySelector('.dislike').style.fill = 'black';
+        target.style.fill = 'green';
+      } else if (target.classList.contains('dislike')) {
+        div.querySelector('.like').style.fill = 'black';
+        target.style.fill = 'red';
+      }
     }
-  }
-});
+  });
+}
+
 var catalog = document.querySelector('.catalog');
 
 if (catalog) {
