@@ -1,15 +1,19 @@
 @import raiting
 
 .catalog
+    .container
+        padding: 0
     width: calc(100% - 121px)
     +md-block
         width: 100%
     &-wrapper
-        padding: 80px 0 0 115px
+        padding-top: 80px
         +xxl-block
-            padding: 60px 0 30px 30px
+            padding: 80px 0 30px 30px
         +md-block
-            padding: 60px 0 0
+            padding: 80px 0 0
+        +sm-block
+            padding: 0
     &-content
         padding: 30px 0
         border-radius: 230px 0px 0px 0px
@@ -18,13 +22,15 @@
         +xl-block
             padding: 30px 0 0
         +sm-block
-            border-radius: 100px 0 0 0 
+            border-radius: 0
     h1
         text-align: center
         +bold
         +font(36, 20)
         +xl-block
             margin-bottom: 10px
+        +sm-block
+            margin-top: 30px
     &-header
         margin: 0 0 0 120px 
         position: relative
@@ -41,6 +47,12 @@
             align-items: center
             left: 0
             top: 0
+            button
+                cursor: pointer
+                border: none
+                background-color: transparent
+                &:focus
+                    outline: none
             +xxl-block
                 position: initial
                 margin-right: 30px
@@ -76,15 +88,17 @@
                 top: -20px
     &_filter
         +bold
-        cursor: initial !important
+        border: none
         background-color: $orange500 !important
         +lg-block
             display: none
+        &:focus
+            outline: none
     &-filter
         +lg-block
             justify-content: space-evenly
         user-select: none
-        margin: 20px 70px 70px 70px
+        margin: 40px 70px 70px
         display: flex
         justify-content: space-between
         +xl-block
@@ -142,7 +156,10 @@
                         border-bottom: none
     &-blocks
         +row-flex
-        justify-content: center
+        justify-content: space-around
+        +shift-right(0.5)
+        +lg-block
+            +shift-right(0)
         +xxl-block
             justify-content: space-evenly
         &__block
@@ -174,14 +191,15 @@
             ul
                 position: absolute
                 right: -20px 
-                bottom: 40%
+                bottom: 35%
                 filter: drop-shadow(10px 2px 4px rgba(0, 0, 0, 0.25))
                 +xm-block
                     position: initial
-                    margin: 0 20px 200px
+                    +shift-left(1)
                 +lg-block
                     transform: scale(0.9)
                 +sm-block
+                    +shift-left(0)
                     width: 90%
                     margin-bottom: 60px
                     transform: initial
@@ -190,30 +208,51 @@
                     justify-content: space-between
                     align-items: center
                     margin: 15px 0
-                    padding: 20px 15px
                     white-space: nowrap
-                    +xm-block
-                        padding: 30px 20px
-                    +sm-block
-                        font-size: 20px
-                        width: 100%
-                        justify-content: center
-                    a
-                        margin-right: 10px
+                    > a
+                        +font(18, 22)
+                        padding: 15px 30px
+                        margin: 0 auto
                         color: $dark
+                    button
+                        display: flex
+                        justify-content: space-between
+                        align-items: center
+                        padding: 20px 15px
+                        width: 100%
+                        +font(18, 20)
+                        +xm-block
+                            padding: 30px 20px
+                        +sm-block
+                            padding: 10px 20px
+                            font-size: 20px
+                            width: 100%
+                        .block30
+                            margin-left: 20px
+                            +xm-block
+                                img
+                                    max-width: 50px
+                            +sm-block
+                                img
+                                    max-width: 30px
                     &:nth-child(1)
-                        background-color: $orange100
                         border-radius: 50px 15px 12px 0
+                        +btn($btnOrange300)
                     &:nth-child(2), &:nth-child(3)
-                        border-radius: 15px 0px
+                        button
+                            border-radius: 15px 0px
+                            &:focus
+                                outline: none
                         a
                             text-decoration: underline
                     &:nth-child(2)
-                        background: #FFE5C0
+                        button
+                            +btn($btnOrange200)
                         a
                             margin-right: 35px
                     &:nth-child(3)
-                        background-color: #FFF0DB
+                        button
+                            +btn($btnOrange100)
             &-footer
                 width: 100%
                 padding: 10px 5px

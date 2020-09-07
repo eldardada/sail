@@ -1,7 +1,12 @@
 .contacts
     width: calc(100% - 121px)
+    margin-top: 80px
+    .container
+        padding: 0
     +md-block
         width: 100%
+    +sm-block
+        margin: 0
     > div
         padding: 100px 100px 0 30px
         height: 100%
@@ -62,6 +67,8 @@
                     max-width: 320px 
                     display: block
                     margin-left: auto
+                    @media screen and ( max-width: 650px)
+                        margin-left: 0
                 a
                     transition: color .3s
                     &:hover
@@ -99,7 +106,10 @@
                 border: none
                 border-radius: 24px
                 width: 100%
+                &:focus
+                    outline: none
             textarea
+                padding: 15px 20px
                 resize: none
                 height: 300px
                 margin-bottom: 20px

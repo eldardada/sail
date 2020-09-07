@@ -55,20 +55,27 @@ cardCountInput.addEventListener('change', () => {
 const cardModelCount = document.querySelector('.card-model__product-count>div');
 
 cardModelCount.addEventListener('click', e => {
-    target = e.target;
+    const target = e.target;
+    let div = target;
+    while(!div.hasAttribute('data-name')) {
+        if(div == cardModelCount) {
+            break;
+        }
+        div = div.parentElement;
+    }
 
-    if(target.hasAttribute('data-name')) {
-        if(target.dataset.name == 'minus') {
+    if(div.hasAttribute('data-name')) {
+        if(div.dataset.name == 'minus') {
             if(cardCountInput.value > 0) cardCountInput.value -= 1;
         }
-        else if (target.dataset.name == 'plus') {
+        else if (div.dataset.name == 'plus') {
             if(cardCountInput.value < 50)
             cardCountInput.value = Number(cardCountInput.value) + 1;
         }
     }
     else {
         let div = target;
-        while(!div.dataset.name) 
+        while(div.hasAttribute('data-name') == null) 
             div = div.parentElement;
         if(div.dataset.name == 'minus') {
             if(cardCountInput.value > 0) cardCountInput.value -= 1;
@@ -219,6 +226,3 @@ if(feedbackBlock) {
         }
     });
 }
-
-
-

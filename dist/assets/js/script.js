@@ -137,24 +137,33 @@ if (card) {
   });
   var cardModelCount = document.querySelector('.card-model__product-count>div');
   cardModelCount.addEventListener('click', function (e) {
-    target = e.target;
+    var target = e.target;
+    var div = target;
 
-    if (target.hasAttribute('data-name')) {
-      if (target.dataset.name == 'minus') {
-        if (cardCountInput.value > 0) cardCountInput.value -= 1;
-      } else if (target.dataset.name == 'plus') {
-        if (cardCountInput.value < 50) cardCountInput.value = Number(cardCountInput.value) + 1;
-      }
-    } else {
-      var div = target;
-
-      while (!div.dataset.name) {
-        div = div.parentElement;
+    while (!div.hasAttribute('data-name')) {
+      if (div == cardModelCount) {
+        break;
       }
 
+      div = div.parentElement;
+    }
+
+    if (div.hasAttribute('data-name')) {
       if (div.dataset.name == 'minus') {
         if (cardCountInput.value > 0) cardCountInput.value -= 1;
       } else if (div.dataset.name == 'plus') {
+        if (cardCountInput.value < 50) cardCountInput.value = Number(cardCountInput.value) + 1;
+      }
+    } else {
+      var _div = target;
+
+      while (_div.hasAttribute('data-name') == null) {
+        _div = _div.parentElement;
+      }
+
+      if (_div.dataset.name == 'minus') {
+        if (cardCountInput.value > 0) cardCountInput.value -= 1;
+      } else if (_div.dataset.name == 'plus') {
         if (cardCountInput.value < 50) cardCountInput.value = Number(cardCountInput.value) + 1;
       }
     }
@@ -309,13 +318,10 @@ if (catalog) {
 
   catalogFilter.addEventListener('click', function (e) {
     var target = e.target;
-    var catalogSelect = document.querySelector('.catalog-filter:not(.catalog_filter)');
-    var itCatalogParam = (catalogSelect == target || catalogSelect.contains(target)) && !target.classList.contains('catalog_filter');
     var itSelectElement = target.classList.contains('select__element');
+    var div = target.closest('.catalog-select');
 
-    if (itCatalogParam) {
-      var div = target.closest('.catalog-select');
-
+    if (div) {
       if (itSelectElement) {
         var dataActive = target.dataset.value;
         var dataText = target.innerHTML;
@@ -323,10 +329,14 @@ if (catalog) {
         p.innerHTML = dataText;
         p.dataset.value = dataActive;
         hideFilterLists();
+      } else if (div.classList.contains('filter-open')) {
+        hideFilterLists();
       } else {
         hideFilterLists();
         div.classList.add('filter-open');
       }
+    } else {
+      hideFilterLists();
     }
   });
   document.addEventListener('click', function (e) {
@@ -4941,8 +4951,8 @@ if (team) {
     speed: 600,
     lazy: true,
     navigation: {
-      nextEl: '.team__next',
-      prevEl: '.team__prev'
+      nextEl: '.team__prev',
+      prevEl: '.team__next'
     },
     breakpoints: {
       960: {
@@ -5050,6 +5060,7 @@ if (simproducts) {
     centerSlides: false,
     slideClass: 'feedback-slide',
     loop: true,
+    loopFillGroupWithBlank: true,
     updateOnWindowResize: true,
     speed: 600,
     lazy: true,
@@ -5079,7 +5090,7 @@ if (cardZabor) {
     speed: 600,
     lazy: true,
     navigation: {
-      prevEl: '.feedback-slider__next'
+      nextEl: '.feedback-slider__next'
     },
     breakpoints: {
       1248: {

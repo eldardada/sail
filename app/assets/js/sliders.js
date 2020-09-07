@@ -36,6 +36,7 @@ var swiperFeedback = new Swiper(feedbackSlider, {
   centerSlides: false,
   slideClass: 'feedback-slide',
   loop: true,
+  loopFillGroupWithBlank: true,
   updateOnWindowResize: true,
   speed: 600,
   lazy: true,
@@ -66,7 +67,7 @@ if(cardZabor) {
     speed: 600,
     lazy: true,
     navigation: {
-      prevEl: '.feedback-slider__next'
+      nextEl: '.feedback-slider__next'
     },
     breakpoints: {
       1248: {

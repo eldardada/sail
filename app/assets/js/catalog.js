@@ -16,11 +16,9 @@ function hideFilterLists() {
 // filter
 catalogFilter.addEventListener('click', e => {
     const target = e.target;
-    const catalogSelect = document.querySelector('.catalog-filter:not(.catalog_filter)');
-    const itCatalogParam = (catalogSelect == target || catalogSelect.contains(target)) && !target.classList.contains('catalog_filter');
     const itSelectElement = target.classList.contains('select__element');
-    if(itCatalogParam){
-        const div = target.closest('.catalog-select');
+    const div = target.closest('.catalog-select');
+    if(div) {
         if(itSelectElement) {
             const dataActive = target.dataset.value;
             const dataText = target.innerHTML;
@@ -29,11 +27,17 @@ catalogFilter.addEventListener('click', e => {
             p.dataset.value = dataActive;
             hideFilterLists();
         }
+        else if(div.classList.contains('filter-open')) {
+            hideFilterLists();
+        }
         else {
             hideFilterLists();
             div.classList.add('filter-open');
         }
-    }   
+    }
+    else {
+        hideFilterLists(); 
+    }
 });
 
 document.addEventListener('click', e => {
