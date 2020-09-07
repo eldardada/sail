@@ -300,6 +300,42 @@ if (feedbackBlock) {
   });
 }
 
+var otherCardZabor = document.querySelector('.card-zabor');
+
+if (otherCardZabor) {
+  var cardZaborCount = document.querySelector('.card-model__product-count');
+  var cardZaborInput = document.querySelector('.card-model__product-count input');
+  var plus = cardZaborCount.querySelector('.plus');
+  var minus = cardZaborCount.querySelector('.minus');
+  cardZaborCount.addEventListener('click', function (e) {
+    var target = e.target;
+
+    if ((plus.contains(target) || plus == target) && cardZaborInput.value < 50) {
+      cardZaborInput.value = Number(cardZaborInput.value) + 1;
+    } else if ((minus.contains(target) || minus == target) && cardZaborInput.value > 0) {
+      cardZaborInput.value -= 1;
+    }
+  });
+  cardZaborInput.addEventListener('input', function (e) {
+    var target = e.target; // plus / minus
+
+    if (target.parentElement.classList.contains('card-info-add__block-count')) {
+      target.value = target.value.replace(/\D/g, '');
+    }
+  });
+  cardZaborInput.addEventListener('change', function (e) {
+    var target = e.target;
+
+    if (target.parentElement.classList.contains('card-info-add__block-count')) {
+      if (target.value === '') {
+        target.value = 0;
+      } else if (target.value > 50) {
+        target.value = 50;
+      }
+    }
+  });
+}
+
 var catalog = document.querySelector('.catalog');
 
 if (catalog) {

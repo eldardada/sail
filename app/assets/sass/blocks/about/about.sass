@@ -1,8 +1,8 @@
 .about
     width: calc(100% - 121px)
     margin-top: 90px
-
     +md-block
+        margin-top: 0
         width: 100%
         background-color: $lightbg
     h2
@@ -23,10 +23,9 @@
         text-align: center
         +md-block
             box-shadow: initial
-
-        +md-block
             border-radius: 0
-            padding: 10px
+            padding: 80px 10px 10px
+
         > h1
             +bold
             +font(36, 22)
@@ -42,7 +41,7 @@
         max-height: 684px
         margin: 0 auto
         border-radius: 40px
-        background: linear-gradient(0deg, #CACDCC, #CACDCC), url(3.jpg)
+        background: linear-gradient(0deg, #CACDCC, #CACDCC)
         box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25)
         position: relative
         padding-bottom: 56%
