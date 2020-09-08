@@ -4,24 +4,28 @@
         width: 100%
     +sm-block
         background-color: $lightbg
-    > div
-        padding: 100px 100px 0 30px
-        +xxl-block
-            padding: 100px 30px 0 0
-        +sm-block
-             padding: 0
+    .container
+        padding: 0
         > div
-            min-height: calc(100vh - 150px)
-            background-color: $lightbg
-            padding: 60px 40px 60px 30px
-            border-radius: 0 175px 0 0
+            padding: 100px 100px 0 30px
+            +xxl-block
+                padding: 100px 30px 0 0
+            +sm-block
+                padding: 0
+            > div
+                min-height: calc(100vh - 150px)
+                background-color: $lightbg
+                padding: 60px 40px 60px 30px
+                border-radius: 0 175px 0 0
+                +sm-block
+                    padding: 70px 20px 20px
     &-header
         display: flex
         align-items: center
         justify-content: space-between
         margin-bottom: 80px
         +lg-block
-            margin-bottom: 10px !important
+            margin-bottom: 0 
         +xm-block
             flex-direction: column
             h1
@@ -60,31 +64,22 @@
                 svg
                     transition: transform .3s, stroke .3s
         &__buy
-            +lg-block
-                margin-bottom: 30px
+            display: flex
+            align-items: center
+            +sm-block
+                flex-direction: column
+                a
+                    margin: 20px 0 0
             a
+                +bold
+                +font(36, 20)
+                color: $dark
                 transition: color .3s
+                margin-left: 10px
                 &:hover
                     color: $orange500
             input
                 text-align: center
-            +sm-block
-                text-align: center
-                a
-                    margin-left: 20px
-                    @media screen and ( max-width: 346px)
-                        display: block
-                        margin-left: 0
-                        
-                > div
-                    vertical-align: middle
-                    display: inline-flex
-                    flex-direction: column
-                    align-items: center
-                    margin: 0 auto 20px
-                    span
-                        margin: 0 auto
-                        margin-bottom: 10px
             > div
                 display: inline-block
                 margin-right: 30px
@@ -92,18 +87,17 @@
                 box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25)
                 border-radius: 15px 0px
                 padding: 15px 20px
+                +sm-block
+                    margin-right: 0
                 input
-                    width: 100%
-                    max-width: 90px
+                    width: fit-content
+                    width: 90px
                     padding: 5px 10px
                     background: #F7F7F7
                     border-radius: 8px
                     border: none
                 span
                     vertical-align: middle
-                    font-size: 22px
+                    +font(22, 18)
                     margin-right: 30px
-            a
-                +bold
-                +font(36, 20)
-                color: $dark
+                

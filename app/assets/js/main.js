@@ -20,8 +20,8 @@ const team = document.querySelector('.team');
 if(team) {
     let MainSwiper = new Swiper('.team-container', {
     slidesPerView: 1,
-    spaceBetween: 0,
-    slidesPerGroup: 3,
+    spaceBetween: 100,
+    slidesPerGroup: 1,
     loop: true,
     loopFillGroupWithBlank: true,
     arrows: false,
@@ -33,13 +33,13 @@ if(team) {
       prevEl: '.team__next',
     },
     breakpoints: {
-      960: {
+      961: {
+        slidesPerGroup: 2,
         slidesPerView: 2,
-        spaceBetween: 50
       },
       1450: {
+        slidesPerGroup: 3,
         slidesPerView: 3,
-        spaceBetween: 100
       }
     }
   });

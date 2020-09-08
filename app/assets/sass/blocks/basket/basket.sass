@@ -1,5 +1,9 @@
 .basket
     margin-top: 80px
+    +md-block
+        margin-top: 50px
+    +sm-block
+        margin-top: 0
     h1
         +bold
         +font(36, 22)
@@ -97,7 +101,6 @@
             span
                max-width: fit-content
                margin: 0 auto
-
             @media screen and ( max-width: 1210px )
                 span
                     display: block
@@ -131,6 +134,14 @@
                     display: none
             ul
                 order: 2
+                +sm-block
+                    .block30
+                        padding: 10px !important
+                        img
+                            max-width: 30px !important
+                    li
+                        button
+                            padding: 10px
         &-bgmenu
             padding: 10px 20px
             width: 100%

@@ -1,36 +1,45 @@
 .team
     padding: 50px
     +lg-block
-        padding: 50px 10px
+        justify-content: center
+        padding: 50px 0
     &-content
         display: flex
         align-items: center
+        position: relative
+        +sm-block
+            margin: 0 auto
+            max-width: 100%
     &-container
-        max-width: 1250px
         padding: 0 30px
+        max-width: 1250px
         +lg-block
             max-width: 500px
-            padding: 0
+        +sm-block
+            max-width: 100%
     h2
         text-align: center
         font-size: 36px
         padding-bottom: 20px
     &-slider
+        padding: 0 25px
         position: relative
+        margin: 0 auto
         p
             padding: 10px
             text-align: center
         +sm-block
-            padding-right: 10px
+            padding: 0
+    &-slide
+        min-width: 350px
+        min-height: max-content
     &__block
         font-size: 22px
-        min-width: 350px
-        min-height: 450px
-        background: #FFFFFF
+        width: 100%
+        height: 450px
+        background: $light
         box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25)
         border-radius: 30px
-        +sm-block
-            width: 100%
     &__next, &__prev
         cursor: pointer
         svg path
@@ -40,16 +49,16 @@
         &:hover
             svg path
                 fill: $orange400
-        +md-block
+        +sm-block
             position: absolute
             z-index: 2
     &__next
-        margin-left: 10px
-        +md-block
+        margin: 0 20px
+        +lg-block
             right: 0
     &__prev
-        margin-right: 10px
-        +md-block
+        margin: 0 20px
+        +lg-block
             left: 0
 
         
