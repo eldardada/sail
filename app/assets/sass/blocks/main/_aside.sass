@@ -15,6 +15,7 @@
       bottom: 10px
       li
         a
+          position: relative
           text-align: center
           display: block
           padding: 5px 10px
@@ -22,6 +23,21 @@
           margin: 0 15px 40px
           border-radius: 20px
           border: 3px solid transparent
+          &:hover::after
+            transform: scale(1)
+          &::after
+            content: attr(data-title)
+            position: absolute
+            width: 100%
+            left: 0
+            top: calc(100% + 5px)
+            color: $light
+            background-color: rgba(0, 0, 0, 0.25)
+            border-radius: 8px
+            padding: 0
+            transition: transform .3s
+            transform: scale(0)
+            transform-origin: top bottom
           &:hover
               filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
               border: 3px solid #0C0000

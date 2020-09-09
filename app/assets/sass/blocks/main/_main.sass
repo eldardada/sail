@@ -1,9 +1,10 @@
 .main
     background-color: $mainDark
     .container__inner
-        position: relative
         height: 100%
         padding: 10px
+        display: flex
+        flex-direction: column
     &-content
         width: calc(100% - 121px)
         +md-block
@@ -11,82 +12,68 @@
         position: relative
         background-size: cover
         background-repeat: no-repeat
-        +sm-block
-            background-position: -50px 0
-        +font(40, 18)
+        +xxs-block
+            background-position: -10px 0
+        +font(40, 15)
         color: $light
         background-color: $mainDark
         a
             color: $light
     &-header
         display: flex
-        margin: 15px 0 0
-    &-company
-        display: flex
         align-items: center
-        +lg-block
-            flex-direction: column
-        margin-bottom: 40px
-        +sm-block
-            flex-direction: column
-            margin-bottom: 20px
+    &-company
         &__logo
-            margin-right: 22px
+            display: flex
+            flex-direction: column
+            align-items: center
             background-color: $light
             box-shadow: 0 10px 5px rgba(0, 0, 0, 0.25)
-            border-radius: 45px 35px
-            padding: 15px 50px
-            +lg-block
-                margin-right: 0
-                border-radius: 20px
-                padding: 10px 35px
-            +md-block
-                padding: 10px 20px
+            border-radius: 25px
+            padding: 5px 20px
+            +md-block   
+                border-radius: 15px
+                padding: 5px 15px
             img
-                max-width: 100px
-                +lg-block
-                    max-width: 60px
+                max-width: 80px 
+                margin-bottom: 5px
                 +md-block
+                    max-width: 50px
+                +sm-block
                     max-width: 40px
-            +sm-block()
-                margin: 0 0 10px 0
         &__name
             +bold
-            +font(54, 18)
-            text-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25)
+            color: $mainDark
+            +font(24, 12)
     &__section
         margin-left: auto
-        display: inline-block
         height: max-content
-        background: $mainDark
+        background-color: $mainDark
         border: 5px solid $light
         box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25)
         border-radius: 40px
         padding: 30px 20px
         transition: background-color .3s
+        +xl-block
+            padding: 10px 20px
         +md-block
             border: 2px solid $light
-            padding: 10px 20px
-            border-radius: 30px
-        +sm-block
-            margin-top: 12px
-            
+            padding: 5px 20px
         &:hover
             background-color: #CACDCC
         &:active
             background-color: #b0b4b2
     &__title
+        margin-top: auto
         width: 90%
-        max-width: 500px
+        max-width: 31.25rem
         padding: 20px
         text-align: center
-        background: #4C4C4C
+        background-color: $mainDark
+        opacity: 85%
         box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25)
         border-radius: 45px 34px 40px 38px
-        position: absolute
-        bottom: 30px
-        left: 30px
-        +font(36, 24)
-        +lg-block
-            left: 50%
-            transform: translateX(-50%)   
+        margin-bottom: 30px
+        +font(36, 18)
+        +md-block
+            margin: auto auto 10px

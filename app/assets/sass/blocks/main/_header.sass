@@ -1,9 +1,10 @@
 .header
-    color: $light  
+    color: $light
     background-color: $mainDark
     padding: 10px 
-    letter-spacing: 0.5em
+    letter-spacing: 0.35em
     box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25)
+    +convSansSerif
     &__phone
         transition: color .3s
         &:hover
@@ -17,7 +18,6 @@
     &-item
         display: flex
         justify-content: space-between
-        font-size: 20px
         position: relative
         +xl-block
             flex-direction: column
