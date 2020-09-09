@@ -95,7 +95,11 @@
         small
             top: calc(100% - 25px)
             right: 20px
-        p
+            cursor: pointer
+            transition: color .3s
+            &:hover
+                color: $mainDark
+        div
             display: -webkit-box
             -webkit-line-clamp: 3
             -webkit-box-orient: vertical
@@ -204,6 +208,22 @@
     background-color: rgba(16, 16, 16, 0.25)
     z-index: 99
     display: none
+
+.feedback-block-active
+    height: max-content
+    z-index: 99
+    > div
+        max-height: 130px
+        overflow: auto 
+        display: block
+        -webkit-line-clamp: initial
+        -webkit-box-orient: initial
+        height: 80px
+        max-height: initial
+        text-overflow: clip 
+        +sm-block
+            font-size: 15px
+
         
 
 

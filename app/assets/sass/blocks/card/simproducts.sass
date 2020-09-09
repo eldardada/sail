@@ -23,8 +23,11 @@
             padding: 10px
             position: relative
             min-height: 443px 
-            > div
+            > button
+                cursor: pointer
                 position: absolute
+                border: none
+                background-color: transparent
                 left: calc(100% - 100px)
                 top: 0
                 border-radius: 20px
@@ -33,13 +36,14 @@
                 width: 90px
                 height: 70px
                 position: relative
+                &:hover svg
+                    fill: $orange500
                 svg
                     cursor: pointer
                     max-width: 30px
                     max-height: 30px
                     transition: fill .3s
-                    &:hover
-                        fill: $orange500
+                    
         &__footer
             padding: 10px
             background-color: #fff

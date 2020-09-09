@@ -275,6 +275,22 @@ if (card) {
 var feedbackBlock = document.querySelector('.feedback');
 
 if (feedbackBlock) {
+  var feedbackSlider = document.querySelector('.feedback-slider');
+  feedbackSlider.addEventListener('click', function (e) {
+    var target = e.target;
+
+    if (target.hasAttribute('data-small')) {
+      var _feedbackBlock = target.closest('.feedback__block');
+
+      _feedbackBlock.classList.toggle('feedback-block-active');
+
+      if (target.innerHTML == 'Скрыть отзыв') {
+        target.innerHTML = 'Читать дальше';
+      } else {
+        target.innerHTML = 'Скрыть отзыв';
+      }
+    }
+  });
   feedbackBlock.addEventListener('click', function (e) {
     var target = e.target;
 
@@ -5087,8 +5103,10 @@ if (simproducts) {
       }
     }
   });
-  var feedbackSlider = document.querySelector('.feedback-slider');
-  var swiperFeedback = new Swiper(feedbackSlider, {
+
+  var _feedbackSlider = document.querySelector('.feedback-slider');
+
+  var swiperFeedback = new Swiper(_feedbackSlider, {
     slidesPerView: 1,
     slidesPerColumn: 2,
     slidesPerColumnFill: 'row',

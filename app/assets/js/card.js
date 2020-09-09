@@ -87,6 +87,10 @@ cardModelCount.addEventListener('click', e => {
     }
 });
 
+
+
+
+
 const cardMain = document.querySelector('.card_main');
 if(cardMain) {
     const cardInfoAdd = document.querySelector('.card-info-add');
@@ -202,7 +206,24 @@ document.addEventListener('click', e => {
 // feedback
 
 const feedbackBlock = document.querySelector('.feedback');
+
 if(feedbackBlock) {
+    const feedbackSlider = document.querySelector('.feedback-slider');
+    
+    feedbackSlider.addEventListener('click', e => {
+        const target = e.target;
+        if(target.hasAttribute('data-small')) {
+            const feedbackBlock = target.closest('.feedback__block');
+            feedbackBlock.classList.toggle('feedback-block-active');
+            if(target.innerHTML == 'Скрыть отзыв') {
+                target.innerHTML = 'Читать дальше';
+            }
+            else {
+                target.innerHTML = 'Скрыть отзыв';
+            }
+        }
+    });
+
     feedbackBlock.addEventListener('click', e => {
         let target = e.target;
     
