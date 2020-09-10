@@ -1,9 +1,8 @@
 .footer
     padding: 20px
-    font-size: 18px
+    +font(18, 15) 
     position: relative
     +md-block
-        font-size: 25px
         +xxs-block
             padding-bottom: 90px
     &__arrow
@@ -26,7 +25,7 @@
         +row-flex
     h3
         text-align: center
-        font-size: 36px
+        +font(36, 24)
         &::after
             content: ''
             display: block
@@ -64,7 +63,6 @@
     color: $light
     a
         color: $light
-        font-size: 18px
     &__contacts
         margin: 0 auto
         max-width: 250px
@@ -130,13 +128,15 @@
             +lg-block
                 flex-direction: column
             li
-                min-width: 160px
-                margin: 0 auto
+                min-width: 200px
+                margin: 0 auto 10px
                 display: flex
                 align-items: center
-                a
+                a:nth-child(2)
+                    min-width: 90px
                     transition: color .3s
-                &:hover
-                    a 
-                        color: #FFC677
+                a:first-child:hover + a
+                    color: #FFC677
+                a:hover
+                    color: #FFC677
                 
