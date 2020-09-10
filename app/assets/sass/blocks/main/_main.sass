@@ -12,11 +12,7 @@
         position: relative
         background-size: cover
         background-repeat: no-repeat
-        +font(49, 24)
-        +xl-block
-            background-position: -200px 0
-        +sm-block
-            background-position: -250px 0
+        +font(49, 15)
         color: $light
         a
             color: $light
@@ -45,8 +41,10 @@
             img
                 +xxx-block
                     max-width: 80px
+                +md-block
+                    max-width: 50px 
                 +sm-block
-                    max-width: 50px                    
+                    max-width: 30px                   
         &__name
             +bold
             margin-left: 20px
@@ -72,6 +70,7 @@
         +sm-block
             margin-bottom: 20px
         +xxs-block
+            border: 2px solid $light
             padding: 15px 20px
         &:hover
             background-color: #CACDCC
@@ -91,5 +90,7 @@
             margin-bottom: 10px
             +font(40, 24)
             padding: 20px 50px 
+        +md-block
+            font-size: 15px
         +xl-block
             margin: auto auto 10px
