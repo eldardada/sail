@@ -1,5 +1,4 @@
 .main
-    background-color: $mainDark
     .container__inner
         display: flex
         flex-direction: column
@@ -8,17 +7,18 @@
         +md-block
             min-height: 60vh
     &-content
+        margin-left: -15px
         @media (min-width:980px)
             .main-content
                 min-height: 1300px 
-
         padding: 16px 10px
-        width: calc(100% - 121px)
+        width: calc(100% - 116px)
         +md-block
             width: 100%
         position: relative
         background-size: cover
         background-repeat: no-repeat
+        background-position: 0 0
         +font(63, 14)
         +xxx-block
             +font(50, 14)
