@@ -10,12 +10,11 @@
     &-content
         margin-left: -20px
         @media (min-width:980px)
-            .main-content
-                min-height: 1300px 
+            min-height: 1300px 
         padding: 16px 10px
         width: calc(100% - 101px)
         +md-block
-            width: 100%
+            width: calc(100% + 30px) 
         position: relative
         background-size: cover
         background-repeat: no-repeat
@@ -102,3 +101,5 @@
             padding: 20px 50px 
         +xl-block
             margin: auto auto 10px
+        +md-block
+            max-width: 600px
