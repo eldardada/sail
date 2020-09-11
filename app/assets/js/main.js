@@ -29,8 +29,8 @@ if(team) {
     speed: 600,
     lazy: true,
     navigation: {
-      nextEl: '.team__prev',
-      prevEl: '.team__next',
+      nextEl: '.team__next',
+      prevEl: '.team__prev',
     },
     breakpoints: {
       1000: {
