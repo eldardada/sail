@@ -60,11 +60,11 @@ if (basket) {
     var div = target;
 
     while (!div.classList.contains('btn_count')) {
-      div = div.parentElement;
-
       if (div == basketModels) {
         break;
       }
+
+      div = div.parentElement;
     }
 
     if (div != basketModels) {

@@ -2,8 +2,8 @@
 
 .catalog
     padding: 10px 100px 0 30px
-    +lg-block
-        padding: 0 20px 0 0px
+    +xxx-block
+        padding: 10px 0 0 0
     +sm-block
         padding: 0
     .container
@@ -74,23 +74,6 @@
             img
                 +xl-block
                     max-width: 40px
-                +sm-block
-                    display: none
-        &__exit
-            cursor: pointer
-            position: absolute
-            right: 15px
-            top: 0
-            width: 50px
-            height: 50px
-            border: 3px solid
-            text-align: center
-            line-height: 38px
-            border-radius: 50px
-            padding: 10px
-            +sm-block
-                transform: scale(0.7) 
-                top: -20px
     &_filter
         +bold
         border: none
@@ -187,6 +170,7 @@
             +sm-block
                 flex-direction: column
                 width: 90%
+                margin-bottom: 40px
             &-content
                 position: relative
                 margin-bottom: 100px
@@ -198,32 +182,32 @@
                 right: -50px 
                 bottom: 250px
                 filter: drop-shadow(10px 2px 4px rgba(0, 0, 0, 0.25))
-                +xm-block
-                    position: initial
-                    transform: scale(1)
-                    +shift-left(1)
                 +xxx-block
                     right: -33px
                     transform: scale(0.8)
+                +xm-block
+                    right: 30px
                 +sm-block
-                    +shift-left(0)
-                    width: 90%
-                    margin-bottom: 60px
-                    transform: initial
+                    transform: scale(0.7)
+                    right: -20px
+                    bottom: 20%
+                +xxs-block
+                    button
+                        padding-top: 20px !important
+                        padding-bottom: 20px !important
+                    li
+                        margin-bottom: 5px
                 li
                     display: flex
                     justify-content: space-between
                     align-items: center
                     margin-bottom: 6px
-                    width: 160px
+                    width: 180px
                     height: 60px
+                    white-space: nowrap
                     +xm-block
                         margin-bottom: 15px
-                        width: 180px
                         height: initial
-                    +sm-block
-                        width: initial
-                    white-space: nowrap
                     > a
                         margin: 0 auto
                         color: $dark
@@ -236,16 +220,6 @@
                         width: 100%
                         +xm-block
                             padding: 30px 20px
-                        +sm-block
-                            padding: 10px 20px
-                            width: 100%
-                            .block30
-                                margin-left: 20px
-                                img
-                                    max-width: 50px
-                        +sm-block
-                            img
-                                max-width: 30px
                     &:nth-child(1)
                         padding: 20px 15px
                         +bold

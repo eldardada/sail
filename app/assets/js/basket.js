@@ -29,10 +29,10 @@ basketModels.addEventListener('click', e => {
     let div = target;
 
     while(!div.classList.contains('btn_count')) {
-        div = div.parentElement;
         if(div == basketModels) {
             break;
         }
+        div = div.parentElement;
     }
 
     if(div != basketModels) {
