@@ -282,13 +282,17 @@ if (feedbackBlock) {
     if (target.hasAttribute('data-small')) {
       var _feedbackBlock = target.closest('.feedback__block');
 
-      _feedbackBlock.classList.toggle('feedback-block-active');
-
       if (target.innerHTML == 'Скрыть отзыв') {
         target.innerHTML = 'Читать дальше';
+
+        var div = _feedbackBlock.querySelector('div');
+
+        div.scrollTop = 0;
       } else {
         target.innerHTML = 'Скрыть отзыв';
       }
+
+      _feedbackBlock.classList.toggle('feedback-block-active');
     }
   });
   feedbackBlock.addEventListener('click', function (e) {
@@ -4994,8 +4998,8 @@ var team = document.querySelector('.team');
 if (team) {
   var MainSwiper = new Swiper('.team-container', {
     slidesPerView: 1,
-    spaceBetween: 100,
     slidesPerGroup: 1,
+    spaceBetween: 50,
     loop: true,
     loopFillGroupWithBlank: true,
     arrows: false,
@@ -5007,13 +5011,14 @@ if (team) {
       prevEl: '.team__next'
     },
     breakpoints: {
-      961: {
+      1000: {
         slidesPerGroup: 2,
         slidesPerView: 2
       },
-      1450: {
+      1500: {
         slidesPerGroup: 3,
-        slidesPerView: 3
+        slidesPerView: 3,
+        spaceBetween: 100
       }
     }
   });

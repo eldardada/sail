@@ -12,34 +12,24 @@
             +size(3.5)
             +shift-left(1.25)
             +shift-right(1.25)
-            @media screen and ( max-width: 1810px)
-                width: 100%
-                max-width: 900px
-                margin: 0 auto 80px
-            @media screen and ( max-width: 1210px )
-                max-width: 750px
+            +xxx-block
+                +size(4)
+                +shift-left(1)
+                +shift-right(1)
+            +xxl-block
+                +size(5)
+                +shift-left(0.5)
+                +shift-right(0.5)
+            +lg-block
+                margin: 10px 0 0
+                +size(12)
             .favorites__model
                 width: 100% !important
-                @media screen and ( max-width: 1810px)
-                    display: flex
-                    justify-content: space-between
             ul
-                @media screen and ( max-width: 1810px)
-                    position: static
-                    margin: auto 0
-                .block30
-                     @media screen and ( max-width: 1810px)
-                        padding: 25px
-                        img
-                            max-width: 100%
-                        +md-block
-                            padding: 5px 10px
-                        +sm-block
-                            img
-                                max-width: 30px
+                +lg-block
+                    position: initial
                 li
                     cursor: pointer
-    
 +lg-block
     .favorites
         &-models
@@ -48,9 +38,10 @@
                 flex-direction: column-reverse
                 margin-bottom: 20px
         &__model
+            display: flex
+            align-items: center
             margin: 0 auto
             max-width: 450px
-            flex-direction: column
             > div
                 border-radius: 0 0 0 0
                 +xxs-block
@@ -58,7 +49,29 @@
                 span
                     display: none
             ul
+                margin-left: 20px
                 order: 2
+                li
+                    width: 200px
+@media screen and ( max-width: 460px )
+    .favorites
+        &-models
+            > form
+                +size(10)
+                +shift-left(1)
+        &__model
+            flex-direction: column
+            .block30
+                text-align: center
+                padding: 10px
+                img
+                    max-width: 20px
+            ul, li
+                min-width: 100%
+            ul
+                margin: 0
+
+
 
                 
 

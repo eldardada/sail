@@ -214,13 +214,16 @@ if(feedbackBlock) {
         const target = e.target;
         if(target.hasAttribute('data-small')) {
             const feedbackBlock = target.closest('.feedback__block');
-            feedbackBlock.classList.toggle('feedback-block-active');
+            
             if(target.innerHTML == 'Скрыть отзыв') {
                 target.innerHTML = 'Читать дальше';
+                const div = feedbackBlock.querySelector('div');
+                div.scrollTop = 0;
             }
             else {
                 target.innerHTML = 'Скрыть отзыв';
             }
+            feedbackBlock.classList.toggle('feedback-block-active');
         }
     });
 

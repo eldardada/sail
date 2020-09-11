@@ -1,21 +1,21 @@
 @font-face {
-    font-family: 'Montserrat';
+    font-family: 'Brutal Type';
     font-style: normal;
     font-weight: 400;
-    src: url('./assets/fonts/montserrat-v14-cyrillic-regular.woff2') format('woff2'), 
-         url('./assets/fonts/montserrat-v14-cyrillic-regular.woff') format('woff');
+    src: url('./assets/fonts/BrutalType.woff2') format('woff2'), 
+         url('./assets/fonts/BrutalType.woff') format('woff');
   }
 
 @font-face {
-    font-family: 'Montserrat';
+    font-family: 'Brutal Type';
     font-style: normal;
     font-weight: 700;
-    src: url('./assets/fonts/montserrat-v14-cyrillic-700.woff2') format('woff2'), 
-         url('./assets/fonts/montserrat-v14-cyrillic-700.woff') format('woff');
+    src: url('./assets/fonts/BrutalType-Bold.woff2') format('woff2'), 
+         url('./assets/fonts/BrutalType-Bold.woff') format('woff');
 }
 
-@mixin mont400 {
-    font-family: 'Montserrat';
+@mixin brutalType {
+    font-family: 'Brutal Type';
     font-weight: 400;
 }
 

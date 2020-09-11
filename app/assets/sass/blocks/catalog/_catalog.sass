@@ -195,14 +195,16 @@
                     margin-bottom: 20px
             ul
                 position: absolute
-                right: -20px 
-                bottom: 35%
+                right: -50px 
+                bottom: 250px
                 filter: drop-shadow(10px 2px 4px rgba(0, 0, 0, 0.25))
                 +xm-block
                     position: initial
+                    transform: scale(1)
                     +shift-left(1)
-                +lg-block
-                    transform: scale(0.9)
+                +xxx-block
+                    right: -33px
+                    transform: scale(0.8)
                 +sm-block
                     +shift-left(0)
                     width: 90%
@@ -212,11 +214,17 @@
                     display: flex
                     justify-content: space-between
                     align-items: center
-                    margin: 15px 0
+                    margin-bottom: 6px
+                    width: 160px
+                    height: 60px
+                    +xm-block
+                        margin-bottom: 15px
+                        width: 180px
+                        height: initial
+                    +sm-block
+                        width: initial
                     white-space: nowrap
                     > a
-                        +font(18, 22)
-                        padding: 15px 30px
                         margin: 0 auto
                         color: $dark
                     button
@@ -224,23 +232,23 @@
                         justify-content: space-between
                         align-items: center
                         padding: 20px 15px
+                        height: 100%
                         width: 100%
-                        +font(18, 20)
                         +xm-block
                             padding: 30px 20px
                         +sm-block
                             padding: 10px 20px
-                            font-size: 20px
                             width: 100%
-                        .block30
-                            margin-left: 20px
-                            +xm-block
+                            .block30
+                                margin-left: 20px
                                 img
                                     max-width: 50px
-                            +sm-block
-                                img
-                                    max-width: 30px
+                        +sm-block
+                            img
+                                max-width: 30px
                     &:nth-child(1)
+                        padding: 20px 15px
+                        +bold
                         border-radius: 50px 15px 12px 0
                         +btn($btnOrange300)
                     &:nth-child(2), &:nth-child(3)

@@ -26,7 +26,7 @@
             border-radius: 0 175px 0 0
             height: 100%
             +sm-block
-                padding: 60px 15px
+                padding: 80px 20px 30px
     &__inner
         +row-flex
     &-info
@@ -42,7 +42,8 @@
             +bold
             +xxx-block
                 text-align: center
-        ul                
+        ul           
+            +font(22, 15)     
             margin-top: 80px
             +sm-block
                 margin-top: 0
@@ -53,18 +54,26 @@
                 width: 100%
                 margin-bottom: 35px
                 display: flex
+                > div
+                    strong
+                        display: inline-block
+                        width: 200px
+                        margin-left: 10px
+                    > div
+                        text-align: center
+                        width: 62px
+                        height: 49px
+                        line-height: 62px
+                        border-radius: 20px
+                        background-color: $light
                 @media screen and ( max-width: 650px)
-                    flex-direction: column
                     align-items: center
-                    font-size: 30px
                     a
                         margin-left: 0
                     > div
                         margin-bottom: 10px
                         > div // .contacts-info__img
                             display: inline-block
-                +sm-block
-                    font-size: 22px
                 a, span
                     width: 100%
                     color: $dark

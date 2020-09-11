@@ -24,6 +24,9 @@
         align-items: center
         justify-content: space-between
         margin-bottom: 80px
+        padding-right: 144px
+        +xxl-block
+            padding: 0
         +lg-block
             margin-bottom: 0 
         +xm-block
@@ -32,8 +35,6 @@
                 margin-bottom: 30px
                 +lg-block
                     margin-bottom: 10px
-            &__edit
-                margin-bottom: 30px
         &__edit
             > div:first-child
                 display: inline-block
@@ -56,6 +57,8 @@
                 line-height: 40px
                 border-radius: 8px
                 cursor: pointer
+                +lg-block
+                    cursor: initial
                 background-color: #fff
                 &:hover
                     svg
@@ -88,6 +91,7 @@
                 border-radius: 15px 0px
                 padding: 15px 20px
                 +sm-block
+                    margin-top: 20px
                     margin-right: 0
                 input
                     width: fit-content
@@ -95,9 +99,10 @@
                     padding: 5px 10px
                     background: #F7F7F7
                     border-radius: 8px
+                    font-size: 15px
                     border: none
                 span
                     vertical-align: middle
-                    +font(22, 18)
+                    +font(22, 15)
                     margin-right: 30px
                 

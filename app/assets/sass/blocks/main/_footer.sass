@@ -1,6 +1,5 @@
 .footer
     padding: 20px
-    +font(18, 15) 
     position: relative
     +md-block
         +xxs-block
@@ -14,7 +13,7 @@
         bottom: 10px
         width: 80px
         height: 65px
-        background-color: #fff
+        background-color: $light
         border-radius: 20px
         overflow: visible
         border: 3px solid transparent
@@ -34,13 +33,14 @@
             height: 5px
             background-color: #cacdcc
             box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25)
+            border-radius: 5px
     &-imgblock
         a
             width: fit-content
             display: block
     &-img
         max-width: 290px
-        +md-block
+        @media screen and ( max-width: 650px )
             display: none
         margin: 0 auto
         text-align: center
@@ -64,15 +64,20 @@
     a
         color: $light
     &__contacts
+        @media screen and ( max-width: 650px )
+            max-width: 70%
+        +xxs-block
+            max-width: 100%
         margin: 0 auto
+        line-height: 34px
         max-width: 250px
-        +md-block
-            max-width: 80%
         li
             display: flex
-            margin-bottom: 15px
+            text-align: justify
             &:nth-child(4)
                 display: block
+            > div
+                white-space: nowrap
         a
             color: $orange600
             transition: color .3s
@@ -81,11 +86,9 @@
             &:hover
                 color: $orange300
         span
-            width: 100%
             color: $orange600
             text-align: right
-        +sm-block
-            max-width: 100%
+            margin-left: auto
     &-col
         +col
         +size(3)
@@ -93,21 +96,21 @@
             +size(4)
         +lg-block
             +size(6)
-            margin: 20px 0 0
-        +md-block
+        @media screen and ( max-width: 650px )
             +size(12)
         a
             margin: 0 auto
     &__garant
         max-width: 290px
         margin: 0 auto
-        line-height: 30px
+        line-height: 31px
         text-indent: 10px
         margin-bottom: 10px
         +md-block
-            max-width: 80%
             text-indent: 0
-        +sm-block
+        @media screen and ( max-width: 650px )
+            max-width: 70%
+        +xxs-block
             max-width: 100%
     &-social
         +xl-block
@@ -128,7 +131,7 @@
             +lg-block
                 flex-direction: column
             li
-                min-width: 200px
+                min-width: 170px
                 margin: 0 auto 10px
                 display: flex
                 align-items: center
@@ -139,4 +142,26 @@
                     color: #FFC677
                 a:hover
                     color: #FFC677
+    &-copy
+        text-align: center
+        padding: 20px
+        background-color: #252528
+        color: $light
+        font-size: 10px
+        > p
+            margin-bottom: 5px
+        ul
+            margin: 0 auto
+            display: flex
+            flex-wrap: wrap
+            margin-right: -20px
+            margin-bottom: -5px
+            justify-content: center
+            li
+                margin-right: 20px
+                margin-bottom: 5px
+                a
+                    color: $light
+                    &:hover
+                        text-decoration: underline
                 
