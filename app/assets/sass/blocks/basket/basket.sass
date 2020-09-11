@@ -7,8 +7,52 @@
     h1
         +bold
         +font(36, 22)
+    &-models
+        +row-flex
+        justify-content: center
+        @media screen and (max-width: 1810px)
+            > form 
+                +size(4)
+                +shift-left(0.75)
+                +shift-right(0.75)
+                ul
+                    bottom: 200px
+        +xxl-block
+            > form
+                +size(6)
+        +lg-block
+            > form
+                +size(8)
+                +md-block
+                    +size(8)
+                    margin: 0 0 30px 20px
+                @media screen and ( max-width: 650px )
+                    +size(10)
+                +xxs-block
+                    +size(12)
+                +lg-block
+                    ul
+                        bottom: 10%
+                        right: -2%
+                        li
+                            width: 150px
+                            +sm-block
+                                width: 130px
+                                text-align: center
+                                button
+                                    padding: 0
+                        button
+                            img
+                                max-width: 15px
+                            span
+                                margin: 0
+
     &__model
         ul
+            +xxs-block
+                transform: scale(0.8)
+                bottom: 5% !important
+                right: -5% !important
             li
                 +xxx-block
                     max-width: initial
@@ -24,6 +68,8 @@
         border-radius: 24px
         background-color: $gray
         padding: 5px 10px
+        @media screen and (max-width: 1810px)
+            min-width: 100%
         > div
             text-align: center
             width: fit-content
@@ -55,32 +101,14 @@
         > form
             position: relative
             margin: 80px 120px
-            @media screen and ( max-width: 1810px)
-                width: 100%
-                max-width: 900px
-                margin: 0 auto 80px
-            @media screen and ( max-width: 1210px )
-                max-width: 750px
             .basket__model
                 width: 100% !important
-                @media screen and ( max-width: 1810px)
-                    display: flex
-                    justify-content: space-between
             ul
-                @media screen and ( max-width: 1810px)
-                    position: static
-                    margin: auto 0
-                .block30
-                     @media screen and ( max-width: 1810px)
-                        padding: 25px
-                        img
-                            max-width: 100%
-                        +md-block
-                            padding: 5px 10px
                 li
                     cursor: pointer
     &-bgmenu
-        @media screen and ( max-width: 1210px )
+        @media screen and ( max-width: 1810px )
+            width: 100%
             margin-top: 20px
             position: initial
             max-width: 450px
@@ -88,7 +116,10 @@
             display: flex
             max-height: 320px
             padding: 20px
-            font-size: 20px        
+            font-size: 20px      
+        &-info
+            @media screen and ( max-width: 1810px )
+                margin: 0 !important
         +xxs-block
             z-index: 99
             &-price
@@ -119,7 +150,6 @@
                     margin-top: 10px
             +xxs-block
                 margin-left: 0 !important
-
     
 +lg-block
     .basket
@@ -129,25 +159,9 @@
                 flex-direction: column-reverse
                 margin-bottom: 20px
         &__model
-            margin: 0 auto
-            max-width: 450px
-            flex-direction: column
             > div
-                border-radius: 0 0 0 0
-                +xxs-block
-                    padding-top: 30px
                 span
                     display: none
-            ul
-                order: 2
-                +sm-block
-                    .block30
-                        padding: 10px !important
-                        img
-                            max-width: 30px !important
-                    li
-                        button
-                            padding: 10px
         &-bgmenu
             padding: 10px 20px
             width: 100%
@@ -163,4 +177,12 @@
                 div
                     height: 30px
                     line-height: 30px
+
+.basket
+    .btn_count
+        width: 25px
+        height: 25px
+        border: 1px solid $dark
+        svg
+            max-width: 10px
                     
