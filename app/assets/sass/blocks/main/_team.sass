@@ -34,11 +34,12 @@
         min-width: 1600px !important
         position: relative
         margin: 0 auto
+        +sm-block
+            padding: 0
+    &-slide
         p
             padding: 10px
             text-align: center
-        +sm-block
-            padding: 0
     &__block
         font-size: 22px
         height: 450px
@@ -72,8 +73,8 @@
         display: none
         position: absolute
         z-index: 100
-        bottom: 20px
-        right: 20px
+        top: 310px
+        right: 30px
         text-align: center
         +sm-block
             display: block
