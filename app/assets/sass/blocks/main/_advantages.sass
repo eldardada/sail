@@ -15,6 +15,7 @@
         +sm-block
             max-width: 250px !important
             img
+                display: block
                 min-width: 100px
         &_sm
             max-width: 164px
@@ -38,7 +39,6 @@
             +size(10)
             +shift-left(1)
             +shift-right(1)
-
         margin-bottom: 30px                
         display: flex
         flex-direction: column
@@ -48,12 +48,18 @@
             margin: 0 auto 30px
             font-size: 21px
             color: $light
+            position: relative
             +sm-block
                 max-width: initial
             &::after
                 content: ''
+                position: absolute
+                top: calc(100% - 5px)
+                left: 50%
+                transform: translateX(-50%)
                 display: block
-                width: 100px
+                width: 150px
+                margin: 0 auto
                 background-color: #fff
                 height: 1px
                 margin: 15px auto 0

@@ -5,13 +5,32 @@
         flex-direction: column
         height: 100%
         min-height: calc(100vh - 70px)
+        margin: 0
+        padding: 0
         +md-block
             min-height: 60vh
     &-content
+        position: relative
+        letter-spacing: -3px
         margin-left: -20px
-        @media (min-width:980px)
-            min-height: 1300px 
-        padding: 16px 10px
+        padding: 16px 10px 0 27px
+        @media (min-width: 960px)
+            min-height: 1300px
+            .main__title
+                position: sticky
+                bottom: 10px
+            .main-header
+                position: sticky
+                padding-bottom: 600px
+                top: 10px
+                bottom: 300px
+        @media (min-width: 1500px)
+            .main__title
+                position: static
+            .main-header
+                position: static
+        
+            
         width: calc(100% - 101px)
         +md-block
             width: calc(100% + 30px) 
@@ -19,9 +38,9 @@
         background-size: cover
         background-repeat: no-repeat
         background-position: 0 0
-        +font(63, 14)
+        +font(60, 20)
         +xxx-block
-            +font(50, 14)
+            +font(50, 20)
         color: $light
         a
             color: $light
@@ -37,28 +56,29 @@
         &__logo
             display: inline-block
             vertical-align: middle
-            padding: 10px 35px
+            padding: 9px 30px 24px 35px
             background-color: $light
             box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25)
             border-radius: 45px 34px 40px 38px
             +xxx-block
-                padding: 10px 35px
+                padding: 6px 22px 18px 27px
             +sm-block
                 border-radius: 20px
-            +xxs-block
-                padding: 10px 20px
+            +md-block
+                border-radius: 22px 17px 20px 19px
+                padding: 4px 15px 12px 18px
             img
+                display: block
                 +xxx-block
-                    max-width: 80px
+                    max-width: 80px 
                 +md-block
-                    max-width: 50px 
-                +sm-block
-                    max-width: 30px                   
+                    max-width: 50px
         &__name
             +bold
             margin-left: 20px
             color: $light
             text-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25)
+            letter-spacing: -3px
             +sm-block
                 margin-left: 0
                 margin-top: 10px
@@ -67,9 +87,12 @@
         background-color: $mainDark
         border: 5px solid $light
         box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25)
-        border-radius: 40px
+        +font(60, 14)
+        border-radius: 45px 34px 40px 38px
+        line-height: 1.2
         transition: background-color .3s
-        padding: 40px 60px
+        letter-spacing: -1px
+        padding: 29px 52px
         +xxx-block
             margin-bottom: 10px
             padding: 20px 30px
@@ -86,20 +109,25 @@
         &:active
             background-color: #b0b4b2
     &__title
-        margin: auto 0 30px
-        width: 95%
-        max-width: 880px
+        margin: auto 0 30px 88px
+        padding: 25px 60px
+        padding-left: 77px
+        max-width: 760px
         box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25)
         border-radius: 45px 34px 40px 38px
-        padding: 25px 65px
-        letter-spacing: 0.06em
-        text-align: center
+        letter-spacing: -1px
+        line-height: 1.1
         background-color: $mainDark
         +xxx-block
-            margin-bottom: 10px
             max-width: 600px
-            padding: 20px 50px 
         +xl-block
-            margin: auto auto 10px
-        +md-block
-            max-width: 600px
+            margin: auto 0 30px 30px 
+            +font(30, 16)
+            padding: 20px 50px
+            text-align: center
+            max-width: 300px
+            width: 80%
+        +sm-block
+            max-width: 270px
+        +xxs-block
+            margin: auto auto 30px 
