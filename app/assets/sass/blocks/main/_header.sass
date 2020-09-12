@@ -11,10 +11,6 @@
         transition: color .3s
         &:hover
             color: gray
-    nav
-        a
-            &:first-child
-                text-transform: uppercase !important
     +sm-block
         letter-spacing: 0.12em
     &-item
@@ -45,18 +41,24 @@
                 left: 50%
                 transform: translateX(-50%)
             a
-                padding: 10px 40px
+                padding: 10px 0
+                width: 250px
+                text-align: center
                 +font(40, 18)
                 +bold
-                color: #4A4A4A
-                background-color: #FFDBA9
-                border-radius: 0px 0px 92px 92px
+                background-color: $orange300
+                border-radius: 0 0 40px 40px
+                margin-left: 10px
+                margin-right: 10px
                 box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25)
                 +sm-block
-                    letter-spacing: normal
+                    width: 190px
                     padding: 10px 30px
-
-                &:first-child
-                    text-transform: uppercase
+                +xxs-block
+                    width: 150px
+                    font-size: 15px
+                    margin-right: 0
+                    margin-left: 0
+                text-transform: uppercase
 
 
