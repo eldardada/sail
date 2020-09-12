@@ -109,32 +109,33 @@ button, input
       width: 30px
       height: 20px
 
-    
-  &:hover
-    fill: darken(#FFC677, 20%)
 .brforcheck          
   border-radius: 12px 50px 0 15px  !important
 
 .icon__next, .icon__prev
   cursor: pointer
-  svg path
-      transition: .3s
+  border-radius: 30px
+  transition: background-color .3s
   &:focus
-      outline: none
+    outline: none
   &:hover
-      svg path
-          fill: #FFC677
+    background-color: $light
+  &:active 
+    background-color: #F2F2F2
   +sm-block
+      background-color: $light
       position: absolute
       z-index: 2
 .icon__next
   margin-left: 10px
+  padding: 15px 0 5px 10px
   +sm-block
-      right: 0
+    right: -30px !important
 .icon__prev
+  padding: 15px 10px 5px 0
   margin-right: 10px
   +sm-block
-      left: 0
+    left: -30px !important
 
 .webMoney
   background-image: url('./assets/img/pay/webmoney.svg')

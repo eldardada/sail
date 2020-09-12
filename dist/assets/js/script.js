@@ -276,6 +276,7 @@ var feedbackBlock = document.querySelector('.feedback');
 
 if (feedbackBlock) {
   var feedbackSlider = document.querySelector('.feedback-slider');
+  var simproductsSlider = document.querySelector('.simproducts-slider');
   feedbackSlider.addEventListener('click', function (e) {
     var target = e.target;
 
@@ -293,6 +294,23 @@ if (feedbackBlock) {
       }
 
       _feedbackBlock.classList.toggle('feedback-block-active');
+    }
+  });
+  simproductsSlider.addEventListener('click', function (e) {
+    var target = e.target;
+
+    if (target.hasAttribute('data-small')) {
+      var slideFooter = target.closest('.simproducts-slide__footer');
+
+      if (target.innerHTML == 'Скрыть информацию') {
+        target.innerHTML = 'Подробнее';
+        var div = slideFooter.querySelector('div');
+        div.scrollTop = 0;
+      } else {
+        target.innerHTML = 'Скрыть информацию';
+      }
+
+      slideFooter.classList.toggle('feedback-block-active');
     }
   });
   feedbackBlock.addEventListener('click', function (e) {
@@ -5090,7 +5108,6 @@ if (simproducts) {
     loop: true,
     loopFillGroupWithBlank: true,
     speed: 600,
-    lazy: true,
     arrows: false,
     updateOnWindowResize: true,
     navigation: {
@@ -5108,27 +5125,22 @@ if (simproducts) {
       }
     }
   });
-
-  var _feedbackSlider = document.querySelector('.feedback-slider');
-
-  var swiperFeedback = new Swiper(_feedbackSlider, {
+  var swiperFeedback = new Swiper('.feedback-slider', {
     slidesPerView: 1,
     slidesPerColumn: 2,
     slidesPerColumnFill: 'row',
     spaceBetween: 50,
-    centerSlides: false,
     slideClass: 'feedback-slide',
     loop: true,
     loopFillGroupWithBlank: true,
-    updateOnWindowResize: true,
     speed: 600,
-    lazy: true,
     navigation: {
-      prevEl: '.feedback-slider__next'
+      nextEl: '.feedback-slider__next'
     },
     breakpoints: {
       1248: {
-        slidesPerView: 2
+        slidesPerView: 2,
+        slidesPerColumn: 2
       }
     }
   });
@@ -5137,7 +5149,7 @@ if (simproducts) {
 var cardZabor = document.querySelector('.card-zabor');
 
 if (cardZabor) {
-  var swiperFeedback = new Swiper('.card-zabor-slider', {
+  var _swiperFeedback = new Swiper('.card-zabor-slider', {
     slidesPerView: 1,
     slidesPerColumn: 2,
     slidesPerColumnFill: 'row',
@@ -5145,15 +5157,15 @@ if (cardZabor) {
     centerSlides: false,
     slideClass: 'feedback-slide',
     loop: true,
-    updateOnWindowResize: true,
+    loopFillGroupWithBlank: true,
     speed: 600,
-    lazy: true,
     navigation: {
       nextEl: '.feedback-slider__next'
     },
     breakpoints: {
       1248: {
-        slidesPerView: 2
+        slidesPerView: 2,
+        slidesPerColumn: 2
       }
     }
   });

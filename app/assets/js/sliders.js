@@ -7,7 +7,6 @@ if(simproducts) {
     loop: true,
     loopFillGroupWithBlank: true,
     speed: 600,
-    lazy: true,
     arrows: false,
     updateOnWindowResize: true,
     navigation: {
@@ -24,38 +23,33 @@ if(simproducts) {
         spaceBetween: 100
       }
     }
-  });
+});
 
-const feedbackSlider = document.querySelector('.feedback-slider');
-
-var swiperFeedback = new Swiper(feedbackSlider, {
+let swiperFeedback = new Swiper('.feedback-slider', {
   slidesPerView: 1,
   slidesPerColumn: 2,
   slidesPerColumnFill: 'row',
   spaceBetween: 50,
-  centerSlides: false,
   slideClass: 'feedback-slide',
   loop: true,
   loopFillGroupWithBlank: true,
-  updateOnWindowResize: true,
   speed: 600,
-  lazy: true,
   navigation: {
-    prevEl: '.feedback-slider__next'
+    nextEl: '.feedback-slider__next'
   },
   breakpoints: {
     1248: {
       slidesPerView: 2,
+      slidesPerColumn: 2,
     }
   }
 });
-
 }
 
 const cardZabor = document.querySelector('.card-zabor');
 
 if(cardZabor) {
-  var swiperFeedback = new Swiper('.card-zabor-slider', {
+  let swiperFeedback = new Swiper('.card-zabor-slider', {
     slidesPerView: 1,
     slidesPerColumn: 2,
     slidesPerColumnFill: 'row',
@@ -63,17 +57,16 @@ if(cardZabor) {
     centerSlides: false,
     slideClass: 'feedback-slide',
     loop: true,
-    updateOnWindowResize: true,
+    loopFillGroupWithBlank: true,
     speed: 600,
-    lazy: true,
     navigation: {
       nextEl: '.feedback-slider__next'
     },
     breakpoints: {
       1248: {
         slidesPerView: 2,
+        slidesPerColumn: 2
       }
     }
   });
-  
 }

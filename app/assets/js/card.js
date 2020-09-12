@@ -88,9 +88,6 @@ cardModelCount.addEventListener('click', e => {
 });
 
 
-
-
-
 const cardMain = document.querySelector('.card_main');
 if(cardMain) {
     const cardInfoAdd = document.querySelector('.card-info-add');
@@ -209,7 +206,7 @@ const feedbackBlock = document.querySelector('.feedback');
 
 if(feedbackBlock) {
     const feedbackSlider = document.querySelector('.feedback-slider');
-    
+    const simproductsSlider = document.querySelector('.simproducts-slider');
     feedbackSlider.addEventListener('click', e => {
         const target = e.target;
         if(target.hasAttribute('data-small')) {
@@ -224,6 +221,23 @@ if(feedbackBlock) {
                 target.innerHTML = 'Скрыть отзыв';
             }
             feedbackBlock.classList.toggle('feedback-block-active');
+        }
+    });
+
+    simproductsSlider.addEventListener('click', e => {
+        const target = e.target;
+        if(target.hasAttribute('data-small')) {
+            const slideFooter = target.closest('.simproducts-slide__footer');
+            
+            if(target.innerHTML == 'Скрыть информацию') {
+                target.innerHTML = 'Подробнее';
+                const div = slideFooter.querySelector('div');
+                div.scrollTop = 0;
+            }
+            else {
+                target.innerHTML = 'Скрыть информацию';
+            }
+            slideFooter.classList.toggle('feedback-block-active');
         }
     });
 
