@@ -21,45 +21,27 @@
                 +shift-left(0.5)
                 +shift-right(0.5)
             +lg-block
-                margin: 10px 0 0
-                +size(12)
+                margin: 60px 0 0
+                +size(8)
+                +shift-left(2)
+                +shift-right(2)
             .favorites__model
                 width: 100% !important
-            ul
-                +lg-block
-                    position: initial
-                li
-                    cursor: pointer
-+lg-block
-    .favorites
-        &-models
-            > form
-                display: flex
-                flex-direction: column-reverse
-                margin-bottom: 20px
-        &__model
-            display: flex
-            align-items: center
-            margin: 0 auto
-            max-width: 450px
-            > div
-                border-radius: 0 0 0 0
-                +xxs-block
-                    padding-top: 30px
-                span
-                    display: none
-            ul
-                margin-left: 20px
-                order: 2
-                li
-                    width: 200px
-
++sm-block
+    .models__model-img
+        > div
+            > span
+                top: -10px
+                padding: 10px 30px
+                +font(20, 15)
+                
 @media screen and ( max-width: 460px )
     .favorites
         &-models
             > form
                 +size(10)
                 +shift-left(1)
+                +shift-right(1)
                 position: relative
         &__model
             ul
@@ -73,11 +55,3 @@
                     transform: scale(0.6)
                 li
                     margin: 0 0 5px
-
-
-                
-
-
-
-        
-

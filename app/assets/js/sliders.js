@@ -80,10 +80,8 @@ if(imgSwiperBlock) {
     spaceBetween: 30,
     speed: 600,
     arrows: true,
+    preloadImages: false,
     lazy: true,
-    autoplay: {
-        delay: 3000
-    },
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
