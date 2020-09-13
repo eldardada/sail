@@ -2,7 +2,7 @@ const simproducts = document.querySelector('.simproducts');
 if(simproducts) {
   let swiperSimproducts = new Swiper('.simproducts-slider', {
     slidesPerView: 1,
-    spaceBetween: 0,
+    spaceBetween: 30,
     slidesPerGroup: 3,
     loop: true,
     loopFillGroupWithBlank: true,
@@ -10,8 +10,8 @@ if(simproducts) {
     arrows: false,
     updateOnWindowResize: true,
     navigation: {
-      nextEl: '.simproducts__next',
-      prevEl: '.simproducts__prev',
+      prevEl: '.simproducts__next',
+      nextEl: '.simproducts__prev',
     },
     breakpoints: {
     800: {
@@ -40,7 +40,7 @@ let swiperFeedback = new Swiper('.feedback-slider', {
   breakpoints: {
     1248: {
       slidesPerView: 2,
-      slidesPerColumn: 2,
+      slidesPerColumn: 2
     }
   }
 });

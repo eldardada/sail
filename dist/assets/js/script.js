@@ -5103,7 +5103,7 @@ var simproducts = document.querySelector('.simproducts');
 if (simproducts) {
   var swiperSimproducts = new Swiper('.simproducts-slider', {
     slidesPerView: 1,
-    spaceBetween: 0,
+    spaceBetween: 30,
     slidesPerGroup: 3,
     loop: true,
     loopFillGroupWithBlank: true,
@@ -5111,8 +5111,8 @@ if (simproducts) {
     arrows: false,
     updateOnWindowResize: true,
     navigation: {
-      nextEl: '.simproducts__next',
-      prevEl: '.simproducts__prev'
+      prevEl: '.simproducts__next',
+      nextEl: '.simproducts__prev'
     },
     breakpoints: {
       800: {

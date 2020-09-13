@@ -220,7 +220,14 @@
         -webkit-box-orient: initial
         height: 80px
         max-height: initial
-        text-overflow: clip 
+        text-overflow: clip
+        margin-bottom: 5px
+        &::-webkit-scrollbar
+            width: 10px
+        &::-webkit-scrollbar-track
+            background-color: #C4C4C4
+        &::-webkit-scrollbar-thumb
+            background-color: $mainDark
         +sm-block
             font-size: 15px
 

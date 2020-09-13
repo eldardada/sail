@@ -76,9 +76,21 @@
             display: flex
             align-items: center
             +sm-block
-                flex-direction: column
-                a
-                    margin: 20px 0 0
+                width: 100%
+                justify-content: space-around
+                > div
+                    transform: scale(0.8)
+                    display: flex
+                    padding: 10px 20px
+                    margin-top: 0 !important
+                    span
+                        text-align: center
+                        display: block
+                        width: max-content
+                        max-width: 80px
+                        margin-right: 5px
+                    input, span
+                        font-size: 18px !important
             a
                 +bold
                 +font(36, 20)

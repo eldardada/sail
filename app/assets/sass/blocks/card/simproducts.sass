@@ -2,6 +2,8 @@
     width: 100%
     background-color: $mainDark
     padding: 20px
+    .container
+        padding: 0
     h2
         +font(36, 22)
         letter-spacing: 0.205em
@@ -71,13 +73,17 @@
                 left: 20px
     &__next, &__prev
         +sm-block
+            background-color: transparent !important
+            &:hover, &:active
+                background-color: transparent !important
             position: absolute
+            transform: scale(0.7)
     &__next
         +sm-block
-            left: -5px
+            left: -4px !important
     &__prev
         +sm-block
-            right: -5px
+            right: -4px !important
             
                 
 
