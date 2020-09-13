@@ -27,5 +27,22 @@ if(aside) {
     if(window.innerWidth > 768) menu.style.display = 'none';
     else if(window.innerWidth <= 768 && !aside.classList.contains('aside_show')) menu.style.display = 'block';
   });
+
+
+  let initialPoint;
+  let finalPoint
+
+  document.addEventListener('touchstart', event => {
+    initialPoint = event.changedTouches[0];
+  }, false);
+
+  document.addEventListener('touchend', event => {
+    finalPoint = event.changedTouches[0];
+    let xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
+    let yAbs = Math.abs(initialPoint.pageY - finalPoint.pageY);
+    if ((xAbs > 20 || yAbs > 20) && (xAbs > yAbs) && (finalPoint.pageX < initialPoint.pageX)) {
+      hideMenu();
+    }
+    }, false);
 }
 

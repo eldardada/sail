@@ -8,6 +8,10 @@
     &-models
         +row-flex
         justify-content: center
+        > form
+            +size(3.65)
+            +shift-left(1)
+            +shift-right(1)
         @media screen and (max-width: 1810px)
             > form 
                 +size(4)
@@ -90,6 +94,9 @@
                 text-align: center
                 line-height: 60px
         &-count
+            margin-right: 5px
+            @media screen and ( max-width: 1810px )
+                margin-right: 0
             span
                 display: flex
 // 1810px  - 960px 

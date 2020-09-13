@@ -70,3 +70,23 @@ if(cardZabor) {
     }
   });
 }
+
+let imgSwiperBlock = document.querySelector('.img-swiper');
+
+if(imgSwiperBlock) {
+  let ImgSwiper = new Swiper('.img-swiper', {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 30,
+    speed: 600,
+    arrows: true,
+    lazy: true,
+    autoplay: {
+        delay: 3000
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+    }
+  });
+}

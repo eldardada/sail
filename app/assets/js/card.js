@@ -6,7 +6,22 @@ if (card) {
     const modalBg = document.querySelector('.modal-bg');
     const feedbackModalExit = feedbackModal.querySelector('.feedback-modal__exit');
     const body = document.querySelector('body');
-
+    
+    console.log('1');
+    let imgSlider = new Swiper('.card-img-swiper', {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 30,
+        speed: 600,
+        arrows: true,
+        autoplay: {
+            delay: 3000,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+        }
+    });
 
 function hideFeedbackModal() {
     feedbackModal.classList.remove('show');

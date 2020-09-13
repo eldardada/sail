@@ -2,440 +2,6 @@
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-var aside = document.querySelector('.aside');
-
-if (aside) {
-  var hideMenu = function hideMenu() {
-    _aside.classList.remove('aside_show');
-  };
-
-  var menu = document.querySelector('.aside__menu');
-
-  var _aside = document.querySelector('.main__aside');
-
-  menu.addEventListener('click', function () {
-    _aside.classList.toggle('aside_show');
-  });
-  ;
-  document.addEventListener('click', function (e) {
-    var target = e.target;
-    var its_menu = target == menu || menu.contains(target);
-    var its_aside = target == _aside;
-
-    var aside_is_active = _aside.classList.contains('aside_show');
-
-    if (!its_aside && !its_menu && aside_is_active) {
-      hideMenu();
-    }
-  });
-  window.addEventListener('resize', function () {
-    if (window.innerWidth > 768) menu.style.display = 'none';else if (window.innerWidth <= 768 && !_aside.classList.contains('aside_show')) menu.style.display = 'block';
-  });
-}
-
-var basket = document.querySelector('.basket');
-
-if (basket) {
-  var basketModels = document.querySelector('.basket-models');
-  basketModels.addEventListener('input', function (e) {
-    var target = e.target;
-
-    if (target.dataset.name = 'input-count') {
-      target.value = target.value.replace(/\D/g, '');
-    }
-  });
-  basketModels.addEventListener('change', function (e) {
-    var target = e.target;
-
-    if (target.dataset.name = 'input-count') {
-      if (target.value === '') {
-        target.value = 0;
-      } else if (target.value > 50) {
-        target.value = 50;
-      }
-    }
-  });
-  basketModels.addEventListener('click', function (e) {
-    var target = e.target;
-    var div = target;
-
-    while (!div.classList.contains('btn_count')) {
-      if (div == basketModels) {
-        break;
-      }
-
-      div = div.parentElement;
-    }
-
-    if (div != basketModels) {
-      var itInc = div.classList.contains('btn_count_inc');
-      var itDec = div.classList.contains('btn_count_dec');
-
-      if (itInc) {
-        var divParrent = div.parentElement;
-        var input = divParrent.querySelector('input');
-        if (input.value < 50) input.value = Number(input.value) + 1;
-      } else if (itDec) {
-        var _divParrent = div.parentElement;
-
-        var _input = _divParrent.querySelector('input');
-
-        if (_input.value > 0) {
-          _input.value -= 1;
-        }
-      }
-    }
-  });
-}
-
-var card = document.querySelector('.card');
-
-if (card) {
-  var hideFeedbackModal = function hideFeedbackModal() {
-    feedbackModal.classList.remove('show');
-    body.style.overflow = 'initial';
-    modalBg.classList.toggle('show');
-  };
-
-  var feedbackBtn = document.querySelector('.feedback button');
-  var feedbackModal = document.querySelector('.feedback-modal');
-  var modalBg = document.querySelector('.modal-bg');
-  var feedbackModalExit = feedbackModal.querySelector('.feedback-modal__exit');
-  var body = document.querySelector('body');
-  document.addEventListener('click', function (e) {
-    var target = e.target;
-    var its_feedbackModal = target == feedbackModal || feedbackModal.contains(target);
-    var its_feedbackBtn = target == feedbackBtn;
-    var feedbackModal_is_active = feedbackModal.classList.contains('show');
-
-    if (!its_feedbackModal && !its_feedbackBtn && feedbackModal_is_active) {
-      hideFeedbackModal();
-    }
-  });
-  feedbackBtn.addEventListener('click', function () {
-    window.location = '#feedback';
-    body.style.overflow = 'hidden';
-    feedbackModal.classList.toggle('show');
-    modalBg.classList.toggle('show');
-    body.style.overflow = 'hidden';
-  });
-  feedbackModalExit.addEventListener('click', hideFeedbackModal);
-  var cardCountInput = document.querySelector('.card-model__product-count input');
-  cardCountInput.addEventListener('input', function () {
-    cardCountInput.value = cardCountInput.value.replace(/\D/g, '');
-  });
-  cardCountInput.addEventListener('change', function () {
-    var value = cardCountInput.value;
-
-    if (value === '') {
-      value = 0;
-    } else if (value > 50) {
-      value = 50;
-    }
-
-    cardCountInput.value = value;
-  });
-  var cardModelCount = document.querySelector('.card-model__product-count>div');
-  cardModelCount.addEventListener('click', function (e) {
-    var target = e.target;
-    var div = target;
-
-    while (!div.hasAttribute('data-name')) {
-      if (div == cardModelCount) {
-        break;
-      }
-
-      div = div.parentElement;
-    }
-
-    if (div.hasAttribute('data-name')) {
-      if (div.dataset.name == 'minus') {
-        if (cardCountInput.value > 0) cardCountInput.value -= 1;
-      } else if (div.dataset.name == 'plus') {
-        if (cardCountInput.value < 50) cardCountInput.value = Number(cardCountInput.value) + 1;
-      }
-    } else {
-      var _div = target;
-
-      while (_div.hasAttribute('data-name') == null) {
-        _div = _div.parentElement;
-      }
-
-      if (_div.dataset.name == 'minus') {
-        if (cardCountInput.value > 0) cardCountInput.value -= 1;
-      } else if (_div.dataset.name == 'plus') {
-        if (cardCountInput.value < 50) cardCountInput.value = Number(cardCountInput.value) + 1;
-      }
-    }
-  });
-  var cardMain = document.querySelector('.card_main');
-
-  if (cardMain) {
-    var cardHideAllLists = function cardHideAllLists(div) {
-      cardAddChecks.forEach(function (block) {
-        if (block !== div) block.classList.remove('open');
-      });
-    };
-
-    var cardInfoAdd = document.querySelector('.card-info-add');
-    var cardAddChecks = document.querySelectorAll('.card-info-add__block-check');
-    cardInfoAdd.addEventListener('click', function (e) {
-      var target = e.target;
-      var div = target;
-
-      while (!div.classList.contains('add__sign') && !div.classList.contains('card-info-add__block-check')) {
-        if (div == cardInfoAdd) {
-          break;
-        }
-
-        div = div.parentElement;
-      }
-
-      if (div.classList.contains('add__sign')) {
-        var divParent = div.parentElement;
-        var mainParent = divParent.parentElement;
-
-        if (mainParent.querySelector('.card-info-add__block-check input').checked) {
-          var input = divParent.querySelector('input');
-
-          if (div.dataset.name == 'plus' && input.value < 50) {
-            input.value = Number(input.value) + 1;
-          } else if (div.dataset.name == 'minus' && input.value > 0) {
-            input.value -= 1;
-          }
-        }
-      } // drop-down lists
-      else if (div.classList.contains('card-info-add__block-check')) {
-          var _input2 = div.querySelector('label>input');
-
-          var span = div.querySelector('label>span');
-          var divOutput = div.querySelector('#add_content');
-          var list = div.querySelector('ul');
-          var itListElement = list.contains(target) && target != list;
-          var itSpan = target == span || target == _input2;
-
-          if (itListElement) {
-            divOutput.innerHTML = target.innerHTML;
-            _input2.checked = true;
-            cardHideAllLists(null);
-          } else if (!itSpan) {
-            div.classList.add('open');
-            cardHideAllLists(div);
-          }
-        }
-    });
-    cardInfoAdd.addEventListener('change', function (e) {
-      var target = e.target;
-      var div = target.parentElement.parentElement;
-      var divOutput = div.querySelector('#add_content');
-      var mainParent = target.closest('.card-info-add__block');
-      var input = mainParent.querySelector('.card-info-add__block-count>input');
-
-      if (!target.checked) {
-        divOutput.innerHTML = divOutput.dataset.content;
-        cardHideAllLists(null);
-        input.value = 0;
-      } else {
-        if (divOutput.innerHTML == divOutput.dataset.content) {
-          target.checked = false;
-        }
-
-        div.classList.add('open');
-      }
-    });
-    cardInfoAdd.addEventListener('input', function (e) {
-      var target = e.target; // plus / minus
-
-      if (target.parentElement.classList.contains('card-info-add__block-count')) {
-        target.value = target.value.replace(/\D/g, '');
-      }
-    });
-    cardInfoAdd.addEventListener('change', function (e) {
-      var target = e.target;
-
-      if (target.parentElement.classList.contains('card-info-add__block-count')) {
-        if (target.value === '') {
-          target.value = 0;
-        } else if (target.value > 50) {
-          target.value = 50;
-        }
-      }
-    });
-    document.addEventListener('click', function (e) {
-      var target = e.target;
-
-      if (!cardInfoAdd.contains(target)) {
-        cardHideAllLists(null);
-      }
-    });
-  }
-} // feedback
-
-
-var feedbackBlock = document.querySelector('.feedback');
-
-if (feedbackBlock) {
-  var feedbackSlider = document.querySelector('.feedback-slider');
-  var simproductsSlider = document.querySelector('.simproducts-slider');
-  feedbackSlider.addEventListener('click', function (e) {
-    var target = e.target;
-
-    if (target.hasAttribute('data-small')) {
-      var _feedbackBlock = target.closest('.feedback__block');
-
-      if (target.innerHTML == 'Скрыть отзыв') {
-        target.innerHTML = 'Читать дальше';
-
-        var div = _feedbackBlock.querySelector('div');
-
-        div.scrollTop = 0;
-      } else {
-        target.innerHTML = 'Скрыть отзыв';
-      }
-
-      _feedbackBlock.classList.toggle('feedback-block-active');
-    }
-  });
-  simproductsSlider.addEventListener('click', function (e) {
-    var target = e.target;
-
-    if (target.hasAttribute('data-small')) {
-      var slideFooter = target.closest('.simproducts-slide__footer');
-
-      if (target.innerHTML == 'Скрыть информацию') {
-        target.innerHTML = 'Подробнее';
-        var div = slideFooter.querySelector('div');
-        div.scrollTop = 0;
-      } else {
-        target.innerHTML = 'Скрыть информацию';
-      }
-
-      slideFooter.classList.toggle('feedback-block-active');
-    }
-  });
-  feedbackBlock.addEventListener('click', function (e) {
-    var target = e.target;
-
-    if (!target.classList.contains('like') && !target.classList.contains('dislike')) {
-      target = target.parentElement;
-    }
-
-    if (target.classList.contains('like') || target.classList.contains('dislike')) {
-      var div = target;
-
-      while (!div.classList.contains('feedback-bgblock')) {
-        div = div.parentElement;
-      }
-
-      if (target.classList.contains('like')) {
-        div.querySelector('.dislike').style.fill = 'black';
-        target.style.fill = 'green';
-      } else if (target.classList.contains('dislike')) {
-        div.querySelector('.like').style.fill = 'black';
-        target.style.fill = 'red';
-      }
-    }
-  });
-}
-
-var otherCardZabor = document.querySelector('.card-zabor');
-
-if (otherCardZabor) {
-  var cardZaborCount = document.querySelector('.card-model__product-count');
-  var cardZaborInput = document.querySelector('.card-model__product-count input');
-  var plus = cardZaborCount.querySelector('.plus');
-  var minus = cardZaborCount.querySelector('.minus');
-  cardZaborCount.addEventListener('click', function (e) {
-    var target = e.target;
-
-    if ((plus.contains(target) || plus == target) && cardZaborInput.value < 50) {
-      cardZaborInput.value = Number(cardZaborInput.value) + 1;
-    } else if ((minus.contains(target) || minus == target) && cardZaborInput.value > 0) {
-      cardZaborInput.value -= 1;
-    }
-  });
-  cardZaborInput.addEventListener('input', function (e) {
-    var target = e.target; // plus / minus
-
-    if (target.parentElement.classList.contains('card-info-add__block-count')) {
-      target.value = target.value.replace(/\D/g, '');
-    }
-  });
-  cardZaborInput.addEventListener('change', function (e) {
-    var target = e.target;
-
-    if (target.parentElement.classList.contains('card-info-add__block-count')) {
-      if (target.value === '') {
-        target.value = 0;
-      } else if (target.value > 50) {
-        target.value = 50;
-      }
-    }
-  });
-}
-
-var catalog = document.querySelector('.catalog');
-
-if (catalog) {
-  var hideFilterLists = function hideFilterLists() {
-    filterParams.forEach(function (filter) {
-      if (filter.classList.contains('filter-open')) {
-        filter.classList.remove('filter-open');
-      }
-    });
-  };
-
-  var catalogFilter = document.querySelector('.catalog-filter');
-  var catalogBlocks = document.querySelector('.catalog-blocks');
-  var filterParams = document.querySelectorAll('.catalog-select');
-  ; // filter
-
-  catalogFilter.addEventListener('click', function (e) {
-    var target = e.target;
-    var itSelectElement = target.classList.contains('select__element');
-    var div = target.closest('.catalog-select');
-
-    if (div) {
-      if (itSelectElement) {
-        var dataActive = target.dataset.value;
-        var dataText = target.innerHTML;
-        var p = div.querySelector('.catalog-select__check');
-        p.innerHTML = dataText;
-        p.dataset.value = dataActive;
-        hideFilterLists();
-      } else if (div.classList.contains('filter-open')) {
-        hideFilterLists();
-      } else {
-        hideFilterLists();
-        div.classList.add('filter-open');
-      }
-    } else {
-      hideFilterLists();
-    }
-  });
-  document.addEventListener('click', function (e) {
-    var target = e.target;
-
-    if (!catalogFilter.contains(target)) {
-      hideFilterLists();
-    }
-  }); // Raiting
-
-  catalogBlocks.addEventListener('click', function (e) {
-    var target = e.target;
-
-    if (target.classList.contains('rating-item') && !target.classList.contains('rating_active')) {
-      {
-        var rating = target.parentElement;
-        var items = rating.querySelectorAll('.rating-item');
-        items.forEach(function (item) {
-          item.classList.remove('rating_active');
-        });
-        target.classList.add('rating_active');
-      }
-    }
-  });
-}
 /**
  * Swiper 6.1.2
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -447,8 +13,6 @@ if (catalog) {
  *
  * Released on: August 17, 2020
  */
-
-
 !function (e, t) {
   "object" == (typeof exports === "undefined" ? "undefined" : _typeof(exports)) && "undefined" != typeof module ? module.exports = t() : "function" == typeof define && define.amd ? define(t) : (e = e || self).Swiper = t();
 }(void 0, function () {
@@ -5011,6 +4575,470 @@ if (catalog) {
   }];
   return W.use(ue), W;
 });
+var aside = document.querySelector('.aside');
+
+if (aside) {
+  var hideMenu = function hideMenu() {
+    _aside.classList.remove('aside_show');
+  };
+
+  var menu = document.querySelector('.aside__menu');
+
+  var _aside = document.querySelector('.main__aside');
+
+  menu.addEventListener('click', function () {
+    _aside.classList.toggle('aside_show');
+  });
+  ;
+  document.addEventListener('click', function (e) {
+    var target = e.target;
+    var its_menu = target == menu || menu.contains(target);
+    var its_aside = target == _aside;
+
+    var aside_is_active = _aside.classList.contains('aside_show');
+
+    if (!its_aside && !its_menu && aside_is_active) {
+      hideMenu();
+    }
+  });
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 768) menu.style.display = 'none';else if (window.innerWidth <= 768 && !_aside.classList.contains('aside_show')) menu.style.display = 'block';
+  });
+  var initialPoint;
+  var finalPoint;
+  document.addEventListener('touchstart', function (event) {
+    initialPoint = event.changedTouches[0];
+  }, false);
+  document.addEventListener('touchend', function (event) {
+    finalPoint = event.changedTouches[0];
+    var xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
+    var yAbs = Math.abs(initialPoint.pageY - finalPoint.pageY);
+
+    if ((xAbs > 20 || yAbs > 20) && xAbs > yAbs && finalPoint.pageX < initialPoint.pageX) {
+      hideMenu();
+    }
+  }, false);
+}
+
+var basket = document.querySelector('.basket');
+
+if (basket) {
+  var basketModels = document.querySelector('.basket-models');
+  basketModels.addEventListener('input', function (e) {
+    var target = e.target;
+
+    if (target.dataset.name = 'input-count') {
+      target.value = target.value.replace(/\D/g, '');
+    }
+  });
+  basketModels.addEventListener('change', function (e) {
+    var target = e.target;
+
+    if (target.dataset.name = 'input-count') {
+      if (target.value === '') {
+        target.value = 0;
+      } else if (target.value > 50) {
+        target.value = 50;
+      }
+    }
+  });
+  basketModels.addEventListener('click', function (e) {
+    var target = e.target;
+    var div = target;
+
+    while (!div.classList.contains('btn_count')) {
+      if (div == basketModels) {
+        break;
+      }
+
+      div = div.parentElement;
+    }
+
+    if (div != basketModels) {
+      var itInc = div.classList.contains('btn_count_inc');
+      var itDec = div.classList.contains('btn_count_dec');
+
+      if (itInc) {
+        var divParrent = div.parentElement;
+        var input = divParrent.querySelector('input');
+        if (input.value < 50) input.value = Number(input.value) + 1;
+      } else if (itDec) {
+        var _divParrent = div.parentElement;
+
+        var _input = _divParrent.querySelector('input');
+
+        if (_input.value > 0) {
+          _input.value -= 1;
+        }
+      }
+    }
+  });
+}
+
+var card = document.querySelector('.card');
+
+if (card) {
+  var hideFeedbackModal = function hideFeedbackModal() {
+    feedbackModal.classList.remove('show');
+    body.style.overflow = 'initial';
+    modalBg.classList.toggle('show');
+  };
+
+  var feedbackBtn = document.querySelector('.feedback button');
+  var feedbackModal = document.querySelector('.feedback-modal');
+  var modalBg = document.querySelector('.modal-bg');
+  var feedbackModalExit = feedbackModal.querySelector('.feedback-modal__exit');
+  var body = document.querySelector('body');
+  console.log('1');
+  var imgSlider = new Swiper('.card-img-swiper', {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 30,
+    speed: 600,
+    arrows: true,
+    autoplay: {
+      delay: 3000
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    }
+  });
+  document.addEventListener('click', function (e) {
+    var target = e.target;
+    var its_feedbackModal = target == feedbackModal || feedbackModal.contains(target);
+    var its_feedbackBtn = target == feedbackBtn;
+    var feedbackModal_is_active = feedbackModal.classList.contains('show');
+
+    if (!its_feedbackModal && !its_feedbackBtn && feedbackModal_is_active) {
+      hideFeedbackModal();
+    }
+  });
+  feedbackBtn.addEventListener('click', function () {
+    window.location = '#feedback';
+    body.style.overflow = 'hidden';
+    feedbackModal.classList.toggle('show');
+    modalBg.classList.toggle('show');
+    body.style.overflow = 'hidden';
+  });
+  feedbackModalExit.addEventListener('click', hideFeedbackModal);
+  var cardCountInput = document.querySelector('.card-model__product-count input');
+  cardCountInput.addEventListener('input', function () {
+    cardCountInput.value = cardCountInput.value.replace(/\D/g, '');
+  });
+  cardCountInput.addEventListener('change', function () {
+    var value = cardCountInput.value;
+
+    if (value === '') {
+      value = 0;
+    } else if (value > 50) {
+      value = 50;
+    }
+
+    cardCountInput.value = value;
+  });
+  var cardModelCount = document.querySelector('.card-model__product-count>div');
+  cardModelCount.addEventListener('click', function (e) {
+    var target = e.target;
+    var div = target;
+
+    while (!div.hasAttribute('data-name')) {
+      if (div == cardModelCount) {
+        break;
+      }
+
+      div = div.parentElement;
+    }
+
+    if (div.hasAttribute('data-name')) {
+      if (div.dataset.name == 'minus') {
+        if (cardCountInput.value > 0) cardCountInput.value -= 1;
+      } else if (div.dataset.name == 'plus') {
+        if (cardCountInput.value < 50) cardCountInput.value = Number(cardCountInput.value) + 1;
+      }
+    } else {
+      var _div = target;
+
+      while (_div.hasAttribute('data-name') == null) {
+        _div = _div.parentElement;
+      }
+
+      if (_div.dataset.name == 'minus') {
+        if (cardCountInput.value > 0) cardCountInput.value -= 1;
+      } else if (_div.dataset.name == 'plus') {
+        if (cardCountInput.value < 50) cardCountInput.value = Number(cardCountInput.value) + 1;
+      }
+    }
+  });
+  var cardMain = document.querySelector('.card_main');
+
+  if (cardMain) {
+    var cardHideAllLists = function cardHideAllLists(div) {
+      cardAddChecks.forEach(function (block) {
+        if (block !== div) block.classList.remove('open');
+      });
+    };
+
+    var cardInfoAdd = document.querySelector('.card-info-add');
+    var cardAddChecks = document.querySelectorAll('.card-info-add__block-check');
+    cardInfoAdd.addEventListener('click', function (e) {
+      var target = e.target;
+      var div = target;
+
+      while (!div.classList.contains('add__sign') && !div.classList.contains('card-info-add__block-check')) {
+        if (div == cardInfoAdd) {
+          break;
+        }
+
+        div = div.parentElement;
+      }
+
+      if (div.classList.contains('add__sign')) {
+        var divParent = div.parentElement;
+        var mainParent = divParent.parentElement;
+
+        if (mainParent.querySelector('.card-info-add__block-check input').checked) {
+          var input = divParent.querySelector('input');
+
+          if (div.dataset.name == 'plus' && input.value < 50) {
+            input.value = Number(input.value) + 1;
+          } else if (div.dataset.name == 'minus' && input.value > 0) {
+            input.value -= 1;
+          }
+        }
+      } // drop-down lists
+      else if (div.classList.contains('card-info-add__block-check')) {
+          var _input2 = div.querySelector('label>input');
+
+          var span = div.querySelector('label>span');
+          var divOutput = div.querySelector('#add_content');
+          var list = div.querySelector('ul');
+          var itListElement = list.contains(target) && target != list;
+          var itSpan = target == span || target == _input2;
+
+          if (itListElement) {
+            divOutput.innerHTML = target.innerHTML;
+            _input2.checked = true;
+            cardHideAllLists(null);
+          } else if (!itSpan) {
+            div.classList.add('open');
+            cardHideAllLists(div);
+          }
+        }
+    });
+    cardInfoAdd.addEventListener('change', function (e) {
+      var target = e.target;
+      var div = target.parentElement.parentElement;
+      var divOutput = div.querySelector('#add_content');
+      var mainParent = target.closest('.card-info-add__block');
+      var input = mainParent.querySelector('.card-info-add__block-count>input');
+
+      if (!target.checked) {
+        divOutput.innerHTML = divOutput.dataset.content;
+        cardHideAllLists(null);
+        input.value = 0;
+      } else {
+        if (divOutput.innerHTML == divOutput.dataset.content) {
+          target.checked = false;
+        }
+
+        div.classList.add('open');
+      }
+    });
+    cardInfoAdd.addEventListener('input', function (e) {
+      var target = e.target; // plus / minus
+
+      if (target.parentElement.classList.contains('card-info-add__block-count')) {
+        target.value = target.value.replace(/\D/g, '');
+      }
+    });
+    cardInfoAdd.addEventListener('change', function (e) {
+      var target = e.target;
+
+      if (target.parentElement.classList.contains('card-info-add__block-count')) {
+        if (target.value === '') {
+          target.value = 0;
+        } else if (target.value > 50) {
+          target.value = 50;
+        }
+      }
+    });
+    document.addEventListener('click', function (e) {
+      var target = e.target;
+
+      if (!cardInfoAdd.contains(target)) {
+        cardHideAllLists(null);
+      }
+    });
+  }
+} // feedback
+
+
+var feedbackBlock = document.querySelector('.feedback');
+
+if (feedbackBlock) {
+  var feedbackSlider = document.querySelector('.feedback-slider');
+  var simproductsSlider = document.querySelector('.simproducts-slider');
+  feedbackSlider.addEventListener('click', function (e) {
+    var target = e.target;
+
+    if (target.hasAttribute('data-small')) {
+      var _feedbackBlock = target.closest('.feedback__block');
+
+      if (target.innerHTML == 'Скрыть отзыв') {
+        target.innerHTML = 'Читать дальше';
+
+        var div = _feedbackBlock.querySelector('div');
+
+        div.scrollTop = 0;
+      } else {
+        target.innerHTML = 'Скрыть отзыв';
+      }
+
+      _feedbackBlock.classList.toggle('feedback-block-active');
+    }
+  });
+  simproductsSlider.addEventListener('click', function (e) {
+    var target = e.target;
+
+    if (target.hasAttribute('data-small')) {
+      var slideFooter = target.closest('.simproducts-slide__footer');
+
+      if (target.innerHTML == 'Скрыть информацию') {
+        target.innerHTML = 'Подробнее';
+        var div = slideFooter.querySelector('div');
+        div.scrollTop = 0;
+      } else {
+        target.innerHTML = 'Скрыть информацию';
+      }
+
+      slideFooter.classList.toggle('feedback-block-active');
+    }
+  });
+  feedbackBlock.addEventListener('click', function (e) {
+    var target = e.target;
+
+    if (!target.classList.contains('like') && !target.classList.contains('dislike')) {
+      target = target.parentElement;
+    }
+
+    if (target.classList.contains('like') || target.classList.contains('dislike')) {
+      var div = target;
+
+      while (!div.classList.contains('feedback-bgblock')) {
+        div = div.parentElement;
+      }
+
+      if (target.classList.contains('like')) {
+        div.querySelector('.dislike').style.fill = 'black';
+        target.style.fill = 'green';
+      } else if (target.classList.contains('dislike')) {
+        div.querySelector('.like').style.fill = 'black';
+        target.style.fill = 'red';
+      }
+    }
+  });
+}
+
+var otherCardZabor = document.querySelector('.card-zabor');
+
+if (otherCardZabor) {
+  var cardZaborCount = document.querySelector('.card-model__product-count');
+  var cardZaborInput = document.querySelector('.card-model__product-count input');
+  var plus = cardZaborCount.querySelector('.plus');
+  var minus = cardZaborCount.querySelector('.minus');
+  cardZaborCount.addEventListener('click', function (e) {
+    var target = e.target;
+
+    if ((plus.contains(target) || plus == target) && cardZaborInput.value < 50) {
+      cardZaborInput.value = Number(cardZaborInput.value) + 1;
+    } else if ((minus.contains(target) || minus == target) && cardZaborInput.value > 0) {
+      cardZaborInput.value -= 1;
+    }
+  });
+  cardZaborInput.addEventListener('input', function (e) {
+    var target = e.target; // plus / minus
+
+    if (target.parentElement.classList.contains('card-info-add__block-count')) {
+      target.value = target.value.replace(/\D/g, '');
+    }
+  });
+  cardZaborInput.addEventListener('change', function (e) {
+    var target = e.target;
+
+    if (target.parentElement.classList.contains('card-info-add__block-count')) {
+      if (target.value === '') {
+        target.value = 0;
+      } else if (target.value > 50) {
+        target.value = 50;
+      }
+    }
+  });
+}
+
+var catalog = document.querySelector('.catalog');
+
+if (catalog) {
+  var hideFilterLists = function hideFilterLists() {
+    filterParams.forEach(function (filter) {
+      if (filter.classList.contains('filter-open')) {
+        filter.classList.remove('filter-open');
+      }
+    });
+  };
+
+  var catalogFilter = document.querySelector('.catalog-filter');
+  var catalogBlocks = document.querySelector('.catalog-blocks');
+  var filterParams = document.querySelectorAll('.catalog-select');
+  ; // filter
+
+  catalogFilter.addEventListener('click', function (e) {
+    var target = e.target;
+    var itSelectElement = target.classList.contains('select__element');
+    var div = target.closest('.catalog-select');
+
+    if (div) {
+      if (itSelectElement) {
+        var dataActive = target.dataset.value;
+        var dataText = target.innerHTML;
+        var p = div.querySelector('.catalog-select__check');
+        p.innerHTML = dataText;
+        p.dataset.value = dataActive;
+        hideFilterLists();
+      } else if (div.classList.contains('filter-open')) {
+        hideFilterLists();
+      } else {
+        hideFilterLists();
+        div.classList.add('filter-open');
+      }
+    } else {
+      hideFilterLists();
+    }
+  });
+  document.addEventListener('click', function (e) {
+    var target = e.target;
+
+    if (!catalogFilter.contains(target)) {
+      hideFilterLists();
+    }
+  }); // Raiting
+
+  catalogBlocks.addEventListener('click', function (e) {
+    var target = e.target;
+
+    if (target.classList.contains('rating-item') && !target.classList.contains('rating_active')) {
+      {
+        var rating = target.parentElement;
+        var items = rating.querySelectorAll('.rating-item');
+        items.forEach(function (item) {
+          item.classList.remove('rating_active');
+        });
+        target.classList.add('rating_active');
+      }
+    }
+  });
+}
+
 var team = document.querySelector('.team');
 
 if (team) {
@@ -5167,6 +5195,26 @@ if (cardZabor) {
         slidesPerView: 2,
         slidesPerColumn: 2
       }
+    }
+  });
+}
+
+var imgSwiperBlock = document.querySelector('.img-swiper');
+
+if (imgSwiperBlock) {
+  var ImgSwiper = new Swiper('.img-swiper', {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 30,
+    speed: 600,
+    arrows: true,
+    lazy: true,
+    autoplay: {
+      delay: 3000
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
     }
   });
 }
