@@ -76,9 +76,9 @@
             display: flex
             align-items: center
             +sm-block
-                width: 100%
-                justify-content: space-around
+                justify-content: center
                 > div
+                    margin-left: -30px
                     transform: scale(0.8)
                     display: flex
                     padding: 10px 20px
@@ -97,6 +97,8 @@
                 color: $dark
                 transition: color .3s
                 margin-left: 10px
+                +md-block
+                    margin-left: 0
                 &:hover
                     color: $orange500
             input
