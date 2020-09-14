@@ -4,27 +4,28 @@
     padding: 10px 100px 0 30px
     +lg-block
         padding: 0 20px 0 0px
-    +sm-block
+    +md-block
         padding: 0
         margin: 0
     .container
-        min-height: 0 !important
-        padding: 0 10px
+        padding: 0
+        +md-block
+            padding: 0 10px
     +md-block
         width: 100%
     > div
         padding: 100px 100px 0 30px
         +xxl-block
             padding: 100px 30px 0 0
-        +sm-block
-            padding: 0
+        +md-block
+            padding: 0 20px
             background-color: $lightbg
         > div
             background-color: $lightbg
             padding: 60px 40px 60px 30px
             border-radius: 0 175px 0 0
             height: 100%
-            +sm-block
+            +md-block
                 padding: 80px 20px 30px
     &__inner
         +row-flex
@@ -44,7 +45,7 @@
         ul           
             +font(22, 15)     
             margin-top: 80px
-            +sm-block
+            +md-block
                 margin-top: 0
             font-size: 22px
             width: 100%
@@ -96,6 +97,8 @@
         +xxx-block
             +size(12)
         padding: 30px 25px
+        +md-block
+            padding: 20px 10px
         background: #FFE5C0
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25)
         border-radius: 0 175px 0 0

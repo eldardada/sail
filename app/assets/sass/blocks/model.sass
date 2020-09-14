@@ -62,16 +62,15 @@
             position: relative
             overflow: hidden 
             border-radius: 106px 14px 14px 14px
-            height: 0
-            padding-bottom: 135%
             .swiper-slide
-                height: 100%
-
-                img
-                    display: block
-                    object-fit: cover
-                    width: 100%
-                    
+                > .swiper-lazy
+                    height: 0
+                    padding-bottom: 130%
+                    background-size: cover
+                    background-position: center
+                    background-repeat: no-repeat
+                    +sm-block
+                        padding-bottom: 160%
     ul
         z-index: 10
         position: absolute
