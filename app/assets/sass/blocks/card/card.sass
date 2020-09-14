@@ -54,11 +54,14 @@
                 z-index: 0
                 border-radius: 45px
                 .swiper-slide
-                    height: 0
-                    padding-bottom: 130%
-                img
+                    > .swiper-lazy
+                        height: 0
+                        padding-bottom: 130%
+                        background-size: cover
+                        background-position: center
+                        background-repeat: no-repeat
                     width: 100%
-                    height: auto
+                    height: 100%
                     display: block
             &-icons
                 position: absolute
