@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Парус</title>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 </head>
 <body>
     <header class="header header_orange">
@@ -72,7 +73,8 @@
                                 </li>
                             </ul>
                             <div class="contacts-info__map">
-                                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A235f0fcefbfb51e4153d4ad267afa7aefebdb06c0ded76b20dca816df86335b4&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>
+                                <div id="map" style="width: 100%; height: 400px"></div>
+                                <!-- <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A235f0fcefbfb51e4153d4ad267afa7aefebdb06c0ded76b20dca816df86335b4&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script> -->
                             </div>
                         </div>
                         <div class="contacts-form">
@@ -147,5 +149,26 @@
         </div>
     </footer>
     <script src="./assets/js/script.js"></script>
+    <script type="text/javascript">
+        
+        ymaps.ready(init);
+        function init(){
+            var myMap = new ymaps.Map("map", {
+                center: [57.34911961458482,39.77319727290255],
+                zoom: 18.429445393880208,
+            }),
+            
+            myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                hintContent: 'Парус',
+                ballonContent: 'Парус - личное пространство для вас'
+            });
+            myMap.geoObjects.add(myPlacemark);
+            myMap.behaviors.disable('scrollZoom');
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+                myMap.behaviors.disable('drag');
+            }
+        }
+
+    </script>
 </body>
 </html>
