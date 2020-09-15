@@ -22,7 +22,7 @@ const imagemin = require('gulp-imagemin');
 const imgCompress  = require('imagemin-jpeg-recompress');
 const mozjpeg = require('imagemin-mozjpeg');
   // tinypng
-  const tiny = 'API';
+  const tiny = '5z1WBCWwW8DDNPMfhkLwJTbLQPf87G2Q';
   const tingpng = require('gulp-tinypng');
 // smartgrid
 const smartgrid = require('smart-grid');
@@ -198,7 +198,7 @@ function grid(done){
         done()
     };
 
-let build = gulp.series(clean, gulp.parallel(styles, php, html, scripts, images, fonts));
+let build = gulp.series(clean, gulp.parallel(styles, php, html, scripts, fonts));
 
 gulp.task('clean', clean);
 gulp.task('build', build);
