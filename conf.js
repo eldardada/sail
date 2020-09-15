@@ -12,7 +12,7 @@ global.html_arch = [
   'contacts',
   'card',
   'about',
-  'pay',
+  'checkout',
   'card-zabor'
 ].map(element => appDir + element + '.html')
 // files name
