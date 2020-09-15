@@ -5073,6 +5073,12 @@ if (team) {
 var pay = document.querySelector('.pay');
 
 if (pay) {
+  var deleteChecked = function deleteChecked(array) {
+    array.forEach(function (input) {
+      input.checked = false;
+    });
+  };
+
   var delivery = document.querySelector('.pay-delivary-choice');
   var deliveryButton = document.querySelector('.pay-delivary>h2>input');
   var payDataProducts = document.querySelector('.pay-data__products');
@@ -5106,14 +5112,9 @@ if (pay) {
   });
   payDataProducts.addEventListener('click', function (e) {
     var target = e.target;
-    var div = target;
+    var div = target.closest('.pay__sign');
 
-    while (!div.classList.contains('pay__sign')) {
-      if (div.classList.contains('pay-data__products-count')) break;
-      div = div.parentElement;
-    }
-
-    if (div.classList.contains('pay__sign')) {
+    if (div) {
       var parent = div.parentElement;
       var input = parent.querySelector('input');
 
@@ -5121,6 +5122,30 @@ if (pay) {
         input.value -= 1;
       } else if (div.dataset.name == 'plus' && input.value < 50) {
         input.value = Number(input.value) + 1;
+      }
+    }
+  });
+  var payPay = document.querySelector('.pay-pay');
+  var payMethods = payPay.querySelectorAll('input[data-name="pay_method"]');
+  var payDelivary = document.querySelector('.pay-delivary');
+  var payСities = payDelivary.querySelectorAll('input[data-name="pay_city"]');
+  payPay.addEventListener('change', function (e) {
+    var target = e.target;
+
+    if (target.dataset.name === 'pay_method') {
+      if (target.checked) {
+        deleteChecked(payMethods);
+        target.checked = true;
+      }
+    }
+  });
+  payDelivary.addEventListener('change', function (e) {
+    var target = e.target;
+
+    if (target.dataset.name === 'pay_city') {
+      if (target.checked) {
+        deleteChecked(payСities);
+        target.checked = true;
       }
     }
   });

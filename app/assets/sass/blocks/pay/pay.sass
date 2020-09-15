@@ -1,14 +1,15 @@
 .pay
     margin-top: 80px
+    width: calc(100% - 121px)
     padding: 10px 100px 0 30px
     +lg-block
-        padding: 10px 20px 0 0px
+        padding: 10px 20px 0 0
     +md-block
         margin: 0
         padding: 50px 20px 0
     .container
         height: 100%
-    width: calc(100% - 121px)
+        padding: 0
     +md-block
         width: 100%
         background-color: $lightbg
@@ -109,7 +110,7 @@
                 +shift-left(0)
                 +shift-right(0)
                 +size(12)
-            >div
+            > div
                 padding: 10px 20px
                 background-color: $orange200
                 position: relative
@@ -120,7 +121,7 @@
                     align-items: center
                     justify-content: space-between
                 > h3
-                    +font(15, 15)
+                    +font(15, 12)
                     color: $light
                     padding: 5px 10px
                     max-width: 80%
@@ -139,7 +140,8 @@
             &-img
                 margin-top: 10px
                 overflow: hidden
-                width: 164px
+                width: 100%
+                max-width: 164px
                 height: 96px
                 background-size: contain
                 background-position: center
