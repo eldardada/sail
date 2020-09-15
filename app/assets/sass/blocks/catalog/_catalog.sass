@@ -2,15 +2,15 @@
 
 .catalog
     padding: 10px 100px 0 30px
-    +xxx-block
-        padding: 10px 20px 0 
-    +sm-block
-        padding: 0
-    .container
-        padding: 0
     width: calc(100% - 121px)
+    +xxx-block
+        padding: 10px 20px 0
+    +lg-block
+        padding: 0
     +md-block
         width: 100%
+    .container
+        padding: 0
     &-wrapper
         padding-top: 80px
         +xxl-block
@@ -146,53 +146,50 @@
                         border-bottom: none
     &-blocks
         +row-flex
-        justify-content: space-around
-        +shift-right(0.5)
-        +lg-block
-            +shift-right(0)
-        +xxl-block
-            justify-content: space-evenly
         &__block
             position: relative
-            max-width: 400px
             +col
-            +size(4)
+            +size(3.5)
+            +shift-left(0.25)
+            +shift-right(0.25)
             padding: 0 45px
             +xxl-block
-                +size(6)
+                +size(5)
+                +shift-left(0.5)
+                +shift-right(0.5)
             +xm-block
-                display: flex
-                justify-content: space-evenly
-                align-items: center
-                min-width: 100%
-                padding: 0
+                padding: 0 30px
+            +md-block
+                +size(7)
+                +shift-left(2.5)
+                +shift-right(2.5)
+            +sm-block
+                +size(10)
                 +shift-left(1)
                 +shift-right(1)
-                padding: 0 30px
-            +sm-block
-                flex-direction: column
-                width: 90%
-                margin-bottom: 40px
+            +xxs-block
+                +size(11)
+                +shift-left(0.5)
+                +shift-right(0.5)
             &-content
                 position: relative
                 margin-bottom: 100px
                 max-width: 380px
                 +sm-block
-                    margin-bottom: 20px
+                    margin-bottom: 80px
             ul
                 position: absolute
-                right: -50px 
+                right: -10px 
                 bottom: 250px
                 filter: drop-shadow(10px 2px 4px rgba(0, 0, 0, 0.25))
                 +xxx-block
                     right: -33px
                     transform: scale(0.8)
-                +xm-block
-                    right: 30px
-                +sm-block
+                +lg-block
                     transform: scale(0.7)
+                    bottom: 200px
+                +sm-block
                     right: -20px
-                    bottom: 20%
                 +xxs-block
                     button
                         padding-top: 20px !important
@@ -207,9 +204,6 @@
                     width: 180px
                     height: 60px
                     white-space: nowrap
-                    +xm-block
-                        margin-bottom: 15px
-                        height: initial
                     > a
                         margin: 0 auto
                         color: $dark
