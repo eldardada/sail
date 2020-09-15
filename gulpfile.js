@@ -101,24 +101,24 @@ function images(){
 
     return gulp.src(config.app.img)
 
-    // .pipe(gulpif(isProd,
-    //   imagemin([
-    //     imgCompress({
-    //         loops: 4,
-    //         min: 70,
-    //         max: 80,
-    //         quality: 'high'
-    //     }),
-    //     mozjpeg({
-    //       quality: 60,
-    //       progressive: true,
-    //       tune: "ms-ssim",
-    //       smooth: 2
-    //     }),
-    //     imagemin.gifsicle(),
-    //     imagemin.svgo()
-    //   ])
-    // ))
+    .pipe(gulpif(isProd,
+      imagemin([
+        imgCompress({
+            loops: 4,
+            min: 70,
+            max: 80,
+            quality: 'high'
+        }),
+        mozjpeg({
+          quality: 60,
+          progressive: true,
+          tune: "ms-ssim",
+          smooth: 2
+        }),
+        imagemin.gifsicle(),
+        imagemin.svgo()
+      ])
+    ))
 
     // .pipe(gulpif(isProd, tingpng(tiny) ))
 
