@@ -85,8 +85,7 @@
             +lg-block
                 margin-top: 15px
             button
-                display: flex
-                align-items: center
+                display: block
                 cursor: pointer
                 border-radius: 15px 0px
                 width: 100%
@@ -97,10 +96,12 @@
                 &:focus
                     outline: none
                 > span
+                    vertical-align: middle
                     margin-right: 10px
                     display: inline-block
                     border-bottom: 1px solid #000
                 > div
+                    vertical-align: middle
                     display: inline-block
                     margin-left: auto
             &:first-child
