@@ -112,14 +112,12 @@
             &:not(&:first-child)
                 button
                     display: flex
+                    justify-content: space-between
                     align-items: center
                     > span
                         display: block
                         margin-right: 15px
                         border-bottom: 1px solid #000
-                    > div
-                        display: inline-block
-                        margin-left: auto
             &:nth-child(2)
                 +btn($btnOrange200) 
             &:nth-child(3)
