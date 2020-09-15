@@ -101,26 +101,26 @@ function images(){
 
     return gulp.src(config.app.img)
 
-    .pipe(gulpif(isProd,
-      imagemin([
-        imgCompress({
-            loops: 4,
-            min: 70,
-            max: 80,
-            quality: 'high'
-        }),
-        mozjpeg({
-          quality: 60,
-          progressive: true,
-          tune: "ms-ssim",
-          smooth: 2
-        }),
-        imagemin.gifsicle(),
-        imagemin.svgo()
-      ])
-    ))
+    // .pipe(gulpif(isProd,
+    //   imagemin([
+    //     imgCompress({
+    //         loops: 4,
+    //         min: 70,
+    //         max: 80,
+    //         quality: 'high'
+    //     }),
+    //     mozjpeg({
+    //       quality: 60,
+    //       progressive: true,
+    //       tune: "ms-ssim",
+    //       smooth: 2
+    //     }),
+    //     imagemin.gifsicle(),
+    //     imagemin.svgo()
+    //   ])
+    // ))
 
-    .pipe(gulpif(isProd, tingpng(tiny) ))
+    // .pipe(gulpif(isProd, tingpng(tiny) ))
 
     .pipe(gulp.dest(config.dist.img))
     .pipe(browserSync.stream())
@@ -198,7 +198,7 @@ function grid(done){
         done()
     };
 
-let build = gulp.series(clean, gulp.parallel(styles, php, html, scripts, fonts));
+let build = gulp.series(clean, gulp.parallel(styles, php, html, scripts, images, fonts));
 
 gulp.task('clean', clean);
 gulp.task('build', build);
