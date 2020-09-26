@@ -22,7 +22,7 @@ const imagemin = require('gulp-imagemin');
 const imgCompress  = require('imagemin-jpeg-recompress');
 const mozjpeg = require('imagemin-mozjpeg');
   // tinypng
-  const tiny = '5z1WBCWwW8DDNPMfhkLwJTbLQPf87G2Q';
+  const tiny = 'TOKEN tinyPng';
   const tingpng = require('gulp-tinypng');
 // smartgrid
 const smartgrid = require('smart-grid');
