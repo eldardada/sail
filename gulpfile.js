@@ -116,7 +116,7 @@ function images(){
           smooth: 2
         }),
         imagemin.gifsicle(),
-        imagemin.svgo()
+        // imagemin.svgo()
       ])
     ))
 
