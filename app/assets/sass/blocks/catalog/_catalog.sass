@@ -100,7 +100,7 @@
             cursor: pointer
             display: flex
             padding: 15px 30px
-            z-index: 300
+            z-index: 3
             margin: 0 15px
             background-color: $orange300
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
@@ -128,7 +128,6 @@
                 cursor: pointer
                 transition: transform .3s
             ul
-                z-index: 2
                 background-color: #FFDBA9
                 position: absolute
                 top: 100%
@@ -140,38 +139,34 @@
                 transform-origin: top left
                 transition: transform .3s
                 li
-                    cursor: pointer
                     padding: 5px
                     border-bottom: 1px solid $mainDark
                     &:last-child
                         border-bottom: none
+        .filter-open
+            z-index: 4
     &-blocks
         +row-flex
         &__block
             position: relative
             +col
             +size(3.5)
-            +shift-left(0.25)
-            +shift-right(0.25)
+            +shift(0.25)
             padding: 0 45px
             +xxl-block
                 +size(5)
-                +shift-left(0.5)
-                +shift-right(0.5)
+                +shift(0.5)
             +xm-block
                 padding: 0 30px
             +md-block
                 +size(7)
-                +shift-left(2.5)
-                +shift-right(2.5)
+                +shift(2.5)
             +sm-block
                 +size(10)
-                +shift-left(1)
-                +shift-right(1)
+                +shift(1)
             +xxs-block
                 +size(11)
-                +shift-left(0.5)
-                +shift-right(0.5)
+                +shift(0.5)
             &-content
                 position: relative
                 margin-bottom: 100px
