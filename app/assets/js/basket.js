@@ -2,58 +2,100 @@ const basket = document.querySelector('.basket');
 
 if(basket) {
     const basketModels = document.querySelector('.basket-models');
+    let input;
+    let btnCount;
+    let btn;
+    let itInc;
+    let interval;
+    let intervalCount 
 
-basketModels.addEventListener('input', e => {
-    const target = e.target;
-    if(target.dataset.name = 'input-count') {
-        target.value = target.value.replace(/\D/g, '');
+
+    basketModels.addEventListener('input', e => {
+        const target = e.target;
         
-    }
-});
-
-basketModels.addEventListener('change', e => {
-    const target = e.target;
-    if(target.dataset.name = 'input-count') {
-        if(target.value === '') {
-            target.value = 0;
+        if(target.dataset.name === 'input-count') {
+            target.value = target.value.replace(/\D/g, '');
         }
-        else if(target.value > 50) {
-            target.value = 50;
-        }
-    }
-});
 
-basketModels.addEventListener('click', e => {
-    const target = e.target;
+    });
 
-    let div = target;
+    basketModels.addEventListener('change', e => {
+        const target = e.target;
+        const value = target.value;
 
-    while(!div.classList.contains('btn_count')) {
-        if(div == basketModels) {
-            break;
-        }
-        div = div.parentElement;
-    }
-
-    if(div != basketModels) {
-        const itInc = div.classList.contains('btn_count_inc');
-        const itDec = div.classList.contains('btn_count_dec');
-
-        if(itInc) {
-            const divParrent = div.parentElement;
-            const input = divParrent.querySelector('input');
-            if(input.value < 50) input.value = Number(input.value) + 1; 
-        }
-        else if(itDec) {
-            const divParrent = div.parentElement;
-            const input = divParrent.querySelector('input');
-
-            if(input.value > 0) {
-                input.value -= 1; 
+        if(target.dataset.name == 'input-count') {
+            if(value === '') {
+                target.value = 0;
+                
+            }
+            else if(value > 50) {
+                target.value = 50;
             }
         }
-    }
+    });
+
     
-});
+    basketModels.addEventListener('mousedown', e => {
+        const target = e.target;
+        btnCount = target.closest('.btn_count');
+        let bgMenuCount = target.closest('.basket-bgmenu-count');
+        if(bgMenuCount) {
+            input = target.closest('.basket-bgmenu-count').querySelector('input');
+        }
+        if(btnCount) {
+            itInc = btnCount.classList.contains('btn_count_inc');
+        }
+        
+        if(btnCount && counterValidate(input)) {
+            btn = new btnCounter(btnCount);
+            if(itInc) btn.startClickAnimation();
+            else if(!itInc && input.value != 0) btn.startClickAnimation();
+            
+            let count = 0;
+
+            intervalCount = setInterval(function() {
+                count++;
+                if(count == 3) {
+                    if(itInc && input.value < 50) {
+                        interval = setInterval(function() {
+                            if(input.value < 50) input.value = Number(input.value) + 1;
+                            else if(input.value == 50) btn.stopClickAnimation();
+                        }, 100);
+                        
+                    }
+                    else if(!itInc && input.value > 0) {
+                        interval = setInterval(function() {
+                            if(input.value > 0) input.value -= 1;
+                            else if(input.value == 0) btn.stopClickAnimation();
+                        }, 100);
+                    }
+                    
+                }
+            }, 100);
+
+            setTimeout(function() {
+                clearInterval(intervalCount);
+            }, 300)
+
+        }
+    });
+    
+    basketModels.addEventListener('mouseup', e => {
+        clearInterval(interval);
+        
+        if(intervalCount) {
+            clearInterval(intervalCount);
+        }
+        
+        if(btnCount) {
+            if(counterValidate(input)) btn.stopClickAnimation();
+
+            if(itInc && input.value < 50) 
+                input.value = Number(input.value) + 1; 
+            else if(!itInc && input.value > 0) 
+                input.value -= 1; 
+            
+        }
+    });
 }
 
