@@ -7,7 +7,6 @@ if (card) {
     const feedbackModalExit = feedbackModal.querySelector('.feedback-modal__exit');
     const body = document.querySelector('body');
     
-    console.log('1');
     let imgSlider = new Swiper('.card-img-swiper', {
         slidesPerView: 1,
         slidesPerGroup: 1,
@@ -50,58 +49,9 @@ feedbackBtn.addEventListener('click', () => {
 
 feedbackModalExit.addEventListener('click', hideFeedbackModal);
 
-const cardCountInput = document.querySelector('.card-model__product-count input');
+const cardCounterBlock = document.querySelector('.card-model__product-count');
 
-cardCountInput.addEventListener('input', () => {
-    cardCountInput.value = cardCountInput.value.replace(/\D/g, '');
-});
-
-cardCountInput.addEventListener('change', () => {
-    let value = cardCountInput.value;
-    if(value === '') {
-        value = 0;
-    }
-    else if(value > 50) {
-        value = 50;
-    }
-    cardCountInput.value = value;
-});
-
-const cardModelCount = document.querySelector('.card-model__product-count>div');
-
-cardModelCount.addEventListener('click', e => {
-    const target = e.target;
-    let div = target;
-    while(!div.hasAttribute('data-name')) {
-        if(div == cardModelCount) {
-            break;
-        }
-        div = div.parentElement;
-    }
-
-    if(div.hasAttribute('data-name')) {
-        if(div.dataset.name == 'minus') {
-            if(cardCountInput.value > 0) cardCountInput.value -= 1;
-        }
-        else if (div.dataset.name == 'plus') {
-            if(cardCountInput.value < 50)
-            cardCountInput.value = Number(cardCountInput.value) + 1;
-        }
-    }
-    else {
-        let div = target;
-        while(div.hasAttribute('data-name') == null) 
-            div = div.parentElement;
-        if(div.dataset.name == 'minus') {
-            if(cardCountInput.value > 0) cardCountInput.value -= 1;
-        }
-        else if (div.dataset.name == 'plus') {
-            if(cardCountInput.value < 50)
-            cardCountInput.value = Number(cardCountInput.value) + 1;
-        }
-    }
-});
-
+btnClickAnimation(cardCounterBlock, '.card-model__product-count', '.card-model__product-count > div > div', '.plus');
 
 const cardMain = document.querySelector('.card_main');
 if(cardMain) {
